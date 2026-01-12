@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soporte y Mesa de Ayuda - DSISAC</title>
+    <link rel="stylesheet" href="soporte.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    
+    <header class="header-transparent">
+        <div class="menu container">
+            <div class="logo">
+                <a href="index.html"><img src="img/logoBlanco.png" alt="DSISAC Logo"></a>
+            </div>
+            
+            <input type="checkbox" id="menu">
+            <label for="menu">
+                <img src="img/menu.png" class="menu-icono" alt="menú">
+            </label>
+            
+            <nav class="navbar">
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="nosotros.html">Nosotros</a></li>
+                    
+                    <li class="dropdown-item">
+                        <a href="servicios.html" class="dropdown-trigger">Servicios <i class="fas fa-chevron-down"></i></a>
+                        
+                        <div class="mega-menu">
+                            <div class="menu-tabs">
+                                <span class="tab-link active" onclick="switchMenuTab(event, 'tab-productos')">PRODUCTOS</span>
+                                <span class="tab-link" onclick="switchMenuTab(event, 'tab-servicios')">SERVICIOS</span>
+                            </div>
+
+                            <div id="tab-productos" class="menu-content active">
+                                <ul>
+                                    <li><a href="#">DSINet - ERP Core <i class="fas fa-chevron-right"></i></a></li>
+                                    <li><a href="#">DSI - Contabilidad <i class="fas fa-chevron-right"></i></a></li>
+                                    <li><a href="#">DSI - Pedidos <i class="fas fa-chevron-right"></i></a></li>
+                                    <li><a href="#">DSI - Gerencial <i class="fas fa-chevron-right"></i></a></li>
+                                    <li><a href="#">Desarrollo de Software a Medida <i class="fas fa-chevron-right"></i></a></li>
+                                </ul>
+                            </div>
+
+                            <div id="tab-servicios" class="menu-content">
+                                <ul>
+                                    <li><a href="#">Servicio de Soporte <i class="fas fa-chevron-right"></i></a></li>
+                                    <li><a href="#">Certificados Digitales <i class="fas fa-chevron-right"></i></a></li>
+                                    <li><a href="#">NubeFact - OSE <i class="fas fa-chevron-right"></i></a></li>
+                                    <li><a href="#">Servidor en la Nube (VPS) <i class="fas fa-chevron-right"></i></a></li>
+                                    <li><a href="#">Cambios a Medida <i class="fas fa-chevron-right"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li><a href="soporte.html" class="active-link">Mesa de Ayuda</a></li>
+                </ul>
+            </nav>
+
+            <a href="contacto.html" class="btn-header">Contactar &rarr;</a>
+        </div>
+    </header>
+
+    <section class="support-hero">
+        <div class="container hero-content hidden">
+            <h1>Soporte que <br> realmente <span class="text-cyan">funciona</span></h1>
+            <p>Sistema de tickets profesional con respuesta garantizada en menos de 15 minutos.</p>
+            <a href="#" class="btn-cyan-hero">Abrir Ticket Ahora &rarr;</a>
+        </div>
+    </section>
+
+    <section class="stats-section">
+        <div class="container stats-grid">
+            <div class="stat-item hidden delay-100">
+                <h2>&lt;15 min</h2>
+                <p>Tiempo de Respuesta</p>
+            </div>
+            <div class="stat-item hidden delay-200">
+                <h2>98%</h2>
+                <p>Satisfacción</p>
+            </div>
+            <div class="stat-item hidden delay-300">
+                <h2>99%</h2>
+                <p>Continuidad Operativa</p>
+            </div>
+            <div class="stat-item hidden delay-400">
+                <h2>100%</h2>
+                <p>Enfoque Empresarial</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="steps-section">
+        <div class="container">
+            <div class="section-header hidden">
+                <h2>Así funciona nuestro HelpDesk</h2>
+                <p>Sin buzones desorganizados, solo un sistema que realmente resuelve.</p>
+            </div>
+
+            <div class="steps-grid">
+                <div class="step-card card-blue hidden delay-100">
+                    <div class="icon-circle">
+                        <i class="fas fa-paper-plane"></i>
+                        <span class="step-number">1</span>
+                    </div>
+                    <h3>Envía tu solicitud</h3>
+                </div>
+                <div class="step-card card-white hidden delay-200">
+                    <div class="icon-circle">
+                        <i class="fas fa-boxes"></i>
+                        <span class="step-number">2</span>
+                    </div>
+                    <h3>Recibimos y Clasificamos</h3>
+                </div>
+                <div class="step-card card-blue hidden delay-300">
+                    <div class="icon-circle">
+                        <i class="fas fa-user-cog"></i>
+                        <span class="step-number">3</span>
+                    </div>
+                    <h3>Asignamos Especialista</h3>
+                </div>
+                <div class="step-card card-white hidden delay-400">
+                    <div class="icon-circle">
+                        <i class="fas fa-check-circle"></i>
+                        <span class="step-number">4</span>
+                    </div>
+                    <h3>Resolvemos y notificamos</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="features-section">
+        <div class="container features-grid">
+            <div class="feature-card hidden-left">
+                <div class="feature-icon"><i class="fas fa-columns"></i></div>
+                <h3>Sistema Profesional</h3>
+                <ul class="check-list">
+                    <li><i class="fas fa-check-square"></i> Plataforma Jira integrada</li>
+                    <li><i class="fas fa-check-square"></i> Tickets con seguimiento en tiempo real</li>
+                    <li><i class="fas fa-check-square"></i> Equipo técnico especializado</li>
+                </ul>
+            </div>
+            <div class="feature-card hidden-right">
+                <div class="feature-icon"><i class="fas fa-stopwatch"></i></div>
+                <h3>Respuesta Rápida</h3>
+                <ul class="check-list">
+                    <li><i class="fas fa-check-square"></i> Menos de 15 minutos de respuesta</li>
+                    <li><i class="fas fa-check-square"></i> Priorización por criticidad</li>
+                    <li><i class="fas fa-check-square"></i> Actualizaciones constantes</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="helpdesk-contact-section">
+        <div class="container helpdesk-grid">
+            <div class="helpdesk-image hidden-left">
+                <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=800&q=80" alt="Atención al cliente">
+            </div>
+            <div class="helpdesk-info hidden-right">
+                <h2>HelpDesk</h2>
+                <p class="subtitle">Su feedback es muy importante.</p>
+                <p class="description">Esto nos permite anticiparnos a problemas futuros y optimizar el servicio.</p>
+                <div class="contact-channels">
+                    <div class="channel-item">
+                        <i class="far fa-comment-alt"></i>
+                        <span>+51 960-579-083</span>
+                    </div>
+                    <div class="channel-item">
+                        <i class="far fa-envelope"></i>
+                        <span>helpdesk@dsi-sac.com</span>
+                    </div>
+                </div>
+                <div class="exclusive-note">
+                    <strong>Canal exclusivo para clientes</strong>
+                    <p>Este número de soporte es de uso exclusivo para clientes activos. Solo se atenderán solicitudes provenientes de contactos identificados.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-left">
+                    <a href="#" class="footer-logo">
+                        <img src="img/logoTextBlanco.png" alt="DSISAC Logo">
+                    </a>
+                    <p class="footer-desc">Desde la estrategia hasta la ejecución, creamos soluciones digitales que impulsan tu negocio</p>
+                    <ul class="footer-nav">
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="nosotros.html">Nosotros</a></li>
+                        <li><a href="servicios.html">Productos</a></li>
+                        <li><a href="soporte.html">Mesa de Ayuda</a></li>
+                    </ul>
+                </div>
+                <div class="footer-right">
+                    <h3>Suscríbete a nuestro boletín</h3>
+                    <p>Las últimas noticias, artículos y recursos, enviados a su bandeja de entrada semanalmente</p>
+                    <form class="subscribe-form">
+                        <input type="email" placeholder="Introduce tu correo electrónico" required>
+                        <button type="submit">Suscribirse</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>Copyright 2026 © DSISAC</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        /* Funcionalidad del Mega Menú (Tabs) */
+        function switchMenuTab(evt, tabId) {
+            evt.preventDefault(); evt.stopPropagation();
+            let tabs = document.querySelectorAll('.tab-link');
+            let contents = document.querySelectorAll('.menu-content');
+            tabs.forEach(tab => tab.classList.remove('active'));
+            contents.forEach(content => content.classList.remove('active'));
+            evt.target.classList.add('active');
+            document.getElementById(tabId).classList.add('active');
+        }
+
+        /* Animaciones */
+        document.addEventListener('DOMContentLoaded', () => {
+            const observerOptions = { root: null, rootMargin: '0px', threshold: 0.1 };
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('show');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            const hiddenElements = document.querySelectorAll('.hidden, .hidden-left, .hidden-right');
+            hiddenElements.forEach((el) => observer.observe(el));
+        });
+    </script>
+</body>
+</html>

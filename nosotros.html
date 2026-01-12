@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nosotros - DSISAC</title>
+    <link rel="stylesheet" href="nosotros.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    
+    <header class="header-short">
+        <div class="menu container">
+            <a href="index.html" class="logo"><img src="img/logoBlanco.png" alt="DSISAC Logo"></a>
+            
+            <input type="checkbox" id="menu">
+            <label for="menu">
+                <img src="img/menu.png" class="menu-icono" alt="menú">
+            </label>
+            
+            <nav class="navbar">
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="nosotros.html" class="active-link">Nosotros</a></li>
+                    
+                    <li class="dropdown-item">
+                        <a href="servicios.html" class="dropdown-trigger">Servicios <i class="fas fa-chevron-down"></i></a>
+                        <div class="mega-menu">
+                            <div class="menu-tabs">
+                                <span class="tab-link active" onclick="switchMenuTab(event, 'tab-productos')">PRODUCTOS</span>
+                                <span class="tab-link" onclick="switchMenuTab(event, 'tab-servicios')">SERVICIOS</span>
+                            </div>
+
+                            <div id="tab-productos" class="menu-content active">
+                                <ul>
+                                    <li><a href="#">DSINet - ERP Core <i class="fas fa-chevron-right"></i></a></li>
+                                    <li><a href="#">DSI - Contabilidad <i class="fas fa-chevron-right"></i></a></li>
+                                    <li><a href="#">DSI - Pedidos <i class="fas fa-chevron-right"></i></a></li>
+                                    <li><a href="#">DSI - Gerencial <i class="fas fa-chevron-right"></i></a></li>
+                                    <li><a href="#">Desarrollo de Software a Medida <i class="fas fa-chevron-right"></i></a></li>
+                                </ul>
+                            </div>
+
+                            <div id="tab-servicios" class="menu-content">
+                                <ul>
+                                    <li><a href="#">Servicio de Soporte <i class="fas fa-chevron-right"></i></a></li>
+                                    <li><a href="#">Certificados Digitales <i class="fas fa-chevron-right"></i></a></li>
+                                    <li><a href="#">NubeFact - OSE <i class="fas fa-chevron-right"></i></a></li>
+                                    <li><a href="#">Servidor en la Nube (VPS) <i class="fas fa-chevron-right"></i></a></li>
+                                    <li><a href="#">Cambios a Medida <i class="fas fa-chevron-right"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li><a href="soporte.html">Mesa de Ayuda</a></li>
+                </ul>
+            </nav>
+
+            <a href="contacto.html" class="btn-header">Contactar &rarr;</a>
+        </div>
+    </header>
+
+    <section class="about-hero">
+        <div class="container about-grid">
+            <div class="about-text-content hidden-left">
+                <h1>Acerca de nosotros</h1>
+                <p class="main-desc">
+                    DSI desarrolla soluciones ERP basadas en procesos sólidos, experiencia real y conocimiento profundo del negocio. Acompañamos a empresas en Perú, Colombia y Argentina con sistemas que no improvisan y evolucionan sin interrumpir la operación.
+                </p>
+
+                <div class="vm-item delay-100">
+                    <div class="vm-icon"><i class="far fa-eye"></i></div>
+                    <div class="vm-content">
+                        <h3>Visión</h3>
+                        <p>Desarrollar y mantener soluciones ERP confiables que optimicen procesos clave y acompañen el crecimiento de nuestros clientes con tecnología estable y eficiente.</p>
+                    </div>
+                </div>
+
+                <div class="vm-item delay-200">
+                    <div class="vm-icon"><i class="fas fa-rocket"></i></div>
+                    <div class="vm-content">
+                        <h3>Misión</h3>
+                        <p>Ser un socio tecnológico referente en Latinoamérica, reconocido por desarrollar sistemas sólidos y escalables que evolucionan sin afectar la operación empresarial.</p>
+                    </div>
+                </div>
+
+                <div class="about-buttons delay-300">
+                    <a href="#" class="btn-cyan">Conoce más &rarr;</a>
+                    <a href="#" class="btn-outline">Ver casos de éxito</a>
+                </div>
+            </div>
+
+            <div class="about-image-content hidden-right">
+                <img src="img/NOSOTROS.jpg" alt="Equipo DSISAC">
+            </div>
+        </div>
+    </section>
+
+    <section class="values-section">
+        <div class="container">
+            <div class="values-grid">
+                
+                <div class="values-content hidden-left">
+                    <h2>Nuestros <span class="underline">Valores</span></h2>
+                    <p class="values-desc">
+                        Los valores de DSI reflejan los principios que guían nuestra cultura e identidad institucional, fortaleciendo nuestra reputación y la relación con colaboradores, clientes y partners.
+                    </p>
+
+                    <div class="values-list">
+                        <div class="val-item">
+                            <i class="fas fa-hand-holding-heart"></i>
+                            <span>Confiabilidad</span>
+                        </div>
+                        <div class="val-item">
+                            <i class="fas fa-chart-line"></i>
+                            <span>Relación a largo plazo</span>
+                        </div>
+                        <div class="val-item">
+                            <i class="fas fa-lightbulb"></i>
+                            <span>Evolución consciente</span>
+                        </div>
+                        <div class="val-item">
+                            <i class="fas fa-user-check"></i>
+                            <span>Responsabilidad</span>
+                        </div>
+                        <div class="val-item">
+                            <i class="fas fa-users-cog"></i>
+                            <span>Especialización</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="values-image hidden-right">
+                    <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=800&q=80" alt="Equipo trabajando">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="experience-section">
+        <div class="container">
+            <h2 class="exp-title hidden">Nuestra <span class="underline-blue">Experiencia</span></h2>
+            
+            <div class="experience-cards">
+                
+                <div class="exp-card hidden delay-100">
+                    <h3>Fundada con propósito</h3>
+                    <p>DSI es una empresa de tecnología con casi siete años de experiencia en el desarrollo de soluciones ERP confiables, orientadas a garantizar la continuidad, control y estabilidad de los procesos empresariales en compañías de gran tamaño.</p>
+                </div>
+
+                <div class="exp-card hidden delay-200">
+                    <h3>Presencia regional</h3>
+                    <p>Contamos con un sólido dominio en facturación, integraciones y automatización de procesos críticos, adaptándonos a cada cliente sin imponer soluciones genéricas. Hoy, DSI tiene presencia en Perú, Colombia y Argentina, ofreciendo tecnología que evoluciona sin afectar lo que ya funciona.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-left">
+                    <a href="#" class="footer-logo">
+                        <img src="img/logoTextBlanco.png" alt="DSISAC Logo">
+                    </a>
+                    <p class="footer-desc">Desde la estrategia hasta la ejecución, creamos soluciones digitales que impulsan tu negocio</p>
+                    <ul class="footer-nav">
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="nosotros.html">Nosotros</a></li>
+                        <li><a href="servicios.html">Productos</a></li>
+                        <li><a href="soporte.html">Mesa de Ayuda</a></li>
+                    </ul>
+                </div>
+                <div class="footer-right">
+                    <h3>Suscríbete a nuestro boletín</h3>
+                    <p>Las últimas noticias, artículos y recursos, enviados a su bandeja de entrada semanalmente</p>
+                    <form class="subscribe-form">
+                        <input type="email" placeholder="Introduce tu correo electrónico" required>
+                        <button type="submit">Suscribirse</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>Copyright 2026 © DSISAC</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function switchMenuTab(evt, tabId) {
+            evt.preventDefault(); evt.stopPropagation();
+            let tabs = document.querySelectorAll('.tab-link');
+            let contents = document.querySelectorAll('.menu-content');
+            tabs.forEach(tab => tab.classList.remove('active'));
+            contents.forEach(content => content.classList.remove('active'));
+            evt.target.classList.add('active');
+            document.getElementById(tabId).classList.add('active');
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const observerOptions = { root: null, rootMargin: '0px', threshold: 0.1 };
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('show');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+            const hiddenElements = document.querySelectorAll('.hidden, .hidden-left, .hidden-right');
+            hiddenElements.forEach((el) => observer.observe(el));
+        });
+    </script>
+</body>
+</html>
