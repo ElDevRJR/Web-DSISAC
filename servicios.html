@@ -11,10 +11,12 @@
     
     <header class="header-light">
         <div class="menu container">
+            
             <a href="index.html" class="logo"><img src="img/logo.png" alt="DSISAC Logo"></a>
             
             <input type="checkbox" id="menu">
-            <label for="menu">
+            
+            <label for="menu" class="menu-label">
                 <img src="img/menu.png" class="menu-icono" alt="menú">
             </label>
             
@@ -25,6 +27,7 @@
                     
                     <li class="dropdown-item">
                         <a href="#" class="dropdown-trigger active-link">Servicios <i class="fas fa-chevron-down"></i></a>
+                        
                         <div class="mega-menu">
                             <div class="menu-tabs">
                                 <span class="tab-link active" onclick="switchMenuTab(event, 'tab-productos')">PRODUCTOS</span>
@@ -65,11 +68,9 @@
         <div class="container services-grid">
             <div class="hero-text hidden-left">
                 <h1>Soluciones ERP para <br> gestión <span class="underline-blue">empresarial</span></h1>
-                <p>Brindamos soluciones tecnológicas integrales que centralizan la información, optimizan procesos críticos y aseguran la continuidad operativa del negocio. Acompañamos a las empresas en su crecimiento con servicios confiables.</p>
-                
+                <p>Brindamos soluciones tecnológicas integrales que centralizan la información, optimizan procesos críticos y aseguran la continuidad operativa del negocio.</p>
                 <a href="#" class="btn-dark-blue">Saber más &rarr;</a>
             </div>
-
             <div class="hero-image hidden-right">
                 <img src="https://images.unsplash.com/photo-1531973576160-7125cd663d86?auto=format&fit=crop&w=800&q=80" alt="Gestión Empresarial">
             </div>
@@ -78,50 +79,43 @@
 
     <section class="services-slider">
         <div class="slider-container">
-            
             <div class="service-slide active" style="background-image: linear-gradient(rgba(13, 37, 78, 0.85), rgba(13, 37, 78, 0.9)), url('https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=1600&q=80');">
                 <div class="slide-content">
                     <h2>Soporte al Usuario</h2>
-                    <p>Brindamos acompañamiento permanente para garantizar la correcta operación del sistema, resolviendo incidencias, aclarando dudas y apoyando a tu equipo en el uso diario del software.</p>
+                    <p>Brindamos acompañamiento permanente para garantizar la correcta operación del sistema, resolviendo incidencias y aclarando dudas.</p>
                     <a href="#" class="btn-cyan">Ver Servicio &rarr;</a>
                 </div>
             </div>
-
             <div class="service-slide" style="background-image: linear-gradient(rgba(13, 37, 78, 0.85), rgba(13, 37, 78, 0.9)), url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1600&q=80');">
                 <div class="slide-content">
                     <h2>Cambios a Medida</h2>
-                    <p>Personalizamos nuestros sistemas para adaptarse a flujos de trabajo específicos, desarrollando nuevas funcionalidades y módulos que potencian la productividad única de tu empresa.</p>
+                    <p>Personalizamos nuestros sistemas para adaptarse a flujos de trabajo específicos, desarrollando nuevas funcionalidades.</p>
                     <a href="#" class="btn-cyan">Ver Servicio &rarr;</a>
                 </div>
             </div>
-
             <div class="service-slide" style="background-image: linear-gradient(rgba(13, 37, 78, 0.85), rgba(13, 37, 78, 0.9)), url('img/servidorMube.jpg');">
                 <div class="slide-content">
                     <h2>Servidor en la Nube (VPS)</h2>
-                    <p>Infraestructura segura y escalable para alojar tu ERP. Garantizamos disponibilidad 24/7, copias de seguridad automáticas y acceso rápido desde cualquier lugar del mundo.</p>
+                    <p>Infraestructura segura y escalable para alojar tu ERP. Garantizamos disponibilidad 24/7 y copias de seguridad.</p>
                     <a href="#" class="btn-cyan">Ver Servicio &rarr;</a>
                 </div>
             </div>
-
             <div class="service-slide" style="background-image: linear-gradient(rgba(13, 37, 78, 0.85), rgba(13, 37, 78, 0.9)), url('https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=1600&q=80');">
                 <div class="slide-content">
                     <h2>Certificados Digitales</h2>
-                    <p>Gestionamos la emisión y renovación de certificados digitales necesarios para la facturación electrónica ante SUNAT, asegurando la validez y seguridad de tus comprobantes.</p>
+                    <p>Gestionamos la emisión y renovación de certificados digitales necesarios para la facturación electrónica ante SUNAT.</p>
                     <a href="#" class="btn-cyan">Ver Servicio &rarr;</a>
                 </div>
             </div>
-
             <div class="service-slide" style="background-image: linear-gradient(rgba(13, 37, 78, 0.85), rgba(13, 37, 78, 0.9)), url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=1600&q=80');">
                 <div class="slide-content">
                     <h2>NubeFact - OSE</h2>
-                    <p>Solución integral para la emisión de comprobantes electrónicos con validación inmediata OSE, cumpliendo estrictamente con todas las normativas vigentes de SUNAT.</p>
+                    <p>Solución integral para la emisión de comprobantes electrónicos con validación inmediata OSE.</p>
                     <a href="#" class="btn-cyan">Ver Servicio &rarr;</a>
                 </div>
             </div>
-
             <button class="slider-btn prev-btn" onclick="moveSlide(-1)"><i class="fas fa-chevron-left"></i></button>
             <button class="slider-btn next-btn" onclick="moveSlide(1)"><i class="fas fa-chevron-right"></i></button>
-
         </div>
     </section>
 
@@ -130,10 +124,9 @@
             <div class="collage-wrapper hidden-left">
                 <img src="img/gridImagenes.png" alt="Experiencia y Adaptabilidad" class="grid-image">
             </div>
-
             <div class="adaptability-text hidden-right">
                 <h2>Contamos con la experiencia necesaria para adaptarnos a la forma en que opera cada negocio</h2>
-                <p>Desarrollamos e implementamos soluciones que se ajustan a los procesos, necesidades y objetivos de cada empresa, acompañando su operación y crecimiento de forma eficiente y sostenible.</p>
+                <p>Desarrollamos e implementamos soluciones que se ajustan a los procesos, necesidades y objetivos de cada empresa.</p>
                 <a href="#" class="btn-dark-blue">Saber más &rarr;</a>
             </div>
         </div>
@@ -143,7 +136,7 @@
         <div class="container work-grid">
             <div class="work-text hidden-left">
                 <h2>¿Cómo trabajamos?</h2>
-                <p>Nuestro enfoque se basa en entender primero el negocio, para luego implementar soluciones ERP alineadas a la realidad operativa y acompañar su evolución de forma continua y responsable.</p>
+                <p>Nuestro enfoque se basa en entender primero el negocio, para luego implementar soluciones ERP alineadas a la realidad operativa.</p>
                 <ul class="work-list">
                     <li><i class="far fa-check-square"></i> Analizamos tu operación</li>
                     <li><i class="far fa-check-square"></i> Adaptamos el ERP a tu realidad</li>
@@ -151,7 +144,7 @@
                 </ul>
             </div>
             <div class="work-image hidden-right">
-                <img src="https://images.unsplash.com/photo-1531538606174-0f90ff5dce83?auto=format&fit=crop&w=800&q=80" alt="Reunión de equipo">
+                <img src="https://images.unsplash.com/photo-1531538606174-0f90ff5dce83?auto=format&fit=crop&w=800&q=80" alt="Reunión">
             </div>
         </div>
     </section>
@@ -160,9 +153,8 @@
         <div class="container">
             <div class="section-header-center hidden">
                 <h2>Problemas que <span class="underline-cyan">Resolvemos</span></h2>
-                <p>Transformamos los desafíos operativos en oportunidades de crecimiento, optimizando procesos clave y acompañando a las empresas con soluciones tecnológicas sólidas.</p>
+                <p>Transformamos los desafíos operativos en oportunidades de crecimiento, optimizando procesos clave.</p>
             </div>
-
             <div class="problems-grid">
                 <div class="problem-item hidden delay-100">
                     <div class="icon-circle-cyan"><i class="fas fa-exclamation"></i></div>
@@ -187,11 +179,11 @@
     <section class="technology-section">
         <div class="container technology-grid">
             <div class="tech-image hidden-left">
-                <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=800&q=80" alt="Equipo analizando datos">
+                <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=800&q=80" alt="Tecnología">
             </div>
             <div class="tech-text hidden-right">
                 <h2>Tecnología que sostiene la <br> gestión <span class="text-dark">empresarial</span></h2>
-                <p>Desarrollamos soluciones ERP pensadas para empresas que necesitan estabilidad operativa, control real y una evolución tecnológica consciente.</p>
+                <p>Desarrollamos soluciones ERP pensadas para empresas que necesitan estabilidad operativa.</p>
                 <a href="contacto.html" class="btn-cyan">Solicitar Asesoría &rarr;</a>
             </div>
         </div>
@@ -201,9 +193,7 @@
         <div class="container">
             <div class="footer-top">
                 <div class="footer-left">
-                    <a href="#" class="footer-logo">
-                        <img src="img/logo.png" alt="DSISAC Logo">
-                    </a>
+                    <a href="#" class="footer-logo"><img src="img/logoTextBlanco.png" alt="DSISAC Logo"></a>
                     <p class="footer-desc">Desde la estrategia hasta la ejecución, creamos soluciones digitales que impulsan tu negocio</p>
                     <ul class="footer-nav">
                         <li><a href="index.html">Inicio</a></li>
@@ -213,10 +203,9 @@
                     </ul>
                 </div>
                 <div class="footer-right">
-                    <h3>Suscríbete a nuestro boletín</h3>
-                    <p>Las últimas noticias, artículos y recursos, enviados a su bandeja de entrada semanalmente</p>
+                    <h3>Suscríbete</h3>
                     <form class="subscribe-form">
-                        <input type="email" placeholder="Introduce tu correo electrónico" required>
+                        <input type="email" placeholder="Correo electrónico" required>
                         <button type="submit">Suscribirse</button>
                     </form>
                 </div>
@@ -232,7 +221,6 @@
     </footer>
 
     <script>
-        /* Mega Menú */
         function switchMenuTab(evt, tabId) {
             evt.preventDefault(); evt.stopPropagation();
             let tabs = document.querySelectorAll('.tab-link');
@@ -243,7 +231,6 @@
             document.getElementById(tabId).classList.add('active');
         }
 
-        /* Slider */
         let currentSlide = 0;
         const slides = document.querySelectorAll('.service-slide');
         function showSlide(index) {
@@ -256,19 +243,16 @@
         function moveSlide(direction) { showSlide(currentSlide + direction); }
         setInterval(() => { moveSlide(1); }, 6000);
 
-        /* Animaciones */
         document.addEventListener('DOMContentLoaded', () => {
-            const observerOptions = { root: null, rootMargin: '0px', threshold: 0.1 };
-            const observer = new IntersectionObserver((entries, observer) => {
+            const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         entry.target.classList.add('show');
                         observer.unobserve(entry.target);
                     }
                 });
-            }, observerOptions);
-            const hiddenElements = document.querySelectorAll('.hidden, .hidden-left, .hidden-right');
-            hiddenElements.forEach((el) => observer.observe(el));
+            }, { threshold: 0.1 });
+            document.querySelectorAll('.hidden, .hidden-left, .hidden-right').forEach(el => observer.observe(el));
         });
     </script>
 </body>

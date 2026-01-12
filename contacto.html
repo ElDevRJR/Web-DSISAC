@@ -11,10 +11,12 @@
     
     <header class="header-transparent">
         <div class="menu container">
+            
             <a href="index.html" class="logo"><img src="img/logoBlanco.png" alt="DSISAC Logo"></a>
             
             <input type="checkbox" id="menu">
-            <label for="menu">
+            
+            <label for="menu" class="menu-label">
                 <img src="img/menu.png" class="menu-icono" alt="menú">
             </label>
             
@@ -25,17 +27,30 @@
                     
                     <li class="dropdown-item">
                         <a href="servicios.html" class="dropdown-trigger">Servicios <i class="fas fa-chevron-down"></i></a>
+                        
                         <div class="mega-menu">
                             <div class="menu-tabs">
-                                <span class="tab-link active">PRODUCTOS</span>
-                                <span class="tab-link">SERVICIOS</span>
+                                <span class="tab-link active" onclick="switchMenuTab(event, 'tab-productos')">PRODUCTOS</span>
+                                <span class="tab-link" onclick="switchMenuTab(event, 'tab-servicios')">SERVICIOS</span>
                             </div>
-                            <div class="menu-content active">
+
+                            <div id="tab-productos" class="menu-content active">
                                 <ul>
                                     <li><a href="#">DSINet - ERP Core <i class="fas fa-chevron-right"></i></a></li>
                                     <li><a href="#">DSI - Contabilidad <i class="fas fa-chevron-right"></i></a></li>
                                     <li><a href="#">DSI - Pedidos <i class="fas fa-chevron-right"></i></a></li>
                                     <li><a href="#">DSI - Gerencial <i class="fas fa-chevron-right"></i></a></li>
+                                    <li><a href="#">Desarrollo de Software a Medida <i class="fas fa-chevron-right"></i></a></li>
+                                </ul>
+                            </div>
+
+                            <div id="tab-servicios" class="menu-content">
+                                <ul>
+                                    <li><a href="#">Servicio de Soporte <i class="fas fa-chevron-right"></i></a></li>
+                                    <li><a href="#">Certificados Digitales <i class="fas fa-chevron-right"></i></a></li>
+                                    <li><a href="#">NubeFact - OSE <i class="fas fa-chevron-right"></i></a></li>
+                                    <li><a href="#">Servidor en la Nube (VPS) <i class="fas fa-chevron-right"></i></a></li>
+                                    <li><a href="#">Cambios a Medida <i class="fas fa-chevron-right"></i></a></li>
                                 </ul>
                             </div>
                         </div>
@@ -142,7 +157,7 @@
             <div class="footer-top">
                 <div class="footer-left">
                     <a href="#" class="footer-logo">
-                        <img src="img/logoTextBlanco.png" alt="DSISAC Logo">
+                        <img src="img/logoBlanco.png" alt="DSISAC Logo">
                     </a>
                     <p class="footer-desc">Desde la estrategia hasta la ejecución, creamos soluciones digitales que impulsan tu negocio</p>
                     <ul class="footer-nav">
@@ -172,6 +187,18 @@
     </footer>
 
     <script>
+        /* Funcionalidad del Mega Menú */
+        function switchMenuTab(evt, tabId) {
+            evt.preventDefault(); evt.stopPropagation();
+            let tabs = document.querySelectorAll('.tab-link');
+            let contents = document.querySelectorAll('.menu-content');
+            tabs.forEach(tab => tab.classList.remove('active'));
+            contents.forEach(content => content.classList.remove('active'));
+            evt.target.classList.add('active');
+            document.getElementById(tabId).classList.add('active');
+        }
+
+        /* Animaciones */
         document.addEventListener('DOMContentLoaded', () => {
             const observerOptions = { root: null, rootMargin: '0px', threshold: 0.1 };
             const observer = new IntersectionObserver((entries, observer) => {
