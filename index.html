@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <title>DSISAC - Fábrica de Software y Soluciones ERP</title>
+    <meta name="description" content="DSISAC es una fábrica de software especializada en sistemas empresariales, ERPs, facturación electrónica e integraciones críticas para optimizar tu operación.">
+    <meta name="keywords" content="software, ERP, desarrollo a medida, facturación electrónica, sistemas web, Perú, tecnología">
+    <meta name="author" content="DSISAC">
+
+    <link rel="icon" type="image/png" href="img/.png">
+    <link rel="shortcut icon" href="img/ISOTIPO.png" type="image/x-icon">
+
+    <meta property="og:title" content="DSISAC - Soluciones de Software Empresarial">
+    <meta property="og:description" content="Desarrollamos software a medida, ERPs y sistemas de gestión para potenciar tu negocio.">
+    <meta property="og:image" content="img/logoBlanco.png"> <meta property="og:url" content="https://www.tu-dominio.com">
+    <meta property="og:type" content="website">
+
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    
+    <header class="header">
+        <div class="menu container">
+            <a href="#" class="logo"><img src="img/logoBlanco.png" alt="DSISAC Logo"></a>
+            
+            <input type="checkbox" id="menu">
+            <label for="menu">
+                <img src="img/menu.png" class="menu-icono" alt="menú">
+            </label>
+            
+            <nav class="navbar">
+                <ul>
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="#">Nosotros</a></li>
+                    
+                    <li class="dropdown-item">
+                        <a href="#" class="dropdown-trigger">Servicios <i class="fas fa-chevron-down"></i></a>
+                        <div class="mega-menu">
+                            <div class="menu-tabs">
+                                <span class="tab-link active" onclick="switchMenuTab(event, 'tab-productos')">PRODUCTOS</span>
+                                <span class="tab-link" onclick="switchMenuTab(event, 'tab-servicios')">SERVICIOS</span>
+                            </div>
+
+                            <div id="tab-productos" class="menu-content active">
+                                <ul>
+                                    <li><a href="#">DSINet - ERP Core <i class="fas fa-chevron-right"></i></a></li>
+                                    <li><a href="#">DSI - Contabilidad <i class="fas fa-chevron-right"></i></a></li>
+                                    <li><a href="#">DSI - Pedidos <i class="fas fa-chevron-right"></i></a></li>
+                                    <li><a href="#">DSI - Gerencial <i class="fas fa-chevron-right"></i></a></li>
+                                    <li><a href="#">Desarrollo de Software a Medida <i class="fas fa-chevron-right"></i></a></li>
+                                </ul>
+                            </div>
+
+                            <div id="tab-servicios" class="menu-content">
+                                <ul>
+                                    <li><a href="#">Servicio de Soporte <i class="fas fa-chevron-right"></i></a></li>
+                                    <li><a href="#">Certificados Digitales <i class="fas fa-chevron-right"></i></a></li>
+                                    <li><a href="#">NubeFact - OSE <i class="fas fa-chevron-right"></i></a></li>
+                                    <li><a href="#">Servidor en la Nube (VPS) <i class="fas fa-chevron-right"></i></a></li>
+                                    <li><a href="#">Cambios a Medida <i class="fas fa-chevron-right"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li><a href="#">Mesa de Ayuda</a></li>
+                </ul>
+            </nav>
+
+            <a href="#" class="btn-header">Contactar &rarr;</a>
+        </div>
+        
+        <div class="header-content container">
+            <div class="social-proof hidden">
+                <div class="avatars">
+                    <img src="https://i.pravatar.cc/100?img=1" alt="">
+                    <img src="https://i.pravatar.cc/100?img=2" alt="">
+                    <img src="https://i.pravatar.cc/100?img=3" alt="">
+                </div>
+                <span>Más de 1000 personas confían en nosotros</span>
+            </div>
+
+            <div class="header-txt hidden delay-100">
+                <h1>Software a medida <br> para una operación más <span>eficiente.</span></h1>
+                <p>Somos una software factory especializada en sistemas empresariales, ERPs e integraciones críticas.</p>
+                <a href="#" class="btn-main hidden delay-200">Hablemos de tu sistema</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="productos-section container">
+        <div class="section-header hidden">
+            <h2>Nuestros Productos</h2>
+            <p>Desarrollamos soluciones, ERPs e integraciones críticas para operaciones que exigen control, estabilidad y eficiencia.</p>
+        </div>
+
+        <article class="product-card">
+            <div class="product-info hidden-left">
+                <h3>DSINet - ERP Core</h3>
+                <p>DSI-NET es un ERP modular y escalable para PYMES y empresas medianas que centraliza todos los procesos del negocio en una sola plataforma.</p>
+                <a href="#" class="btn-product">Ver más</a>
+            </div>
+            <div class="product-image hidden-right">
+                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80" alt="ERP Core">
+            </div>
+        </article>
+
+        <article class="product-card">
+            <div class="product-info hidden-right">
+                <h3>DSI - Contabilidad</h3>
+                <p>DSI-Contabilidad es un módulo de DSI-NET que transforma la operación diaria en información contable confiable.</p>
+                <a href="#" class="btn-product">Ver más</a>
+            </div>
+            <div class="product-image hidden-left">
+                <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=800&q=80" alt="Contabilidad">
+            </div>
+        </article>
+
+        <article class="product-card">
+            <div class="product-info hidden-left">
+                <h3>DSI - Pedidos</h3>
+                <p>DSI-Pedidos es una aplicación móvil para el equipo comercial que permite registrar pedidos directamente desde el campo.</p>
+                <a href="#" class="btn-product">Ver más</a>
+            </div>
+            <div class="product-image hidden-right">
+                <img src="https://images.unsplash.com/photo-1556740758-90de374c12ad?auto=format&fit=crop&w=800&q=80" alt="Pedidos">
+            </div>
+        </article>
+
+        <article class="product-card">
+            <div class="product-info hidden-right">
+                <h3>DSI - Gerencial</h3>
+                <p>Es un módulo para la gerencia y la toma de decisiones, con dashboards ejecutivos e indicadores clave.</p>
+                <a href="#" class="btn-product">Ver más</a>
+            </div>
+            <div class="product-image hidden-left">
+                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80" alt="Gerencial">
+            </div>
+        </article>
+
+        <article class="product-card">
+            <div class="product-info hidden-left">
+                <h3>Desarrollo de Software a Medida</h3>
+                <p>Desarrollamos software a medida para procesos específicos, priorizando estabilidad e integración.</p>
+                <a href="#" class="btn-product">Ver más</a>
+            </div>
+            <div class="product-image hidden-right">
+                <img src="https://images.unsplash.com/photo-1573164713988-8665fc963095?auto=format&fit=crop&w=800&q=80" alt="Software a Medida">
+            </div>
+        </article>
+    </section>
+
+    <section class="sistema-conectado">
+        <div class="container sistema-container">
+            <div class="info-left hidden-left">
+                <h2>Todo tu negocio, conectado en un solo sistema</h2>
+                <p>DSISAC centraliza las áreas clave de tu empresa en una sola plataforma, conectando almacenes, ventas, cobranzas, compras, gastos y estadísticas.</p>
+                <a href="#" class="btn-product">Ver módulos &rarr;</a>
+            </div>
+            <div class="image-right hidden-right">
+                <img src="img/graficoModulos.png" alt="Gráfico de conexión">
+            </div>
+        </div>
+    </section>
+
+    <section class="about-cta">
+        <div class="container">
+            <div class="about-content hidden">
+                <h2>Conoce un poco sobre nosotros</h2>
+                <p>No vendemos software genérico ni proyectos eternos.<br>Construimos sistemas que crecen con tu empresa.</p>
+                <a href="#" class="btn-cyan">Ver historias</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="clientes-section">
+        <div class="container">
+            <h2 class="hidden">Clientes que respaldan nuestra experiencia</h2>
+            <div class="slider hidden delay-100">
+                <div class="slide-track">
+                    <div class="slide"><img src="img/ferrer.png" alt="Ferrer"></div>
+                    <div class="slide"><img src="img/grupoalaba.png" alt="Alabaj"></div>
+                    <div class="slide"><img src="img/yangsu.png" alt="Yang Zu"></div>
+                    <div class="slide"><img src="img/gdm.png" alt="GDM"></div>
+                    <div class="slide"><img src="img/hongju.png" alt="Hongju"></div>
+                    
+                    <div class="slide"><img src="img/ferrer.png" alt="Ferrer"></div>
+                    <div class="slide"><img src="img/grupoalaba.png" alt="Alabaj"></div>
+                    <div class="slide"><img src="img/yangsu.png" alt="Yang Zu"></div>
+                    <div class="slide"><img src="img/gdm.png" alt="GDM"></div>
+                    <div class="slide"><img src="img/hongju.png" alt="Hongju"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="sectores-section">
+        <div class="container">
+            <div class="section-header hidden">
+                <h2>¿Qué módulos necesita mi sector?</h2>
+                <p>Descubre qué módulos necesita cada tipo de empresa para optimizar sus operaciones</p>
+            </div>
+
+            <div class="sectores-grid">
+                <div class="sector-card hidden">
+                    <div class="icon-circle">
+                        <img src="img/pequeñaEmpresa.svg" alt="Pequeña Empresa">
+                    </div>
+                    <h3>Pequeña Empresa</h3>
+                    <p>Ideal para negocios que están empezando a ordenar su operación.</p>
+                    <a href="javascript:void(0);" class="btn-sector" onclick="openModal('modal-pequena')">Ver módulos</a>
+                </div>
+
+                <div class="sector-card hidden delay-100">
+                    <div class="icon-circle">
+                        <img src="img/medianaEmpresa.svg" alt="Mediana Empresa">
+                    </div>
+                    <h3>Mediana Empresa</h3>
+                    <p>Para empresas en crecimiento que necesitan control y análisis.</p>
+                    <a href="javascript:void(0);" class="btn-sector" onclick="openModal('modal-mediana')">Ver módulos</a>
+                </div>
+
+                <div class="sector-card hidden delay-200">
+                    <div class="icon-circle">
+                        <img src="img/distribuidora.svg" alt="Distribuidora">
+                    </div>
+                    <h3>Distribuidora</h3>
+                    <p>Pensado para empresas con alto volumen de ventas y operación logística.</p>
+                    <a href="javascript:void(0);" class="btn-sector" onclick="openModal('modal-distribuidora')">Ver módulos</a>
+                </div>
+
+                <div class="sector-card hidden delay-300">
+                    <div class="icon-circle">
+                        <img src="img/importadora.svg" alt="Importadora">
+                    </div>
+                    <h3>Importadora</h3>
+                    <p>Para empresas con operaciones complejas y comercio exterior.</p>
+                    <a href="javascript:void(0);" class="btn-sector" onclick="openModal('modal-importadora')">Ver módulos</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-left">
+                    <a href="#" class="footer-logo">
+                        <img src="img/logoBlanco.png" alt="DSISAC Logo">
+                    </a>
+                    <p class="footer-desc">Desde la estrategia hasta la ejecución, creamos soluciones digitales que impulsan tu negocio</p>
+                    <ul class="footer-nav">
+                        <li><a href="#">Inicio</a></li>
+                        <li><a href="#">Nosotros</a></li>
+                        <li><a href="#">Productos</a></li>
+                        <li><a href="#">Mesa de Ayuda</a></li>
+                    </ul>
+                </div>
+                <div class="footer-right">
+                    <h3>Suscríbete a nuestro boletín</h3>
+                    <p>Las últimas noticias, artículos y recursos, enviados a su bandeja de entrada semanalmente</p>
+                    <form class="subscribe-form">
+                        <input type="email" placeholder="Introduce tu correo electrónico" required>
+                        <button type="submit">Suscribirse</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>Copyright 2026 © DSISAC</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div id="modal-pequena" class="modal-overlay">
+        <div class="modal-box">
+            <div class="modal-header">
+                <div class="icon-circle modal-icon"><img src="img/pequeñaEmpresa.svg" alt=""></div>
+                <div class="header-text"><h2>Pequeña Empresa</h2><p>Ideal para negocios que están empezando.</p></div>
+            </div>
+            <div class="modal-body">
+                <h3>Módulos requeridos:</h3>
+                <ul class="modal-list">
+                    <li><i class="fas fa-check-circle"></i> Almacenes (Ingreso y salida de mercadería)</li>
+                    <li><i class="fas fa-check-circle"></i> Controla sus ventas, niveles de stock</li>
+                    <li><i class="fas fa-check-circle"></i> Cobranza - incluye todos los medios de pago</li>
+                </ul>
+                <p class="modal-highlight"><strong>Orden y control desde el primer día.</strong></p>
+            </div>
+            <div class="modal-footer">
+                <a href="#" class="btn-asesoria">Solicitar Asesoría</a>
+                <button class="btn-cerrar" onclick="closeModal('modal-pequena')">Cerrar</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-mediana" class="modal-overlay">
+        <div class="modal-box">
+            <div class="modal-header">
+                <div class="icon-circle modal-icon"><img src="img/medianaEmpresa.svg" alt=""></div>
+                <div class="header-text"><h2>Mediana Empresa</h2><p>Para empresas en crecimiento.</p></div>
+            </div>
+            <div class="modal-body">
+                <h3>Módulos Requeridos:</h3>
+                <ul class="modal-list">
+                    <li><i class="fas fa-check-circle"></i> Almacenes</li>
+                    <li><i class="fas fa-check-circle"></i> Control de ventas y stock</li>
+                    <li><i class="fas fa-check-circle"></i> Cobranza completa</li>
+                    <li><i class="fas fa-check-circle"></i> Estadísticas</li>
+                    <li><i class="fas fa-check-circle"></i> Compras y provisiones</li>
+                </ul>
+                <p class="modal-highlight"><strong>Más control, más información.</strong></p>
+            </div>
+            <div class="modal-footer">
+                <a href="#" class="btn-asesoria">Solicitar Asesoría</a>
+                <button class="btn-cerrar" onclick="closeModal('modal-mediana')">Cerrar</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-distribuidora" class="modal-overlay">
+        <div class="modal-box wide-modal">
+            <div class="modal-header">
+                <div class="icon-circle modal-icon"><img src="img/distribuidora.svg" alt=""></div>
+                <div class="header-text"><h2>Distribuidora</h2><p>Para empresas con operación logística.</p></div>
+            </div>
+            <div class="modal-body">
+                <h3>Módulos Requeridos:</h3>
+                <ul class="modal-list two-columns">
+                    <li><i class="fas fa-check-circle"></i> Almacenes</li>
+                    <li><i class="fas fa-check-circle"></i> Ventas y Stock</li>
+                    <li><i class="fas fa-check-circle"></i> Cobranza</li>
+                    <li><i class="fas fa-check-circle"></i> Compras</li>
+                    <li><i class="fas fa-check-circle"></i> Facturación anticipo</li>
+                    <li><i class="fas fa-check-circle"></i> Letras comerciales</li>
+                    <li><i class="fas fa-check-circle"></i> Pago a proveedores</li>
+                    <li><i class="fas fa-check-circle"></i> Control de vendedores</li>
+                    <li><i class="fas fa-check-circle"></i> Promociones</li>
+                    <li><i class="fas fa-check-circle"></i> Picking y Packing</li>
+                    <li><i class="fas fa-check-circle"></i> Flota de vehículos</li>
+                    <li><i class="fas fa-check-circle"></i> Importaciones</li>
+                </ul>
+                <p class="modal-highlight"><strong>Eficiencia logística total.</strong></p>
+            </div>
+            <div class="modal-footer">
+                <a href="#" class="btn-asesoria">Solicitar Asesoría</a>
+                <button class="btn-cerrar" onclick="closeModal('modal-distribuidora')">Cerrar</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-importadora" class="modal-overlay">
+        <div class="modal-box wide-modal">
+            <div class="modal-header">
+                <div class="icon-circle modal-icon"><img src="img/importadora.svg" alt=""></div>
+                <div class="header-text"><h2>Importadora</h2><p>Operaciones complejas y comercio exterior.</p></div>
+            </div>
+            <div class="modal-body">
+                <h3>Módulos Requeridos:</h3>
+                <ul class="modal-list two-columns">
+                    <li><i class="fas fa-check-circle"></i> Almacenes</li>
+                    <li><i class="fas fa-check-circle"></i> Ventas y Stock</li>
+                    <li><i class="fas fa-check-circle"></i> Cobranza</li>
+                    <li><i class="fas fa-check-circle"></i> Estadísticas</li>
+                    <li><i class="fas fa-check-circle"></i> Compras</li>
+                    <li><i class="fas fa-check-circle"></i> Facturación anticipo</li>
+                    <li><i class="fas fa-check-circle"></i> Letras comerciales</li>
+                    <li><i class="fas fa-check-circle"></i> Pago a proveedores</li>
+                    <li><i class="fas fa-check-circle"></i> Productividad vendedores</li>
+                    <li><i class="fas fa-check-circle"></i> Promociones</li>
+                    <li><i class="fas fa-check-circle"></i> Picking / Packing</li>
+                    <li><i class="fas fa-check-circle"></i> Flota</li>
+                    <li><i class="fas fa-check-circle"></i> Importaciones</li>
+                    <li><i class="fas fa-check-circle"></i> Inventarios y Devoluciones</li>
+                </ul>
+                <p class="modal-highlight"><strong>Control integral de operaciones internacionales.</strong></p>
+            </div>
+            <div class="modal-footer">
+                <a href="#" class="btn-asesoria">Solicitar Asesoría</a>
+                <button class="btn-cerrar" onclick="closeModal('modal-importadora')">Cerrar</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function switchMenuTab(evt, tabId) {
+            evt.preventDefault(); evt.stopPropagation();
+            let tabs = document.querySelectorAll('.tab-link');
+            let contents = document.querySelectorAll('.menu-content');
+            tabs.forEach(tab => tab.classList.remove('active'));
+            contents.forEach(content => content.classList.remove('active'));
+            evt.target.classList.add('active');
+            document.getElementById(tabId).classList.add('active');
+        }
+
+        function openModal(modalId) {
+            const modal = document.getElementById(modalId);
+            if(modal) {
+                modal.style.display = 'flex';
+                document.body.style.overflow = 'hidden';
+            }
+        }
+        function closeModal(modalId) {
+            const modal = document.getElementById(modalId);
+            if(modal) {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        }
+        window.onclick = function(event) {
+            if (event.target.classList.contains('modal-overlay')) {
+                event.target.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('show');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            const hiddenElements = document.querySelectorAll('.hidden, .hidden-left, .hidden-right');
+            hiddenElements.forEach((el) => observer.observe(el));
+        });
+    </script>
+</body>
+</html>
