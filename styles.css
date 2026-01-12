@@ -296,7 +296,7 @@ img {
 
 .productos-section {
     background-color: #ffffff;
-    padding: 80px 0px;
+    padding: 120px 20px 80px 20px;
 }
 
 .section-header {
@@ -380,7 +380,7 @@ img {
 }
 
 .sistema-conectado {
-    padding: 0px 0px 150px 0px;
+    padding: 100px 0;
     background-color: #ffffff;
     overflow: hidden;
 }
@@ -719,7 +719,6 @@ img {
     font-size: 14px;
 }
 
-/* Ajustado el padding para igualar la altura visual */
 .subscribe-form button {
     background-color: #00ADEE;
     color: #fff;
@@ -911,7 +910,7 @@ img {
 .hidden-left,
 .hidden-right {
     opacity: 0;
-    transition: all 0.4s ease-out;
+    transition: all 1s ease-out;
 }
 
 .hidden {
