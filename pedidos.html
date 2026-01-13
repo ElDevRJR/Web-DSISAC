@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contáctanos - DSISAC</title>
-    <link rel="stylesheet" href="contacto.css">
+    <title>DSI - Pedidos Móvil</title>
+    <link rel="stylesheet" href="pedidos.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
@@ -15,7 +15,6 @@
             <a href="index.html" class="logo"><img src="img/logoBlanco.png" alt="DSISAC Logo"></a>
             
             <input type="checkbox" id="menu">
-            
             <label for="menu" class="menu-label">
                 <img src="img/menu.png" class="menu-icono" alt="menú">
             </label>
@@ -26,7 +25,7 @@
                     <li><a href="nosotros.html">Nosotros</a></li>
                     
                     <li class="dropdown-item">
-                        <a href="servicios.html" class="dropdown-trigger">Servicios <i class="fas fa-chevron-down"></i></a>
+                        <a href="servicios.html" class="dropdown-trigger active-link">Servicios <i class="fas fa-chevron-down"></i></a>
                         
                         <div class="mega-menu">
                             <div class="menu-tabs">
@@ -46,11 +45,10 @@
 
                             <div id="tab-servicios" class="menu-content">
                                 <ul>
-                                    <li><a href="#">Servicio de Soporte <i class="fas fa-chevron-right"></i></a></li>
+                                    <li><a href="soporte.html">Servicio de Soporte <i class="fas fa-chevron-right"></i></a></li>
                                     <li><a href="#">Certificados Digitales <i class="fas fa-chevron-right"></i></a></li>
                                     <li><a href="#">NubeFact - OSE <i class="fas fa-chevron-right"></i></a></li>
                                     <li><a href="#">Servidor en la Nube (VPS) <i class="fas fa-chevron-right"></i></a></li>
-                                    <li><a href="#">Cambios a Medida <i class="fas fa-chevron-right"></i></a></li>
                                 </ul>
                             </div>
                         </div>
@@ -64,89 +62,120 @@
         </div>
     </header>
 
-    <section class="contact-hero">
-        <div class="container hero-content hidden">
-            <h1>Contáctanos</h1>
-            <p>Si tienes cualquier tipo de consulta nuestros especialistas estarán dispuestos a comunicarse con usted.</p>
+    <section class="orders-hero-section">
+        <div class="container hero-grid">
+            
+            <div class="hero-left-content hidden-left">
+                <div class="outline-icon-box"><i class="fas fa-mobile-alt"></i></div>
+                <h1>DSI - Pedidos</h1>
+                <p class="hero-subtitle">Aplicación móvil para el equipo comercial. Venda más rápido y sin errores desde cualquier lugar.</p>
+            </div>
+
+            <div class="hero-right-card hidden-right">
+                <div class="card-content">
+                    <h2>Problemas que resuelve</h2>
+                    
+                    <div class="card-point">
+                        <div class="point-icon"><i class="far fa-check-circle"></i></div>
+                        <p>Elimina la toma de pedidos informal por WhatsApp y los errores de precios.</p>
+                    </div>
+                    
+                    <div class="card-separator"></div>
+
+                    <div class="card-point">
+                        <div class="point-icon"><i class="far fa-check-circle"></i></div>
+                        <p>Soluciona la venta de productos sin stock por falta de información en tiempo real.</p>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </section>
 
-    <section class="form-section">
+    <section class="info-modules-section">
         <div class="container">
-            <div class="section-header hidden">
-                <h2>Registra tu consulta</h2>
-                <p>Déjanos tu consulta y nuestro equipo se pondrá en contacto contigo para brindarte la orientación y el soporte que necesitas.</p>
+            
+            <div class="module-row hidden">
+                <div class="module-text">
+                    <h3>Funciones Principales</h3>
+                    <p>Potencia a tu fuerza de ventas con herramientas digitales de vanguardia.</p>
+                    <ul class="module-list">
+                        <li><i class="fas fa-check"></i> <span>Registro de pedidos desde campo (Online/Offline)</span></li>
+                        <li><i class="fas fa-check"></i> <span>Consulta de clientes, listas de precios y stock actual</span></li>
+                        <li><i class="fas fa-check"></i> <span>Envío inmediato y automático al ERP</span></li>
+                        <li><i class="fas fa-check"></i> <span>Reducción de errores administrativos y reprocesos</span></li>
+                        <li><i class="fas fa-check"></i> <span>Mayor velocidad de cierre de venta</span></li>
+                    </ul>
+                </div>
+                <div class="module-image">
+                    <img src="https://images.unsplash.com/photo-1556740758-90de374c12ad?auto=format&fit=crop&w=800&q=80" alt="App de Pedidos Móvil">
+                </div>
             </div>
 
-            <form class="contact-form hidden delay-100">
-                <div class="form-grid">
-                    <div class="form-group">
-                        <label>Nombres y apellidos</label>
-                        <input type="text" placeholder="Ingrese sus nombres y apellidos" required>
-                    </div>
-                    <div class="form-group">
-                        <label>Empresa</label>
-                        <input type="text" placeholder="Ingrese su empresa" required>
-                    </div>
-                    <div class="form-group">
-                        <label>Teléfono</label>
-                        <input type="tel" placeholder="Ingrese su teléfono" required>
-                    </div>
-                    <div class="form-group">
-                        <label>Correo</label>
-                        <input type="email" placeholder="Ingrese su correo electrónico" required>
-                    </div>
+            <div class="three-column-wrapper hidden">
+                <div class="section-header-center">
+                    <h3>Cliente Objetivo y Modelo</h3>
+                    <p>La herramienta ideal para distribuidores y equipos comerciales dinámicos.</p>
                 </div>
                 
-                <div class="form-group full-width">
-                    <label>Descripción</label>
-                    <textarea placeholder="Ingrese su comentario o descripción a consultar" rows="5"></textarea>
+                <div class="three-column-grid">
+                    <div class="info-card">
+                        <div class="card-icon-large"><i class="fas fa-users"></i></div>
+                        <h4>Cliente Objetivo</h4>
+                        <p>Empresas con fuerza de ventas de campo y distribuidores mayoristas.</p>
+                    </div>
+                    
+                    <div class="info-card">
+                        <div class="card-icon-large"><i class="fas fa-user-tag"></i></div>
+                        <h4>Modelo Comercial</h4>
+                        <p>Suscripción mensual flexible por usuario / vendedor activo.</p>
+                    </div>
+                    
+                    <div class="info-card">
+                        <div class="card-icon-large"><i class="fas fa-tachometer-alt"></i></div>
+                        <h4>Eficiencia</h4>
+                        <p>Aumenta la productividad de tu equipo eliminando el trabajo manual.</p>
+                    </div>
                 </div>
+            </div>
 
-                <button type="submit" class="btn-submit">Consultar</button>
-            </form>
         </div>
     </section>
 
-    <section class="help-channels-section">
+    <section class="quote-section">
         <div class="container">
-            <div class="section-header">
-                <h2>¿Cómo podemos ayudarte?</h2>
-                <p>Te ofrecemos varias formas para comunicarte con nosotros<br>¡Elige la que más te convenga!</p>
-            </div>
-
-            <div class="channels-grid">
-                <div class="channel-card hidden delay-100">
-                    <div class="icon-circle-light">
-                        <i class="fas fa-map-marker-alt"></i>
-                    </div>
-                    <h3>Encuéntranos</h3>
-                    <p class="channel-detail">Visítanos en:<br>Alfredo Mendiola 3599<br>Los Olivos, Lima, Perú</p>
-                    <a href="#" class="btn-card-dark">Ver en Maps</a>
-                </div>
-
-                <div class="channel-card hidden delay-200">
-                    <div class="icon-circle-light">
-                        <i class="fas fa-user-tie"></i>
-                    </div>
-                    <h3>Atención Comercial</h3>
-                    <p class="channel-detail">
-                        <i class="far fa-envelope"></i> ventas@dsi-sac.com<br>
-                        <i class="fas fa-phone-alt"></i> +51 940 769 186
-                    </p>
-                    <a href="#" class="btn-card-dark">Enviar Email</a>
-                </div>
-
-                <div class="channel-card hidden delay-300">
-                    <div class="icon-circle-light">
-                        <i class="fas fa-user-cog"></i>
-                    </div>
-                    <h3>Soporte Técnico</h3>
-                    <p class="channel-detail">
-                        <i class="far fa-envelope"></i> helpdesk@dsi-sac.com<br>
-                        <i class="far fa-envelope"></i> +51 942 635 004
-                    </p>
-                    <a href="#" class="btn-card-dark">Inicar Chat</a>
+            <div class="quote-content-wrapper hidden">
+                <div class="quote-text-form">
+                    <h2>Deseo implementar la App de Pedidos</h2>
+                    <p>Modernice su proceso de ventas hoy mismo. Solicite una demo.</p>
+                    
+                    <form class="quote-form">
+                        <div class="form-grid-2">
+                            <div class="form-group">
+                                <label>Nombres y Apellidos</label>
+                                <input type="text" class="input-white" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Empresa</label>
+                                <input type="text" class="input-white" required>
+                            </div>
+                        </div>
+                        <div class="form-grid-2">
+                            <div class="form-group">
+                                <label>Teléfono</label>
+                                <input type="tel" class="input-white" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Correo electrónico</label>
+                                <input type="email" class="input-white" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Descripción</label>
+                            <textarea class="input-white" rows="4"></textarea>
+                        </div>
+                        <button type="submit" class="btn-quote">Cotizar &rarr;</button>
+                    </form>
                 </div>
             </div>
         </div>
@@ -157,7 +186,7 @@
             <div class="footer-top">
                 <div class="footer-left">
                     <a href="#" class="footer-logo">
-                        <img src="img/logoBlanco.png" alt="DSISAC Logo">
+                        <img src="img/logoTextBlanco.png" alt="DSISAC Logo">
                     </a>
                     <p class="footer-desc">Desde la estrategia hasta la ejecución, creamos soluciones digitales que impulsan tu negocio</p>
                     <ul class="footer-nav">
@@ -187,7 +216,6 @@
     </footer>
 
     <script>
-        /* Funcionalidad del Mega Menú */
         function switchMenuTab(evt, tabId) {
             evt.preventDefault(); evt.stopPropagation();
             let tabs = document.querySelectorAll('.tab-link');
@@ -198,7 +226,6 @@
             document.getElementById(tabId).classList.add('active');
         }
 
-        /* Animaciones */
         document.addEventListener('DOMContentLoaded', () => {
             const observerOptions = { root: null, rootMargin: '0px', threshold: 0.1 };
             const observer = new IntersectionObserver((entries, observer) => {
@@ -210,7 +237,7 @@
                 });
             }, observerOptions);
 
-            const hiddenElements = document.querySelectorAll('.hidden');
+            const hiddenElements = document.querySelectorAll('.hidden, .hidden-left, .hidden-right');
             hiddenElements.forEach((el) => observer.observe(el));
         });
     </script>

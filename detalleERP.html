@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DSINet ERP Core - Detalles</title>
+    <link rel="stylesheet" href="detalleERP.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    
+    <header class="header-transparent">
+        <div class="menu container">
+            
+            <a href="index.html" class="logo"><img src="img/logoBlanco.png" alt="DSISAC Logo"></a>
+            
+            <input type="checkbox" id="menu">
+            <label for="menu" class="menu-label">
+                <img src="img/menu.png" class="menu-icono" alt="menú">
+            </label>
+            
+            <nav class="navbar">
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="nosotros.html">Nosotros</a></li>
+                    
+                    <li class="dropdown-item">
+                        <a href="servicios.html" class="dropdown-trigger active-link">Servicios <i class="fas fa-chevron-down"></i></a>
+                        
+                        <div class="mega-menu">
+                            <div class="menu-tabs">
+                                <span class="tab-link active" onclick="switchMenuTab(event, 'tab-productos')">PRODUCTOS</span>
+                                <span class="tab-link" onclick="switchMenuTab(event, 'tab-servicios')">SERVICIOS</span>
+                            </div>
+
+                            <div id="tab-productos" class="menu-content active">
+                                <ul>
+                                    <li><a href="detalleERP.html">DSINet - ERP Core <i class="fas fa-chevron-right"></i></a></li>
+                                    <li><a href="contabilidad.html">DSI - Contabilidad <i class="fas fa-chevron-right"></i></a></li>
+                                    <li><a href="pedidos.html">DSI - Pedidos <i class="fas fa-chevron-right"></i></a></li>
+                                    <li><a href="gerencial.html">DSI - Gerencial <i class="fas fa-chevron-right"></i></a></li>
+                                    <li><a href="medida.html">Desarrollo de Software a Medida <i class="fas fa-chevron-right"></i></a></li>
+                                </ul>
+                            </div>
+
+                            <div id="tab-servicios" class="menu-content">
+                                <ul>
+                                    <li><a href="soporte.html">Servicio de Soporte <i class="fas fa-chevron-right"></i></a></li>
+                                    <li><a href="#">Certificados Digitales <i class="fas fa-chevron-right"></i></a></li>
+                                    <li><a href="#">NubeFact - OSE <i class="fas fa-chevron-right"></i></a></li>
+                                    <li><a href="#">Servidor en la Nube (VPS) <i class="fas fa-chevron-right"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li><a href="soporte.html">Mesa de Ayuda</a></li>
+                </ul>
+            </nav>
+
+            <a href="contacto.html" class="btn-header">Contactar &rarr;</a>
+        </div>
+    </header>
+
+    <section class="erp-hero-section">
+        <div class="container erp-grid">
+            <div class="erp-left-content hidden-left">
+                <div class="outline-icon-box">
+                    <i class="fas fa-cog"></i>
+                </div>
+                <h1>DSINet - ERP Core</h1>
+                <p class="erp-subtitle">Una plataforma de gestión empresarial que integra todos tus procesos en un solo sistema.</p>
+            </div>
+            <div class="erp-right-card hidden-right">
+                <div class="card-content">
+                    <h2>Solución Empresarial</h2>
+                    <div class="card-point">
+                        <div class="point-icon"><i class="far fa-check-square"></i></div>
+                        <p>El ERP DSI es una solución diseñada para sostener la operación real de las empresas, integrando procesos clave como facturación, inventarios, compras, ventas y contabilidad sobre una base sólida y probada.</p>
+                    </div>
+                    <div class="card-separator"></div>
+                    <div class="card-point">
+                        <div class="point-icon"><i class="far fa-check-square"></i></div>
+                        <p>Con casi 7 años en el mercado, el ERP DSI se ha construido y evolucionado junto a empresas que requieren estabilidad, control y continuidad, priorizando procesos bien definidos antes que modas tecnológicas.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="erp-modules-section">
+        <div class="container">
+            
+            <div class="module-row hidden">
+                <div class="module-text">
+                    <h3>Gestión Comercial</h3>
+                    <p>Integra y organiza todo el proceso comercial, permitiendo gestionar clientes, ventas, fuerza comercial y promociones de manera eficiente y centralizada.</p>
+                    <ul class="module-list">
+                        <li><i class="far fa-check-circle"></i> Control de ventas y niveles de stock</li>
+                        <li><i class="far fa-check-circle"></i> Gestión de Ventas</li>
+                        <li><i class="far fa-check-circle"></i> Definición y control de promociones, liquidaciones y ofertas</li>
+                        <li><i class="far fa-check-circle"></i> Control de productividad de vendedores</li>
+                    </ul>
+                    <a href="#" class="btn-module">Ver más</a>
+                </div>
+                <div class="module-image">
+                    <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=800&q=80" alt="Gestión Comercial">
+                </div>
+            </div>
+
+            <div class="module-row reverse hidden">
+                <div class="module-text">
+                    <h3>Gestión Financiera</h3>
+                    <p>Proporciona control y visibilidad sobre cobranzas, pagos, gastos y resultados financieros, facilitando el análisis y la toma de decisiones económicas.</p>
+                    <ul class="module-list">
+                        <li><i class="far fa-check-circle"></i> Cobranza (incluye todos los medios de pago)</li>
+                        <li><i class="far fa-check-circle"></i> Gestión de Cobranzas</li>
+                        <li><i class="far fa-check-circle"></i> Registro de gastos de la caja cobranza</li>
+                        <li><i class="far fa-check-circle"></i> Administración de letras comerciales (cartera y bancos)</li>
+                        <li><i class="far fa-check-circle"></i> Pago a proveedores nacionales</li>
+                        <li><i class="far fa-check-circle"></i> Facturación de anticipo y cierre de anticipo</li>
+                    </ul>
+                    <a href="#" class="btn-module">Ver más</a>
+                </div>
+                <div class="module-image">
+                    <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=800&q=80" alt="Gestión Financiera">
+                </div>
+            </div>
+
+            <div class="module-row hidden">
+                <div class="module-text">
+                    <h3>Logística y Almacenes</h3>
+                    <p>Administra el flujo de mercadería desde el ingreso hasta el despacho, asegurando control de inventarios, trazabilidad y eficiencia operativa.</p>
+                    <ul class="module-list">
+                        <li><i class="far fa-check-circle"></i> Despacho basado en picking por ubicaciones</li>
+                        <li><i class="far fa-check-circle"></i> Despacho basado en packing</li>
+                        <li><i class="far fa-check-circle"></i> Administración de despachos con flota de vehículos y choferes</li>
+                    </ul>
+                    <a href="#" class="btn-module">Ver más</a>
+                </div>
+                <div class="module-image">
+                    <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=800&q=80" alt="Logística y Almacenes">
+                </div>
+            </div>
+
+            <div class="module-row reverse hidden">
+                <div class="module-text">
+                    <h3>Compras e Importaciones</h3>
+                    <p>Gestiona de forma ordenada los procesos de compra e importación, optimizando el abastecimiento y el control de proveedores y costos asociados.</p>
+                    <ul class="module-list">
+                        <li><i class="far fa-check-circle"></i> Importaciones</li>
+                        <li><i class="far fa-check-circle"></i> Tránsito de importaciones</li>
+                        <li><i class="far fa-check-circle"></i> Valorizaciones</li>
+                    </ul>
+                    <a href="#" class="btn-module">Ver más</a>
+                </div>
+                <div class="module-image">
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80" alt="Compras e Importaciones">
+                </div>
+            </div>
+
+            <div class="module-row hidden">
+                <div class="module-text">
+                    <h3>Reportes y Análisis</h3>
+                    <p>Soluciones que permiten analizar el desempeño del negocio a través de reportes claros y datos actualizados, facilitando la identificación de oportunidades.</p>
+                    <ul class="module-list">
+                        <li><i class="far fa-check-circle"></i> Tablas dinámicas para estadísticas de ventas</li>
+                    </ul>
+                    <a href="#" class="btn-module">Ver más</a>
+                </div>
+                <div class="module-image">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80" alt="Reportes y Análisis">
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="quote-section">
+        <div class="container">
+            <div class="quote-content-wrapper hidden">
+                <div class="quote-text-form">
+                    <h2>Deseo cotizar un proyecto</h2>
+                    <p>Nuestro equipo de especialistas se contactará para darle el mejor plan hacia su necesidad</p>
+                    
+                    <form class="quote-form">
+                        <div class="form-grid-2">
+                            <div class="form-group">
+                                <label>Nombres y Apellidos</label>
+                                <input type="text" class="input-white" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Empresa</label>
+                                <input type="text" class="input-white" required>
+                            </div>
+                        </div>
+                        <div class="form-grid-2">
+                            <div class="form-group">
+                                <label>Teléfono</label>
+                                <input type="tel" class="input-white" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Correo electrónico</label>
+                                <input type="email" class="input-white" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Descripción</label>
+                            <textarea class="input-white" rows="4"></textarea>
+                        </div>
+                        <button type="submit" class="btn-quote">Cotizar &rarr;</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-left">
+                    <a href="#" class="footer-logo">
+                        <img src="img/logoTextBlanco.png" alt="DSISAC Logo">
+                    </a>
+                    <p class="footer-desc">Desde la estrategia hasta la ejecución, creamos soluciones digitales que impulsan tu negocio</p>
+                    <ul class="footer-nav">
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="nosotros.html">Nosotros</a></li>
+                        <li><a href="servicios.html">Productos</a></li>
+                        <li><a href="soporte.html">Mesa de Ayuda</a></li>
+                    </ul>
+                </div>
+                <div class="footer-right">
+                    <h3>Suscríbete a nuestro boletín</h3>
+                    <p>Las últimas noticias, artículos y recursos, enviados a su bandeja de entrada semanalmente</p>
+                    <form class="subscribe-form">
+                        <input type="email" placeholder="Introduce tu correo electrónico" required>
+                        <button type="submit">Suscribirse</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>Copyright 2026 © DSISAC</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        /* Mega Menú */
+        function switchMenuTab(evt, tabId) {
+            evt.preventDefault(); evt.stopPropagation();
+            let tabs = document.querySelectorAll('.tab-link');
+            let contents = document.querySelectorAll('.menu-content');
+            tabs.forEach(tab => tab.classList.remove('active'));
+            contents.forEach(content => content.classList.remove('active'));
+            evt.target.classList.add('active');
+            document.getElementById(tabId).classList.add('active');
+        }
+
+        /* Animaciones Scroll */
+        document.addEventListener('DOMContentLoaded', () => {
+            const observerOptions = { root: null, rootMargin: '0px', threshold: 0.1 };
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('show');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            const hiddenElements = document.querySelectorAll('.hidden, .hidden-left, .hidden-right');
+            hiddenElements.forEach((el) => observer.observe(el));
+        });
+    </script>
+</body>
+</html>
