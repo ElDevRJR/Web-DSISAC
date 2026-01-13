@@ -144,32 +144,38 @@
                 <div class="quote-text-form">
                     <h2>Deseo cotizar el módulo contable</h2>
                     <p>Deje sus datos y un especialista le contactará para explicarle la implementación ligera.</p>
-                    <form class="quote-form">
+                    
+                    <form id="contactForm" class="quote-form">
+                        
+                        <input type="hidden" name="_subject" value="Nuevo Lead - DSI Contabilidad">
+                        <input type="hidden" name="_template" value="table">
+                        <input type="hidden" name="_captcha" value="false">
+
                         <div class="form-grid-2">
                             <div class="form-group">
                                 <label>Nombres y Apellidos</label>
-                                <input type="text" class="input-white" required>
+                                <input type="text" name="Nombre" class="input-white" required>
                             </div>
                             <div class="form-group">
                                 <label>Empresa</label>
-                                <input type="text" class="input-white" required>
+                                <input type="text" name="Empresa" class="input-white" required>
                             </div>
                         </div>
                         <div class="form-grid-2">
                             <div class="form-group">
                                 <label>Teléfono</label>
-                                <input type="tel" class="input-white" required>
+                                <input type="tel" name="Telefono" class="input-white" required>
                             </div>
                             <div class="form-group">
                                 <label>Correo electrónico</label>
-                                <input type="email" class="input-white" required>
+                                <input type="email" name="Email" class="input-white" required>
                             </div>
                         </div>
                         <div class="form-group">
                             <label>Descripción</label>
-                            <textarea class="input-white" rows="4"></textarea>
+                            <textarea name="Mensaje" class="input-white" rows="4"></textarea>
                         </div>
-                        <button type="submit" class="btn-quote">Cotizar &rarr;</button>
+                        <button type="submit" class="btn-quote" id="submitBtn">Cotizar &rarr;</button>
                     </form>
                 </div>
             </div>
@@ -211,7 +217,17 @@
         </div>
     </footer>
 
+    <div id="formModal" class="modal-overlay">
+        <div class="modal-content">
+            <div class="modal-icon" id="modalIcon"></div>
+            <h3 id="modalTitle">Título</h3>
+            <p id="modalMessage">Mensaje del modal</p>
+            <button class="modal-btn" onclick="closeModal()">Aceptar</button>
+        </div>
+    </div>
+
     <script>
+        /* Mega Menú */
         function switchMenuTab(evt, tabId) {
             evt.preventDefault(); evt.stopPropagation();
             let tabs = document.querySelectorAll('.tab-link');
@@ -222,6 +238,7 @@
             document.getElementById(tabId).classList.add('active');
         }
 
+        /* Animaciones Scroll */
         document.addEventListener('DOMContentLoaded', () => {
             const observerOptions = { root: null, rootMargin: '0px', threshold: 0.1 };
             const observer = new IntersectionObserver((entries, observer) => {
@@ -236,6 +253,71 @@
             const hiddenElements = document.querySelectorAll('.hidden, .hidden-left, .hidden-right');
             hiddenElements.forEach((el) => observer.observe(el));
         });
+
+        /* --- LÓGICA DEL FORMULARIO AJAX Y MODAL --- */
+        const form = document.getElementById('contactForm');
+        const modal = document.getElementById('formModal');
+        const modalIcon = document.getElementById('modalIcon');
+        const modalTitle = document.getElementById('modalTitle');
+        const modalMessage = document.getElementById('modalMessage');
+        const submitBtn = document.getElementById('submitBtn');
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            // Validación simple
+            if (!form.checkValidity()) {
+                showModal('error', 'Error al enviar', 'Por favor, complete todos los campos requeridos.');
+                return;
+            }
+
+            const originalBtnText = submitBtn.innerHTML;
+            submitBtn.innerHTML = 'Enviando... <i class="fas fa-spinner fa-spin"></i>';
+            submitBtn.disabled = true;
+
+            const formData = new FormData(form);
+
+            // Fetch AJAX a FormSubmit
+            fetch("https://formsubmit.co/ajax/jordanregaladora@gmail.com", {
+                method: "POST",
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                showModal('success', '¡Mensaje Enviado!', 'Gracias por cotizar. Pronto nos pondremos en contacto.');
+                form.reset();
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                showModal('error', 'Error de conexión', 'Hubo un problema al enviar. Inténtelo de nuevo.');
+            })
+            .finally(() => {
+                submitBtn.innerHTML = originalBtnText;
+                submitBtn.disabled = false;
+            });
+        });
+
+        function showModal(type, title, message) {
+            modal.style.display = 'flex';
+            modalTitle.textContent = title;
+            modalMessage.textContent = message;
+
+            if (type === 'success') {
+                modalIcon.innerHTML = '<i class="fas fa-check-circle" style="color: #28a745;"></i>';
+            } else {
+                modalIcon.innerHTML = '<i class="fas fa-times-circle" style="color: #dc3545;"></i>';
+            }
+            setTimeout(() => { document.querySelector('.modal-content').classList.add('active'); }, 10);
+        }
+
+        function closeModal() {
+            document.querySelector('.modal-content').classList.remove('active');
+            setTimeout(() => { modal.style.display = 'none'; }, 300);
+        }
+
+        window.onclick = function(event) {
+            if (event.target == modal) closeModal();
+        }
     </script>
 </body>
 
