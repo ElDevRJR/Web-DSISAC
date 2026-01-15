@@ -3,37 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DSI - Pedidos Móvil</title>
-    <link rel="stylesheet" href="pedidos.css">
+    <title>DSI - NubeFact OSE</title>
+    <link rel="stylesheet" href="nubefactOse.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     
     <header class="header-transparent">
         <div class="menu container">
-            
             <a href="index.html" class="logo"><img src="img/logoBlanco.png" alt="DSISAC Logo"></a>
-            
             <input type="checkbox" id="menu">
-            <label for="menu" class="menu-label">
-                <img src="img/menu.png" class="menu-icono" alt="menú">
-            </label>
+            <label for="menu" class="menu-label"><img src="img/menu.png" class="menu-icono" alt="menú"></label>
             
             <nav class="navbar">
                 <ul>
                     <li><a href="index.html">Inicio</a></li>
                     <li><a href="nosotros.html">Nosotros</a></li>
-                    
                     <li class="dropdown-item">
                         <a href="servicios.html" class="dropdown-trigger active-link">Servicios <i class="fas fa-chevron-down"></i></a>
-                        
                         <div class="mega-menu">
                             <div class="menu-tabs">
-                                <span class="tab-link active" onclick="switchMenuTab(event, 'tab-productos')">PRODUCTOS</span>
-                                <span class="tab-link" onclick="switchMenuTab(event, 'tab-servicios')">SERVICIOS</span>
+                                <span class="tab-link" onclick="switchMenuTab(event, 'tab-productos')">PRODUCTOS</span>
+                                <span class="tab-link active" onclick="switchMenuTab(event, 'tab-servicios')">SERVICIOS</span>
                             </div>
-
-                            <div id="tab-productos" class="menu-content active">
+                            <div id="tab-productos" class="menu-content">
                                 <ul>
                                     <li><a href="detalleERP.html">DSINet - ERP Core <i class="fas fa-chevron-right"></i></a></li>
                                     <li><a href="contabilidad.html">DSI - Contabilidad <i class="fas fa-chevron-right"></i></a></li>
@@ -42,10 +35,9 @@
                                     <li><a href="medida.html">Desarrollo de Software a Medida <i class="fas fa-chevron-right"></i></a></li>
                                 </ul>
                             </div>
-
-                            <div id="tab-servicios" class="menu-content">
+                            <div id="tab-servicios" class="menu-content active">
                                 <ul>
-                                    <li><a href="soporte.html">Servicio de Soporte <i class="fas fa-chevron-right"></i></a></li>
+                                    <li><a href="soporteUsuario.html">Servicio de Soporte <i class="fas fa-chevron-right"></i></a></li>
                                     <li><a href="certificadosDigitales.html">Certificados Digitales <i class="fas fa-chevron-right"></i></a></li>
                                     <li><a href="nubefactOse.html">NubeFact - OSE <i class="fas fa-chevron-right"></i></a></li>
                                     <li><a href="servidorNube.html">Servidor en la Nube (VPS) <i class="fas fa-chevron-right"></i></a></li>
@@ -54,42 +46,34 @@
                             </div>
                         </div>
                     </li>
-
                     <li><a href="soporte.html">Mesa de Ayuda</a></li>
                 </ul>
             </nav>
-
             <a href="contacto.html" class="btn-header">Contactar &rarr;</a>
         </div>
     </header>
 
-    <section class="orders-hero-section">
+    <section class="ose-hero-section">
         <div class="container hero-grid">
-            
             <div class="hero-left-content hidden-left">
-                <div class="outline-icon-box"><i class="fas fa-mobile-alt"></i></div>
-                <h1>DSI - Pedidos</h1>
-                <p class="hero-subtitle">Aplicación móvil para el equipo comercial. Venda más rápido y sin errores desde cualquier lugar.</p>
+                <div class="outline-icon-box"><i class="fas fa-cloud-upload-alt"></i></div>
+                <h1>NubeFact - OSE</h1>
+                <p class="hero-subtitle">Factura sin interrupciones. Olvídate de que "se cayó el sistema de SUNAT" y atiende a tus clientes al instante.</p>
             </div>
-
             <div class="hero-right-card hidden-right">
                 <div class="card-content">
-                    <h2>Problemas que resuelve</h2>
-                    
+                    <h2>¿Qué es esto?</h2>
                     <div class="card-point">
-                        <div class="point-icon"><i class="far fa-check-circle"></i></div>
-                        <p>Elimina la toma de pedidos informal por WhatsApp y los errores de precios.</p>
+                        <div class="point-icon"><i class="fas fa-check-double"></i></div>
+                        <p>Es un servicio autorizado que recibe tus facturas y las aprueba mucho más rápido que la web de SUNAT.</p>
                     </div>
-                    
                     <div class="card-separator"></div>
-
                     <div class="card-point">
-                        <div class="point-icon"><i class="far fa-check-circle"></i></div>
-                        <p>Soluciona la venta de productos sin stock por falta de información en tiempo real.</p>
+                        <div class="point-icon"><i class="fas fa-bolt"></i></div>
+                        <p>Sirve para que nunca dejes de vender, incluso si la página de SUNAT está lenta o en mantenimiento.</p>
                     </div>
                 </div>
             </div>
-
         </div>
     </section>
 
@@ -98,44 +82,43 @@
             
             <div class="module-row hidden">
                 <div class="module-text">
-                    <h3>Funciones Principales</h3>
-                    <p>Potencia a tu fuerza de ventas con herramientas digitales de vanguardia.</p>
+                    <h3>¿Por qué lo necesitas?</h3>
+                    <p>Para tener tranquilidad y velocidad en tu negocio.</p>
                     <ul class="module-list">
-                        <li><i class="fas fa-check"></i> <span>Registro de pedidos desde campo (Online/Offline)</span></li>
-                        <li><i class="fas fa-check"></i> <span>Consulta de clientes, listas de precios y stock actual</span></li>
-                        <li><i class="fas fa-check"></i> <span>Envío inmediato y automático al ERP</span></li>
-                        <li><i class="fas fa-check"></i> <span>Reducción de errores administrativos y reprocesos</span></li>
-                        <li><i class="fas fa-check"></i> <span>Mayor velocidad de cierre de venta</span></li>
+                        <li><i class="fas fa-check"></i> <span><strong>Siempre funciona:</strong> Tu facturación no se detiene nunca.</span></li>
+                        <li><i class="fas fa-check"></i> <span><strong>Súper rápido:</strong> Tus clientes reciben su comprobante en segundos.</span></li>
+                        <li><i class="fas fa-check"></i> <span><strong>Seguro:</strong> Tus datos están protegidos y respaldados.</span></li>
+                        <li><i class="fas fa-check"></i> <span><strong>Soporte DSISAC:</strong> Si hay algún error con una factura, nosotros te ayudamos a corregirlo.</span></li>
                     </ul>
                 </div>
                 <div class="module-image">
-                    <img src="https://images.unsplash.com/photo-1556740758-90de374c12ad?auto=format&fit=crop&w=800&q=80" alt="App de Pedidos Móvil">
+                    <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=800&q=80" alt="Facturación Rápida">
                 </div>
             </div>
 
             <div class="three-column-wrapper hidden">
                 <div class="section-header-center">
-                    <h3>Cliente Objetivo y Modelo</h3>
-                    <p>La herramienta ideal para distribuidores y equipos comerciales dinámicos.</p>
+                    <h3>¿Es para mi empresa?</h3>
+                    <p>Si te identificas con alguno de estos casos, la respuesta es SÍ.</p>
                 </div>
                 
                 <div class="three-column-grid">
                     <div class="info-card">
-                        <div class="card-icon-large"><i class="fas fa-users"></i></div>
-                        <h4>Cliente Objetivo</h4>
-                        <p>Empresas con fuerza de ventas de campo y distribuidores mayoristas.</p>
+                        <div class="card-icon-large"><i class="fas fa-store"></i></div>
+                        <h4>Tienes Tienda Física</h4>
+                        <p>Si tienes clientes haciendo cola, no puedes esperar a que el sistema cargue. Necesitas velocidad.</p>
                     </div>
                     
                     <div class="info-card">
-                        <div class="card-icon-large"><i class="fas fa-user-tag"></i></div>
-                        <h4>Modelo Comercial</h4>
-                        <p>Suscripción mensual flexible por usuario / vendedor activo.</p>
+                        <div class="card-icon-large"><i class="fas fa-industry"></i></div>
+                        <h4>Vendes Mucho</h4>
+                        <p>Si haces muchas facturas al día, necesitas un sistema que aguante el ritmo sin fallar.</p>
                     </div>
                     
                     <div class="info-card">
-                        <div class="card-icon-large"><i class="fas fa-tachometer-alt"></i></div>
-                        <h4>Eficiencia</h4>
-                        <p>Aumenta la productividad de tu equipo eliminando el trabajo manual.</p>
+                        <div class="card-icon-large"><i class="fas fa-file-contract"></i></div>
+                        <h4>SUNAT te obliga</h4>
+                        <p>Algunas empresas (Principales Contribuyentes) están obligadas por ley a usar este sistema.</p>
                     </div>
                 </div>
             </div>
@@ -147,12 +130,12 @@
         <div class="container">
             <div class="quote-content-wrapper hidden">
                 <div class="quote-text-form">
-                    <h2>Deseo implementar la App de Pedidos</h2>
-                    <p>Modernice su proceso de ventas hoy mismo. Solicite una demo.</p>
+                    <h2>Quiero facturar más rápido</h2>
+                    <p>Mejora la atención a tus clientes hoy mismo. Solicita información.</p>
                     
                     <form id="contactForm" class="quote-form">
                         
-                        <input type="hidden" name="_subject" value="Nuevo Lead - DSI Pedidos">
+                        <input type="hidden" name="_subject" value="Nuevo Lead - NubeFact OSE">
                         <input type="hidden" name="_template" value="table">
                         <input type="hidden" name="_captcha" value="false">
 
@@ -162,7 +145,7 @@
                                 <input type="text" name="Nombre" class="input-white" required>
                             </div>
                             <div class="form-group">
-                                <label>Empresa</label>
+                                <label>Empresa / RUC</label>
                                 <input type="text" name="Empresa" class="input-white" required>
                             </div>
                         </div>
@@ -177,10 +160,10 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label>Descripción</label>
-                            <textarea name="Mensaje" class="input-white" rows="4"></textarea>
+                            <label>¿Cuántas facturas/boletas haces al mes aprox?</label>
+                            <input type="text" name="Volumen" class="input-white" placeholder="Ej: 500 al mes">
                         </div>
-                        <button type="submit" class="btn-quote" id="submitBtn">Cotizar &rarr;</button>
+                        <button type="submit" class="btn-quote" id="submitBtn">Solicitar Activación &rarr;</button>
                     </form>
                 </div>
             </div>
@@ -242,18 +225,15 @@
         }
 
         document.addEventListener('DOMContentLoaded', () => {
-            const observerOptions = { root: null, rootMargin: '0px', threshold: 0.1 };
-            const observer = new IntersectionObserver((entries, observer) => {
+            const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         entry.target.classList.add('show');
                         observer.unobserve(entry.target);
                     }
                 });
-            }, observerOptions);
-
-            const hiddenElements = document.querySelectorAll('.hidden, .hidden-left, .hidden-right');
-            hiddenElements.forEach((el) => observer.observe(el));
+            }, { threshold: 0.1 });
+            document.querySelectorAll('.hidden, .hidden-left, .hidden-right').forEach(el => observer.observe(el));
         });
 
         const form = document.getElementById('contactForm');
@@ -283,12 +263,12 @@
             })
             .then(response => response.json())
             .then(data => {
-                showModal('success', '¡Mensaje Enviado!', 'Gracias por su interés. Nos pondremos en contacto pronto.');
+                showModal('success', '¡Mensaje Enviado!', 'Gracias por su interés. Analizaremos su volumen de facturación y le contactaremos.');
                 form.reset();
             })
             .catch(error => {
                 console.error('Error:', error);
-                showModal('error', 'Error de conexión', 'Hubo un problema al enviar el mensaje. Inténtelo de nuevo.');
+                showModal('error', 'Error de conexión', 'Hubo un problema al enviar la solicitud.');
             })
             .finally(() => {
                 submitBtn.innerHTML = originalBtnText;

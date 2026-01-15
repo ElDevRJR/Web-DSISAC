@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100..900;1,100..900&display=swap');
 
-/* --- BASE --- */
 * {
     margin: 0;
     padding: 0;
@@ -24,7 +23,6 @@ img {
     max-width: 100%;
 }
 
-/* --- HEADER TRANSPARENTE --- */
 .header-transparent {
     background: transparent;
     position: absolute;
@@ -104,7 +102,6 @@ img {
     display: none;
 }
 
-/* --- MEGA MENÚ DARK --- */
 .dropdown-item {
     position: relative;
 }
@@ -222,14 +219,12 @@ img {
     }
 }
 
-/* --- HERO ERP CORE (Diseño Compacto) --- */
 .erp-hero-section {
     background: linear-gradient(rgba(11, 28, 60, 0.9), rgba(11, 28, 60, 0.9)),
         url('https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=1600&q=80');
     background-size: cover;
     background-position: center;
     min-height: 600px;
-    /* Altura más compacta */
     padding: 120px 0 60px 0;
     display: flex;
     align-items: center;
@@ -325,7 +320,6 @@ img {
     width: 100%;
 }
 
-/* --- SECCIÓN MÓDULOS --- */
 .erp-modules-section {
     padding: 80px 0;
     background-color: #fcfcfc;
@@ -420,7 +414,6 @@ img {
     transform: scale(1.02);
 }
 
-/* --- COTIZAR --- */
 .quote-section {
     position: relative;
     padding: 80px 0;
@@ -515,7 +508,6 @@ textarea.input-white {
     background-color: #008cbf;
 }
 
-/* --- FOOTER --- */
 .footer {
     background-color: #060b14;
     padding: 80px 0 30px 0;
@@ -635,7 +627,6 @@ textarea.input-white {
     transform: translateY(-2px);
 }
 
-/* --- ANIMACIONES --- */
 .hidden,
 .hidden-left,
 .hidden-right {
@@ -676,9 +667,6 @@ textarea.input-white {
     transition-delay: 400ms;
 }
 
-/* =========================================
-   ESTILOS DEL MODAL (POP-UP)
-   ========================================= */
 .modal-overlay {
     position: fixed;
     top: 0;
@@ -747,9 +735,6 @@ textarea.input-white {
     background-color: #008cbf;
 }
 
-/* =========================================
-   RESPONSIVE (MÓVIL)
-   ========================================= */
 @media (max-width: 992px) {
     .menu {
         padding: 20px;

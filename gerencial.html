@@ -37,8 +37,10 @@
                                                 class="fas fa-chevron-right"></i></a></li>
                                     <li><a href="contabilidad.html">DSI - Contabilidad <i
                                                 class="fas fa-chevron-right"></i></a></li>
-                                    <li><a href="pedidos.html">DSI - Pedidos <i class="fas fa-chevron-right"></i></a></li>
-                                    <li><a href="gerencial.html">DSI - Gerencial <i class="fas fa-chevron-right"></i></a></li>
+                                    <li><a href="pedidos.html">DSI - Pedidos <i class="fas fa-chevron-right"></i></a>
+                                    </li>
+                                    <li><a href="gerencial.html">DSI - Gerencial <i
+                                                class="fas fa-chevron-right"></i></a></li>
                                     <li><a href="medida.html">Desarrollo de Software a Medida <i
                                                 class="fas fa-chevron-right"></i></a></li>
                                 </ul>
@@ -47,10 +49,11 @@
                                 <ul>
                                     <li><a href="soporte.html">Servicio de Soporte <i
                                                 class="fas fa-chevron-right"></i></a></li>
-                                    <li><a href="#">Certificados Digitales <i class="fas fa-chevron-right"></i></a></li>
-                                    <li><a href="#">NubeFact - OSE <i class="fas fa-chevron-right"></i></a></li>
-                                    <li><a href="#">Servidor en la Nube (VPS) <i class="fas fa-chevron-right"></i></a>
+                                    <li><a href="certificadosDigitales.html">Certificados Digitales <i class="fas fa-chevron-right"></i></a></li>
+                                    <li><a href="nubefactOse.html">NubeFact - OSE <i class="fas fa-chevron-right"></i></a></li>
+                                    <li><a href="servidorNube.html">Servidor en la Nube (VPS) <i class="fas fa-chevron-right"></i></a>
                                     </li>
+                                    <li><a href="modificacionSistema.html">Modificación de Sistema <i class="fas fa-chevron-right"></i></a>
                                 </ul>
                             </div>
                         </div>
@@ -67,7 +70,8 @@
             <div class="hero-left-content hidden-left">
                 <div class="outline-icon-box"><i class="fas fa-chart-line"></i></div>
                 <h1>DSI - Gerencial</h1>
-                <p class="hero-subtitle">Módulo enfocado en gerencia y toma de decisiones estratégicas basadas en datos reales.</p>
+                <p class="hero-subtitle">Módulo enfocado en gerencia y toma de decisiones estratégicas basadas en datos
+                    reales.</p>
             </div>
             <div class="hero-right-card hidden-right">
                 <div class="card-content">
@@ -95,8 +99,10 @@
                     <p>Herramientas de Business Intelligence diseñadas para directivos.</p>
                     <ul class="module-list">
                         <li><i class="fas fa-check"></i> <span>Dashboards ejecutivos interactivos</span></li>
-                        <li><i class="fas fa-check"></i> <span>Indicadores clave (ventas, márgenes, rotación, rentabilidad)</span></li>
-                        <li><i class="fas fa-check"></i> <span>Reportes consolidados por período, sucursal o unidad de negocio</span></li>
+                        <li><i class="fas fa-check"></i> <span>Indicadores clave (ventas, márgenes, rotación,
+                                rentabilidad)</span></li>
+                        <li><i class="fas fa-check"></i> <span>Reportes consolidados por período, sucursal o unidad de
+                                negocio</span></li>
                         <li><i class="fas fa-check"></i> <span>Visión clara del estado real de la empresa</span></li>
                     </ul>
                 </div>
@@ -111,20 +117,20 @@
                     <h3>Cliente Objetivo y Modelo</h3>
                     <p>La solución definitiva para quienes dirigen el rumbo de la organización.</p>
                 </div>
-                
+
                 <div class="three-column-grid">
                     <div class="info-card">
                         <div class="card-icon-large"><i class="fas fa-user-tie"></i></div>
                         <h4>Cliente Objetivo</h4>
                         <p>Dueños, Gerentes Generales y Directores.</p>
                     </div>
-                    
+
                     <div class="info-card">
                         <div class="card-icon-large"><i class="fas fa-crown"></i></div>
                         <h4>Modelo</h4>
                         <p>Disponible como Add-on o Paquete Premium.</p>
                     </div>
-                    
+
                     <div class="info-card">
                         <div class="card-icon-large"><i class="fas fa-handshake"></i></div>
                         <h4>Contratación</h4>
@@ -142,9 +148,9 @@
                 <div class="quote-text-form">
                     <h2>Deseo activar el módulo gerencial</h2>
                     <p>Obtenga la visión que necesita para escalar su negocio. Déjenos sus datos.</p>
-                    
+
                     <form id="contactForm" class="quote-form">
-                        
+
                         <input type="hidden" name="_subject" value="Nuevo Lead - DSI Gerencial">
                         <input type="hidden" name="_template" value="table">
                         <input type="hidden" name="_captcha" value="false">
@@ -225,7 +231,6 @@
     </div>
 
     <script>
-        /* Mega Menú */
         function switchMenuTab(evt, tabId) {
             evt.preventDefault(); evt.stopPropagation();
             let tabs = document.querySelectorAll('.tab-link');
@@ -236,7 +241,6 @@
             document.getElementById(tabId).classList.add('active');
         }
 
-        /* Animaciones Scroll */
         document.addEventListener('DOMContentLoaded', () => {
             const observerOptions = { root: null, rootMargin: '0px', threshold: 0.1 };
             const observer = new IntersectionObserver((entries, observer) => {
@@ -252,7 +256,6 @@
             hiddenElements.forEach((el) => observer.observe(el));
         });
 
-        /* --- LÓGICA DEL FORMULARIO AJAX Y MODAL --- */
         const form = document.getElementById('contactForm');
         const modal = document.getElementById('formModal');
         const modalIcon = document.getElementById('modalIcon');
@@ -260,7 +263,7 @@
         const modalMessage = document.getElementById('modalMessage');
         const submitBtn = document.getElementById('submitBtn');
 
-        form.addEventListener('submit', function(e) {
+        form.addEventListener('submit', function (e) {
             e.preventDefault();
 
             if (!form.checkValidity()) {
@@ -278,19 +281,19 @@
                 method: "POST",
                 body: formData
             })
-            .then(response => response.json())
-            .then(data => {
-                showModal('success', '¡Mensaje Enviado!', 'Gracias por cotizar. Su solicitud ha sido recibida.');
-                form.reset();
-            })
-            .catch(error => {
-                console.error('Error:', error);
-                showModal('error', 'Error de conexión', 'Hubo un problema al enviar el mensaje.');
-            })
-            .finally(() => {
-                submitBtn.innerHTML = originalBtnText;
-                submitBtn.disabled = false;
-            });
+                .then(response => response.json())
+                .then(data => {
+                    showModal('success', '¡Mensaje Enviado!', 'Gracias por cotizar. Su solicitud ha sido recibida.');
+                    form.reset();
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    showModal('error', 'Error de conexión', 'Hubo un problema al enviar el mensaje.');
+                })
+                .finally(() => {
+                    submitBtn.innerHTML = originalBtnText;
+                    submitBtn.disabled = false;
+                });
         });
 
         function showModal(type, title, message) {
@@ -311,7 +314,7 @@
             setTimeout(() => { modal.style.display = 'none'; }, 300);
         }
 
-        window.onclick = function(event) {
+        window.onclick = function (event) {
             if (event.target == modal) closeModal();
         }
     </script>

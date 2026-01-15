@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100..900;1,100..900&display=swap');
 
-/* --- 1. BASE Y UTILIDADES --- */
 * {
     margin: 0;
     padding: 0;
@@ -24,7 +23,6 @@ img {
     padding: 0 20px;
 }
 
-/* Botones Generales */
 .btn-header {
     background-color: #00ADEE;
     color: white;
@@ -73,12 +71,9 @@ img {
     background-color: #2b4c9b;
 }
 
-/* --- 2. HEADER (TRANSPARENTE) --- */
 .header-short {
     background: transparent;
-    /* CLAVE: Sin color de fondo para que no haya separación */
     position: absolute;
-    /* Flota encima de la imagen */
     width: 100%;
     top: 0;
     left: 0;
@@ -122,7 +117,6 @@ img {
     font-weight: 600;
 }
 
-/* Menú Hamburguesa */
 #menu {
     display: none;
 }
@@ -138,7 +132,6 @@ img {
     display: none;
 }
 
-/* Mega Menú */
 .dropdown-item {
     position: relative;
 }
@@ -250,23 +243,17 @@ img {
     padding-left: 5px;
 }
 
-/* --- 3. SECCIÓN NOSOTROS (FONDO ÚNICO) --- */
 .about-hero {
-    /* Aquí va la imagen de fondo que cubre TODO (incluido el header) */
     background: linear-gradient(rgba(9, 23, 46, 0.9), rgba(9, 23, 46, 0.95)),
         url('img/background.png');
-    /* Usando tu nombre de archivo local */
 
     background-position: center top;
     background-repeat: no-repeat;
     background-size: cover;
-
     color: white;
-    /* Padding superior grande para que el texto baje y no quede tapado por el menú */
     padding: 150px 0 100px 0;
     overflow: hidden;
     min-height: 80vh;
-    /* Altura mínima */
 }
 
 .about-grid {
@@ -341,7 +328,6 @@ img {
     object-fit: cover;
 }
 
-/* --- SECCIÓN VALORES --- */
 .values-section {
     padding: 100px 0 80px 0;
     background-color: #ffffff;
@@ -366,7 +352,6 @@ img {
     font-weight: 700;
 }
 
-/* Subrayado negro/gris para "Valores" */
 .underline {
     border-bottom: 3px solid #333;
     display: inline-block;
@@ -380,11 +365,9 @@ img {
     margin-bottom: 40px;
 }
 
-/* Grilla de iconos de valores */
 .values-list {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    /* 2 columnas */
     gap: 30px;
 }
 
@@ -397,7 +380,6 @@ img {
 .val-item i {
     font-size: 28px;
     color: #00ADEE;
-    /* Icono celeste */
 }
 
 .val-item span {
@@ -406,7 +388,6 @@ img {
     color: #333;
 }
 
-/* Imagen derecha */
 .values-image {
     flex: 1;
 }
@@ -418,10 +399,8 @@ img {
     display: block;
     object-fit: cover;
     height: 400px;
-    /* Altura fija para que se vea uniforme */
 }
 
-/* --- SECCIÓN EXPERIENCIA --- */
 .experience-section {
     padding: 60px 0 120px 0;
     background-color: #ffffff;
@@ -435,7 +414,6 @@ img {
     margin-bottom: 60px;
 }
 
-/* Subrayado azul grueso para "Experiencia" */
 .underline-blue {
     border-bottom: 4px solid #00ADEE;
     display: inline-block;
@@ -450,7 +428,6 @@ img {
 .exp-card {
     flex: 1;
     background-color: #F8F9FA;
-    /* Fondo gris muy suave */
     padding: 50px;
     border-radius: 12px;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
@@ -474,7 +451,6 @@ img {
     line-height: 1.6;
 }
 
-/* --- RESPONSIVE PARA ESTAS SECCIONES --- */
 @media (max-width: 992px) {
     .values-grid {
         flex-direction: column;
@@ -488,7 +464,6 @@ img {
 
     .values-list {
         grid-template-columns: 1fr;
-        /* 1 columna en móvil */
         gap: 20px;
     }
 
@@ -501,7 +476,6 @@ img {
     }
 }
 
-/* --- 4. FOOTER --- */
 .footer {
     background-color: #060b14;
     padding: 80px 0 30px 0;
@@ -621,7 +595,6 @@ img {
     transform: translateY(-2px);
 }
 
-/* --- 5. ANIMACIONES --- */
 .hidden,
 .hidden-left,
 .hidden-right {
@@ -672,10 +645,8 @@ img {
     }
 }
 
-/* --- 6. RESPONSIVE --- */
 @media (max-width: 992px) {
 
-    /* Header en móvil: Aquí SÍ ponemos fondo sólido al menú desplegable para leerlo */
     .menu {
         padding: 20px;
     }
@@ -700,7 +671,6 @@ img {
         left: 0;
         right: 0;
         background-color: #0b111e;
-        /* Fondo oscuro SÓLO al desplegar el menú */
         display: none;
         padding: 20px;
         text-align: center;
@@ -731,7 +701,6 @@ img {
         display: block;
     }
 
-    /* Ajustes Nosotros en Móvil */
     .about-hero {
         padding: 120px 0 60px 0;
         min-height: auto;

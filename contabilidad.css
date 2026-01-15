@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100..900;1,100..900&display=swap');
 
-/* --- BASE --- */
 * {
     margin: 0;
     padding: 0;
@@ -24,7 +23,6 @@ img {
     max-width: 100%;
 }
 
-/* --- HEADER TRANSPARENTE --- */
 .header-transparent {
     background: transparent;
     position: absolute;
@@ -104,7 +102,6 @@ img {
     display: none;
 }
 
-/* --- MEGA MENÚ DARK --- */
 .dropdown-item {
     position: relative;
 }
@@ -212,17 +209,13 @@ img {
     padding-left: 5px;
 }
 
-/* --- HERO CONTABILIDAD (COMPACTO) --- */
 .accounting-hero-section {
     background: linear-gradient(rgba(11, 28, 60, 0.9), rgba(11, 28, 60, 0.9)),
         url('https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=1600&q=80');
     background-size: cover;
     background-position: center;
-    /* REDUCCIÓN DE ESPACIO VACÍO */
     min-height: 600px;
-    /* En vez de 100vh, usamos una altura fija menor o auto */
     padding: 120px 0 60px 0;
-    /* Padding superior para el header, inferior reducido */
     display: flex;
     align-items: center;
     color: white;
@@ -317,7 +310,6 @@ img {
     width: 100%;
 }
 
-/* --- CARACTERÍSTICAS Y MODELO (COMPACTO) --- */
 .info-modules-section {
     padding: 70px 0;
     background-color: #fcfcfc;
@@ -391,7 +383,6 @@ img {
     display: block;
 }
 
-/* --- COTIZAR --- */
 .quote-section {
     position: relative;
     padding: 70px 0;
@@ -478,7 +469,6 @@ img {
     background-color: #008cbf;
 }
 
-/* --- FOOTER --- */
 .footer {
     background-color: #060b14;
     padding: 80px 0 30px 0;
@@ -598,7 +588,6 @@ img {
     transform: translateY(-2px);
 }
 
-/* --- ANIMACIONES --- */
 .hidden,
 .hidden-left,
 .hidden-right {
@@ -639,9 +628,6 @@ img {
     transition-delay: 400ms;
 }
 
-/* =========================================
-   ESTILOS DEL MODAL (POP-UP)
-   ========================================= */
 .modal-overlay {
     position: fixed;
     top: 0;
@@ -710,9 +696,6 @@ img {
     background-color: #008cbf;
 }
 
-/* =========================================
-   RESPONSIVE (MÓVIL)
-   ========================================= */
 @media (max-width: 992px) {
     .menu {
         padding: 20px;

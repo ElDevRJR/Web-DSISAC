@@ -47,9 +47,10 @@
                                 <ul>
                                     <li><a href="soporte.html">Servicio de Soporte <i
                                                 class="fas fa-chevron-right"></i></a></li>
-                                    <li><a href="#">Certificados Digitales <i class="fas fa-chevron-right"></i></a></li>
-                                    <li><a href="#">NubeFact - OSE <i class="fas fa-chevron-right"></i></a></li>
-                                    <li><a href="#">Servidor en la Nube (VPS) <i class="fas fa-chevron-right"></i></a>
+                                    <li><a href="certificadosDigitales.html">Certificados Digitales <i class="fas fa-chevron-right"></i></a></li>
+                                    <li><a href="nubefactOse.html">NubeFact - OSE <i class="fas fa-chevron-right"></i></a></li>
+                                    <li><a href="servidorNube.html">Servidor en la Nube (VPS) <i class="fas fa-chevron-right"></i></a>
+                                    <li><a href="modificacionSistema.html">Modificación de Sistema <i class="fas fa-chevron-right"></i></a>
                                     </li>
                                 </ul>
                             </div>
@@ -227,7 +228,6 @@
     </div>
 
     <script>
-        /* Mega Menú */
         function switchMenuTab(evt, tabId) {
             evt.preventDefault(); evt.stopPropagation();
             let tabs = document.querySelectorAll('.tab-link');
@@ -238,7 +238,6 @@
             document.getElementById(tabId).classList.add('active');
         }
 
-        /* Animaciones Scroll */
         document.addEventListener('DOMContentLoaded', () => {
             const observerOptions = { root: null, rootMargin: '0px', threshold: 0.1 };
             const observer = new IntersectionObserver((entries, observer) => {
@@ -254,7 +253,6 @@
             hiddenElements.forEach((el) => observer.observe(el));
         });
 
-        /* --- LÓGICA DEL FORMULARIO AJAX Y MODAL --- */
         const form = document.getElementById('contactForm');
         const modal = document.getElementById('formModal');
         const modalIcon = document.getElementById('modalIcon');
@@ -265,7 +263,6 @@
         form.addEventListener('submit', function(e) {
             e.preventDefault();
 
-            // Validación simple
             if (!form.checkValidity()) {
                 showModal('error', 'Error al enviar', 'Por favor, complete todos los campos requeridos.');
                 return;
@@ -277,7 +274,6 @@
 
             const formData = new FormData(form);
 
-            // Fetch AJAX a FormSubmit
             fetch("https://formsubmit.co/ajax/jordanregaladora@gmail.com", {
                 method: "POST",
                 body: formData

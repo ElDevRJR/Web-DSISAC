@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100..900;1,100..900&display=swap');
 
-/* --- BASE --- */
 * {
     margin: 0;
     padding: 0;
@@ -20,9 +19,6 @@ body {
     padding: 0 20px;
 }
 
-/* =========================================
-   HEADER TRANSPARENTE
-   ========================================= */
 .header-transparent {
     background: transparent;
     position: absolute;
@@ -36,13 +32,11 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    /* Distribución correcta */
     padding: 25px 0;
     width: 100%;
     position: relative;
 }
 
-/* 1. Logo */
 .logo {
     flex-shrink: 0;
 }
@@ -52,13 +46,10 @@ body {
     display: block;
 }
 
-/* 2. Navbar (Centro) */
 .navbar {
     flex: 1;
-    /* Ocupa el espacio central */
     display: flex !important;
     justify-content: center;
-    /* Centra el contenido */
     align-items: center;
 }
 
@@ -83,7 +74,6 @@ body {
     font-weight: 600;
 }
 
-/* 3. Botón Header (Derecha) */
 .btn-header {
     display: inline-block !important;
     flex-shrink: 0;
@@ -100,7 +90,6 @@ body {
     background-color: #008cbf;
 }
 
-/* Hamburguesa (Móvil) */
 #menu {
     display: none;
 }
@@ -115,10 +104,6 @@ body {
     filter: invert(100%);
 }
 
-
-/* =========================================
-   MEGA MENÚ (VERSIÓN DARK / OSCURA)
-   ========================================= */
 .dropdown-item {
     position: relative;
 }
@@ -135,7 +120,6 @@ body {
     left: 0;
     width: 320px;
     background-color: #222222;
-    /* FONDO OSCURO */
     padding: 20px;
     border-radius: 4px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
@@ -216,7 +200,6 @@ body {
     justify-content: space-between;
     align-items: center;
     color: #ffffff;
-    /* TEXTO BLANCO */
     font-size: 13px;
     padding: 10px 0;
     border-bottom: 1px solid #333333;
@@ -250,7 +233,6 @@ body {
 }
 
 
-/* --- SECCIONES PROPIAS DE SOPORTE --- */
 .support-hero {
     background: linear-gradient(rgba(11, 28, 60, 0.85), rgba(11, 28, 60, 0.9)),
         url('https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=1600&q=80');
@@ -682,7 +664,6 @@ body {
     transform: translateY(-2px);
 }
 
-/* Animaciones */
 .hidden,
 .hidden-left,
 .hidden-right {
@@ -723,7 +704,6 @@ body {
     transition-delay: 400ms;
 }
 
-/* RESPONSIVE */
 @media (max-width: 992px) {
     .menu {
         padding: 20px;

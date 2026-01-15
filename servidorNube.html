@@ -3,37 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DSI - Pedidos Móvil</title>
-    <link rel="stylesheet" href="pedidos.css">
+    <title>DSI - Servidor en la Nube (VPS)</title>
+    <link rel="stylesheet" href="servidorNube.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     
     <header class="header-transparent">
         <div class="menu container">
-            
             <a href="index.html" class="logo"><img src="img/logoBlanco.png" alt="DSISAC Logo"></a>
-            
             <input type="checkbox" id="menu">
             <label for="menu" class="menu-label">
                 <img src="img/menu.png" class="menu-icono" alt="menú">
             </label>
-            
             <nav class="navbar">
                 <ul>
                     <li><a href="index.html">Inicio</a></li>
                     <li><a href="nosotros.html">Nosotros</a></li>
-                    
                     <li class="dropdown-item">
                         <a href="servicios.html" class="dropdown-trigger active-link">Servicios <i class="fas fa-chevron-down"></i></a>
-                        
                         <div class="mega-menu">
                             <div class="menu-tabs">
-                                <span class="tab-link active" onclick="switchMenuTab(event, 'tab-productos')">PRODUCTOS</span>
-                                <span class="tab-link" onclick="switchMenuTab(event, 'tab-servicios')">SERVICIOS</span>
+                                <span class="tab-link" onclick="switchMenuTab(event, 'tab-productos')">PRODUCTOS</span>
+                                <span class="tab-link active" onclick="switchMenuTab(event, 'tab-servicios')">SERVICIOS</span>
                             </div>
-
-                            <div id="tab-productos" class="menu-content active">
+                            <div id="tab-productos" class="menu-content">
                                 <ul>
                                     <li><a href="detalleERP.html">DSINet - ERP Core <i class="fas fa-chevron-right"></i></a></li>
                                     <li><a href="contabilidad.html">DSI - Contabilidad <i class="fas fa-chevron-right"></i></a></li>
@@ -42,10 +36,9 @@
                                     <li><a href="medida.html">Desarrollo de Software a Medida <i class="fas fa-chevron-right"></i></a></li>
                                 </ul>
                             </div>
-
-                            <div id="tab-servicios" class="menu-content">
+                            <div id="tab-servicios" class="menu-content active">
                                 <ul>
-                                    <li><a href="soporte.html">Servicio de Soporte <i class="fas fa-chevron-right"></i></a></li>
+                                    <li><a href="soporteUsuario.html">Servicio de Soporte <i class="fas fa-chevron-right"></i></a></li>
                                     <li><a href="certificadosDigitales.html">Certificados Digitales <i class="fas fa-chevron-right"></i></a></li>
                                     <li><a href="nubefactOse.html">NubeFact - OSE <i class="fas fa-chevron-right"></i></a></li>
                                     <li><a href="servidorNube.html">Servidor en la Nube (VPS) <i class="fas fa-chevron-right"></i></a></li>
@@ -54,42 +47,34 @@
                             </div>
                         </div>
                     </li>
-
                     <li><a href="soporte.html">Mesa de Ayuda</a></li>
                 </ul>
             </nav>
-
             <a href="contacto.html" class="btn-header">Contactar &rarr;</a>
         </div>
     </header>
 
-    <section class="orders-hero-section">
+    <section class="vps-hero-section">
         <div class="container hero-grid">
-            
             <div class="hero-left-content hidden-left">
-                <div class="outline-icon-box"><i class="fas fa-mobile-alt"></i></div>
-                <h1>DSI - Pedidos</h1>
-                <p class="hero-subtitle">Aplicación móvil para el equipo comercial. Venda más rápido y sin errores desde cualquier lugar.</p>
+                <div class="outline-icon-box"><i class="fas fa-server"></i></div>
+                <h1>Servidor en la Nube (VPS)</h1>
+                <p class="hero-subtitle">Infraestructura segura, rápida y accesible desde cualquier lugar para alojar sus sistemas y aplicaciones.</p>
             </div>
-
             <div class="hero-right-card hidden-right">
                 <div class="card-content">
                     <h2>Problemas que resuelve</h2>
-                    
                     <div class="card-point">
-                        <div class="point-icon"><i class="far fa-check-circle"></i></div>
-                        <p>Elimina la toma de pedidos informal por WhatsApp y los errores de precios.</p>
+                        <div class="point-icon"><i class="far fa-times-circle"></i></div>
+                        <p>Altos costos de compra y mantenimiento de servidores físicos (electricidad, aire acondicionado).</p>
                     </div>
-                    
                     <div class="card-separator"></div>
-
                     <div class="card-point">
-                        <div class="point-icon"><i class="far fa-check-circle"></i></div>
-                        <p>Soluciona la venta de productos sin stock por falta de información en tiempo real.</p>
+                        <div class="point-icon"><i class="fas fa-shield-alt"></i></div>
+                        <p>Riesgo de pérdida de información por robo, virus o daños de hardware en la oficina.</p>
                     </div>
                 </div>
             </div>
-
         </div>
     </section>
 
@@ -98,44 +83,44 @@
             
             <div class="module-row hidden">
                 <div class="module-text">
-                    <h3>Funciones Principales</h3>
-                    <p>Potencia a tu fuerza de ventas con herramientas digitales de vanguardia.</p>
+                    <h3>Potencia y Seguridad</h3>
+                    <p>Olvídese del hardware. Nosotros nos encargamos de que su servidor esté siempre activo.</p>
                     <ul class="module-list">
-                        <li><i class="fas fa-check"></i> <span>Registro de pedidos desde campo (Online/Offline)</span></li>
-                        <li><i class="fas fa-check"></i> <span>Consulta de clientes, listas de precios y stock actual</span></li>
-                        <li><i class="fas fa-check"></i> <span>Envío inmediato y automático al ERP</span></li>
-                        <li><i class="fas fa-check"></i> <span>Reducción de errores administrativos y reprocesos</span></li>
-                        <li><i class="fas fa-check"></i> <span>Mayor velocidad de cierre de venta</span></li>
+                        <li><i class="fas fa-check"></i> <span>Acceso remoto 24/7 desde cualquier lugar del mundo.</span></li>
+                        <li><i class="fas fa-check"></i> <span>Backups automáticos diarios para proteger su data.</span></li>
+                        <li><i class="fas fa-check"></i> <span>Discos SSD de alta velocidad para mayor rendimiento.</span></li>
+                        <li><i class="fas fa-check"></i> <span>IP Pública dedicada y configuración de seguridad (Firewall).</span></li>
+                        <li><i class="fas fa-check"></i> <span>Ideal para alojar DSINet ERP, Facturación Electrónica o Bases de Datos.</span></li>
                     </ul>
                 </div>
                 <div class="module-image">
-                    <img src="https://images.unsplash.com/photo-1556740758-90de374c12ad?auto=format&fit=crop&w=800&q=80" alt="App de Pedidos Móvil">
+                    <img src="img/NUBE.jpg" alt="Data Center VPS">
                 </div>
             </div>
 
             <div class="three-column-wrapper hidden">
                 <div class="section-header-center">
-                    <h3>Cliente Objetivo y Modelo</h3>
-                    <p>La herramienta ideal para distribuidores y equipos comerciales dinámicos.</p>
+                    <h3>Modelo de Servicio</h3>
+                    <p>Flexibilidad total sin inversión inicial en equipos.</p>
                 </div>
                 
                 <div class="three-column-grid">
                     <div class="info-card">
-                        <div class="card-icon-large"><i class="fas fa-users"></i></div>
+                        <div class="card-icon-large"><i class="fas fa-cloud-upload-alt"></i></div>
                         <h4>Cliente Objetivo</h4>
-                        <p>Empresas con fuerza de ventas de campo y distribuidores mayoristas.</p>
+                        <p>Empresas que necesitan centralizar su información y acceder a ella fuera de la oficina.</p>
                     </div>
                     
                     <div class="info-card">
-                        <div class="card-icon-large"><i class="fas fa-user-tag"></i></div>
-                        <h4>Modelo Comercial</h4>
-                        <p>Suscripción mensual flexible por usuario / vendedor activo.</p>
+                        <div class="card-icon-large"><i class="fas fa-money-bill-wave"></i></div>
+                        <h4>Ahorro</h4>
+                        <p>Transforme gastos de inversión (CAPEX) en gastos operativos mensuales (OPEX).</p>
                     </div>
                     
                     <div class="info-card">
-                        <div class="card-icon-large"><i class="fas fa-tachometer-alt"></i></div>
-                        <h4>Eficiencia</h4>
-                        <p>Aumenta la productividad de tu equipo eliminando el trabajo manual.</p>
+                        <div class="card-icon-large"><i class="fas fa-layer-group"></i></div>
+                        <h4>Escalabilidad</h4>
+                        <p>Aumente la memoria RAM o espacio en disco según el crecimiento de su empresa.</p>
                     </div>
                 </div>
             </div>
@@ -147,12 +132,12 @@
         <div class="container">
             <div class="quote-content-wrapper hidden">
                 <div class="quote-text-form">
-                    <h2>Deseo implementar la App de Pedidos</h2>
-                    <p>Modernice su proceso de ventas hoy mismo. Solicite una demo.</p>
+                    <h2>Solicitar cotización de VPS</h2>
+                    <p>Déjenos sus datos y le asesoraremos sobre las características ideales para su servidor.</p>
                     
                     <form id="contactForm" class="quote-form">
                         
-                        <input type="hidden" name="_subject" value="Nuevo Lead - DSI Pedidos">
+                        <input type="hidden" name="_subject" value="Nuevo Lead - Servidor VPS">
                         <input type="hidden" name="_template" value="table">
                         <input type="hidden" name="_captcha" value="false">
 
@@ -177,8 +162,8 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label>Descripción</label>
-                            <textarea name="Mensaje" class="input-white" rows="4"></textarea>
+                            <label>Uso estimado (Ej: Para ERP, Web, Archivos)</label>
+                            <textarea name="Mensaje" class="input-white" rows="4" required></textarea>
                         </div>
                         <button type="submit" class="btn-quote" id="submitBtn">Cotizar &rarr;</button>
                     </form>
@@ -242,18 +227,15 @@
         }
 
         document.addEventListener('DOMContentLoaded', () => {
-            const observerOptions = { root: null, rootMargin: '0px', threshold: 0.1 };
-            const observer = new IntersectionObserver((entries, observer) => {
+            const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         entry.target.classList.add('show');
                         observer.unobserve(entry.target);
                     }
                 });
-            }, observerOptions);
-
-            const hiddenElements = document.querySelectorAll('.hidden, .hidden-left, .hidden-right');
-            hiddenElements.forEach((el) => observer.observe(el));
+            }, { threshold: 0.1 });
+            document.querySelectorAll('.hidden, .hidden-left, .hidden-right').forEach(el => observer.observe(el));
         });
 
         const form = document.getElementById('contactForm');
@@ -283,12 +265,12 @@
             })
             .then(response => response.json())
             .then(data => {
-                showModal('success', '¡Mensaje Enviado!', 'Gracias por su interés. Nos pondremos en contacto pronto.');
+                showModal('success', '¡Mensaje Enviado!', 'Gracias por cotizar. Un asesor le contactará pronto.');
                 form.reset();
             })
             .catch(error => {
                 console.error('Error:', error);
-                showModal('error', 'Error de conexión', 'Hubo un problema al enviar el mensaje. Inténtelo de nuevo.');
+                showModal('error', 'Error de conexión', 'Hubo un problema al enviar la solicitud.');
             })
             .finally(() => {
                 submitBtn.innerHTML = originalBtnText;

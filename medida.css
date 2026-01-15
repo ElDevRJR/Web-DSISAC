@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100..900;1,100..900&display=swap');
 
-/* --- BASE --- */
 * {
     margin: 0;
     padding: 0;
@@ -24,7 +23,6 @@ img {
     max-width: 100%;
 }
 
-/* HEADER */
 .header-transparent {
     background: transparent;
     position: absolute;
@@ -104,7 +102,6 @@ img {
     display: none;
 }
 
-/* MEGA MENÚ */
 .dropdown-item {
     position: relative;
 }
@@ -212,7 +209,6 @@ img {
     padding-left: 5px;
 }
 
-/* HERO A MEDIDA */
 .custom-hero-section {
     background: linear-gradient(rgba(11, 28, 60, 0.9), rgba(11, 28, 60, 0.9)),
         url('https://images.unsplash.com/photo-1571171637578-41bc2dd41cd2?auto=format&fit=crop&w=1600&q=80');
@@ -314,7 +310,6 @@ img {
     width: 100%;
 }
 
-/* CONTENIDO */
 .info-modules-section {
     padding: 70px 0;
     background-color: #fcfcfc;
@@ -439,7 +434,6 @@ img {
     line-height: 1.6;
 }
 
-/* COTIZAR */
 .quote-section {
     position: relative;
     padding: 70px 0;
@@ -526,7 +520,6 @@ img {
     background-color: #008cbf;
 }
 
-/* FOOTER */
 .footer {
     background-color: #060b14;
     padding: 80px 0 30px 0;
@@ -646,7 +639,6 @@ img {
     transform: translateY(-2px);
 }
 
-/* ANIMACIONES */
 .hidden,
 .hidden-left,
 .hidden-right {
@@ -671,7 +663,6 @@ img {
     transform: translate(0);
 }
 
-/* --- ESTILOS DEL MODAL (POP-UP) --- */
 .modal-overlay {
     position: fixed;
     top: 0;
@@ -740,7 +731,6 @@ img {
     background-color: #008cbf;
 }
 
-/* RESPONSIVE */
 @media (max-width: 992px) {
     .menu {
         padding: 20px;

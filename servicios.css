@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100..900;1,100..900&display=swap');
 
-/* --- 1. BASE --- */
 * {
     margin: 0;
     padding: 0;
@@ -24,7 +23,6 @@ img {
     padding: 0 20px;
 }
 
-/* --- 2. HEADER LIGHT --- */
 .header-light {
     background-color: #ffffff;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
@@ -32,18 +30,15 @@ img {
     z-index: 1000;
 }
 
-/* Contenedor del menú */
 .menu {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    /* Distribuye espacio */
     padding: 25px 0;
     width: 100%;
     position: relative;
 }
 
-/* Logo */
 .logo {
     flex-shrink: 0;
 }
@@ -53,12 +48,10 @@ img {
     display: block;
 }
 
-/* Navbar (Menú Central) */
 .navbar {
     display: flex;
     justify-content: center;
     flex: 1;
-    /* Ocupa el espacio central */
 }
 
 .navbar ul {
@@ -83,7 +76,6 @@ img {
     font-weight: 600;
 }
 
-/* Botón Header (Derecha) */
 .btn-header {
     display: inline-block;
     flex-shrink: 0;
@@ -100,7 +92,6 @@ img {
     background-color: #008cbf;
 }
 
-/* Icono Hamburguesa (Oculto en PC) */
 #menu {
     display: none;
 }
@@ -114,8 +105,6 @@ img {
     width: 30px;
 }
 
-
-/* --- 3. MEGA MENÚ (FONDO BLANCO / TEXTO OSCURO) --- */
 .dropdown-item {
     position: relative;
 }
@@ -132,7 +121,6 @@ img {
     left: 0;
     width: 320px;
     background-color: #ffffff;
-    /* BLANCO */
     padding: 20px;
     border-radius: 4px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
@@ -213,7 +201,6 @@ img {
     justify-content: space-between;
     align-items: center;
     color: #444;
-    /* GRIS OSCURO */
     font-size: 13px;
     padding: 10px 0;
     border-bottom: 1px solid #f5f5f5;
@@ -236,8 +223,6 @@ img {
     color: #00ADEE;
 }
 
-
-/* --- 4. HERO SERVICIOS --- */
 .services-hero {
     padding: 100px 0;
     background-color: #ffffff;
@@ -304,7 +289,6 @@ img {
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
 }
 
-/* --- 5. SLIDER SERVICIOS --- */
 .services-slider {
     position: relative;
     width: 100%;
@@ -420,7 +404,6 @@ img {
     }
 }
 
-/* --- 6. SECCIONES RESTANTES --- */
 .adaptability-section,
 .how-we-work-section,
 .technology-section {
@@ -512,7 +495,6 @@ img {
     margin-right: 15px;
 }
 
-/* Problemas */
 .problems-section {
     background: linear-gradient(rgba(11, 28, 60, 0.9), rgba(11, 28, 60, 0.95)), url('https://images.unsplash.com/photo-1553877616-15280ed852f4?auto=format&fit=crop&w=1600&q=80');
     background-size: cover;
@@ -593,7 +575,6 @@ img {
     color: white;
 }
 
-/* Footer */
 .footer {
     background-color: #060b14;
     padding: 80px 0 30px 0;
@@ -713,7 +694,6 @@ img {
     transform: translateY(-2px);
 }
 
-/* Animaciones */
 .hidden,
 .hidden-left,
 .hidden-right {
@@ -764,10 +744,8 @@ img {
     }
 }
 
-/* --- 7. RESPONSIVE --- */
 @media (max-width: 992px) {
 
-    /* HEADER MÓVIL: Logo - Hamburguesa - Botón */
     .menu {
         justify-content: space-between;
         padding: 20px;
@@ -778,7 +756,6 @@ img {
         position: absolute;
         left: 50%;
         transform: translateX(-50%);
-        /* Centrado absoluto */
     }
 
     .navbar {
@@ -802,12 +779,10 @@ img {
         gap: 20px;
     }
 
-    /* Mostrar botón en móvil también */
     .btn-header {
         display: inline-block;
     }
 
-    /* Ajustes generales móvil */
     .services-grid,
     .adaptability-grid,
     .work-grid,
