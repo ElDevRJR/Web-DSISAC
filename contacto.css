@@ -327,6 +327,7 @@ body {
 .btn-submit {
     display: inline-block;
     background-color: #00ADEE;
+    margin-top: 15px;
     color: white;
     padding: 15px 50px;
     border: none;
