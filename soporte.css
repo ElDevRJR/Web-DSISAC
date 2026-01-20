@@ -242,6 +242,7 @@ img {
 }
 
 .btn-cyan-hero {
+    margin-top: 20px;
     display: inline-block;
     background-color: #00ADEE;
     color: white;
