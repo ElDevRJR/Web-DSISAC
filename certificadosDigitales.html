@@ -1,47 +1,71 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="es_PE">
+    <meta property="og:site_name" content="DSISAC">
+    <meta property="og:url" content="https://www.dsi-sac.com/">
+    <meta property="og:title" content="DSISAC - Fábrica de Software">
+    <meta property="og:description" content="Expertos en Desarrollo de Software, ERP y Facturación OSE.">
+    <meta property="og:image" content="https://www.dsi-sac.com/img/portada-whatsapp.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
     <title>DSI - Certificados Digitales</title>
     <link rel="stylesheet" href="certificadosDigitales.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="icon" type="image/png" href="img/favicon.png">
 </head>
+
 <body>
-    
+
     <header class="header-transparent">
         <div class="menu container">
             <a href="index.html" class="logo"><img src="img/logoBlanco.png" alt="DSISAC Logo"></a>
             <input type="checkbox" id="menu">
             <label for="menu" class="menu-label"><img src="img/menu.png" class="menu-icono" alt="menú"></label>
-            
+
             <nav class="navbar">
                 <ul>
                     <li><a href="index.html">Inicio</a></li>
                     <li><a href="nosotros.html">Nosotros</a></li>
                     <li class="dropdown-item">
-                        <a href="servicios.html" class="dropdown-trigger active-link">Soluciones<i class="fas fa-chevron-down"></i></a>
+                        <a href="servicios.html" class="dropdown-trigger active-link">Soluciones<i
+                                class="fas fa-chevron-down"></i></a>
                         <div class="mega-menu">
                             <div class="menu-tabs">
-                                <span class="tab-link active" onclick="switchMenuTab(event, 'tab-productos')">PRODUCTOS</span>
+                                <span class="tab-link active"
+                                    onclick="switchMenuTab(event, 'tab-productos')">PRODUCTOS</span>
                                 <span class="tab-link" onclick="switchMenuTab(event, 'tab-servicios')">SERVICIOS</span>
                             </div>
                             <div id="tab-productos" class="menu-content active">
                                 <ul>
-                                    <li><a href="detalleERP.html">DSINet - ERP Core <i class="fas fa-chevron-right"></i></a></li>
-                                    <li><a href="contabilidad.html">DSI - Contabilidad <i class="fas fa-chevron-right"></i></a></li>
-                                    <li><a href="pedidos.html">DSI - Pedidos <i class="fas fa-chevron-right"></i></a></li>
-                                    <li><a href="gerencial.html">DSI - Gerencial <i class="fas fa-chevron-right"></i></a></li>
-                                    <li><a href="medida.html">Desarrollo de Software a Medida <i class="fas fa-chevron-right"></i></a></li>
+                                    <li><a href="detalleERP.html">DSINet - ERP Core <i
+                                                class="fas fa-chevron-right"></i></a></li>
+                                    <li><a href="contabilidad.html">DSI - Contabilidad <i
+                                                class="fas fa-chevron-right"></i></a></li>
+                                    <li><a href="pedidos.html">DSI - Pedidos <i class="fas fa-chevron-right"></i></a>
+                                    </li>
+                                    <li><a href="gerencial.html">DSI - Gerencial <i
+                                                class="fas fa-chevron-right"></i></a></li>
+                                    <li><a href="medida.html">Desarrollo de Software a Medida <i
+                                                class="fas fa-chevron-right"></i></a></li>
                                 </ul>
                             </div>
                             <div id="tab-servicios" class="menu-content">
                                 <ul>
-                                    <li><a href="soporteUsuario.html">Servicio de Soporte <i class="fas fa-chevron-right"></i></a></li>
-                                    <li><a href="certificadosDigitales.html">Certificados Digitales <i class="fas fa-chevron-right"></i></a></li>
-                                    <li><a href="nubefactOse.html">NubeFact - OSE <i class="fas fa-chevron-right"></i></a></li>
-                                    <li><a href="servidorNube.html">Servidor en la Nube (VPS) <i class="fas fa-chevron-right"></i></a></li>
-                                    <li><a href="modificacionSistema.html">Modificación de Sistema <i class="fas fa-chevron-right"></i></a></li>
+                                    <li><a href="soporteUsuario.html">Servicio de Soporte <i
+                                                class="fas fa-chevron-right"></i></a></li>
+                                    <li><a href="certificadosDigitales.html">Certificados Digitales <i
+                                                class="fas fa-chevron-right"></i></a></li>
+                                    <li><a href="nubefactOse.html">NubeFact - OSE <i
+                                                class="fas fa-chevron-right"></i></a></li>
+                                    <li><a href="servidorNube.html">Servidor en la Nube (VPS) <i
+                                                class="fas fa-chevron-right"></i></a></li>
+                                    <li><a href="modificacionSistema.html">Modificación de Sistema <i
+                                                class="fas fa-chevron-right"></i></a></li>
                                 </ul>
                             </div>
                         </div>
@@ -58,7 +82,8 @@
             <div class="hero-left-content hidden-left">
                 <div class="outline-icon-box"><i class="fas fa-signature"></i></div>
                 <h1>Certificados Digitales</h1>
-                <p class="hero-subtitle">El archivo digital que tu empresa necesita obligatoriamente para emitir facturas electrónicas válidas ante SUNAT.</p>
+                <p class="hero-subtitle">El archivo digital que tu empresa necesita obligatoriamente para emitir
+                    facturas electrónicas válidas ante SUNAT.</p>
             </div>
             <div class="hero-right-card hidden-right">
                 <div class="card-content">
@@ -70,7 +95,8 @@
                     <div class="card-separator"></div>
                     <div class="card-point">
                         <div class="point-icon"><i class="fas fa-check"></i></div>
-                        <p>Permite conectar tu sistema con el OSE para enviar tus comprobantes a SUNAT automáticamente.</p>
+                        <p>Permite conectar tu sistema con el OSE para enviar tus comprobantes a SUNAT automáticamente.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -84,10 +110,14 @@
                     <h3>Nosotros nos encargamos de todo</h3>
                     <p>Sabemos que los trámites digitales pueden ser confusos. Nosotros te facilitamos el proceso.</p>
                     <ul class="module-list">
-                        <li><i class="fas fa-check"></i> <span><strong>Te guiamos en la compra:</strong> Trabajamos con proveedores autorizados.</span></li>
-                        <li><i class="fas fa-check"></i> <span><strong>Instalación incluida:</strong> Configuramos el certificado en tu sistema DSINet.</span></li>
-                        <li><i class="fas fa-check"></i> <span><strong>Conexión con OSE:</strong> Lo dejamos listo para que empieces a facturar.</span></li>
-                        <li><i class="fas fa-check"></i> <span><strong>Aviso de vencimiento:</strong> Te avisamos antes de que caduque para que no dejes de facturar.</span></li>
+                        <li><i class="fas fa-check"></i> <span><strong>Te guiamos en la compra:</strong> Trabajamos con
+                                proveedores autorizados.</span></li>
+                        <li><i class="fas fa-check"></i> <span><strong>Instalación incluida:</strong> Configuramos el
+                                certificado en tu sistema DSINet.</span></li>
+                        <li><i class="fas fa-check"></i> <span><strong>Conexión con OSE:</strong> Lo dejamos listo para
+                                que empieces a facturar.</span></li>
+                        <li><i class="fas fa-check"></i> <span><strong>Aviso de vencimiento:</strong> Te avisamos antes
+                                de que caduque para que no dejes de facturar.</span></li>
                     </ul>
                 </div>
                 <div class="module-image">
@@ -127,7 +157,7 @@
                 <div class="quote-text-form">
                     <h2>Necesito mi Certificado Digital</h2>
                     <p>Evita problemas con SUNAT. Déjanos tus datos y te ayudamos a obtenerlo rápido.</p>
-                    
+
                     <form id="contactForm" class="quote-form">
                         <input type="hidden" name="_subject" value="Nuevo Lead - Certificado Digital">
                         <input type="hidden" name="_template" value="table">
@@ -169,7 +199,8 @@
             <div class="footer-top">
                 <div class="footer-left">
                     <a href="#" class="footer-logo"><img src="img/logoTextBlanco.png" alt="DSISAC Logo"></a>
-                    <p class="footer-desc">Desde la estrategia hasta la ejecución, creamos soluciones digitales que impulsan tu negocio</p>
+                    <p class="footer-desc">Desde la estrategia hasta la ejecución, creamos soluciones digitales que
+                        impulsan tu negocio</p>
                     <ul class="footer-nav">
                         <li><a href="index.html">Inicio</a></li>
                         <li><a href="nosotros.html">Nosotros</a></li>
@@ -214,7 +245,8 @@
         <div class="chat-window" id="chat-window">
             <div class="chat-header">
                 <div class="header-info">
-                    <img src="img/ISOTIPO.png" alt="Bot" onerror="this.src='https://cdn-icons-png.flaticon.com/512/4712/4712035.png'">
+                    <img src="img/ISOTIPO.png" alt="Bot"
+                        onerror="this.src='https://cdn-icons-png.flaticon.com/512/4712/4712035.png'">
                     <div>
                         <h4>Asistente DSI</h4>
                         <span class="status">● En línea</span>
@@ -233,7 +265,7 @@
     </div>
 
     <script>
-        
+
         function switchMenuTab(evt, tabId) {
             evt.preventDefault(); evt.stopPropagation();
             let tabs = document.querySelectorAll('.tab-link');
@@ -251,7 +283,7 @@
         const modalMessage = document.getElementById('modalMessage');
         const submitBtn = document.getElementById('submitBtn');
 
-        form.addEventListener('submit', function(e) {
+        form.addEventListener('submit', function (e) {
             e.preventDefault();
             if (!form.checkValidity()) {
                 showModal('error', 'Error al enviar', 'Por favor, complete todos los campos requeridos.');
@@ -266,19 +298,19 @@
                 method: "POST",
                 body: formData
             })
-            .then(response => response.json())
-            .then(data => {
-                showModal('success', '¡Mensaje Enviado!', 'Gracias por contactarnos. Te escribiremos pronto.');
-                form.reset();
-            })
-            .catch(error => {
-                console.error('Error:', error);
-                showModal('error', 'Error de conexión', 'Hubo un problema al enviar el mensaje.');
-            })
-            .finally(() => {
-                submitBtn.innerHTML = originalBtnText;
-                submitBtn.disabled = false;
-            });
+                .then(response => response.json())
+                .then(data => {
+                    showModal('success', '¡Mensaje Enviado!', 'Gracias por contactarnos. Te escribiremos pronto.');
+                    form.reset();
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    showModal('error', 'Error de conexión', 'Hubo un problema al enviar el mensaje.');
+                })
+                .finally(() => {
+                    submitBtn.innerHTML = originalBtnText;
+                    submitBtn.disabled = false;
+                });
         });
 
         function showModal(type, title, message) {
@@ -298,7 +330,7 @@
             setTimeout(() => { modal.style.display = 'none'; }, 300);
         }
 
-        window.onclick = function(event) {
+        window.onclick = function (event) {
             if (event.target == modal) closeModal();
         }
 
@@ -323,10 +355,10 @@
             let hasStarted = false;
 
             const knowledgeBase = [
-                { 
-                    keywords: ["soporte", "ayuda", "ticket", "falla", "error", "tecnico", "no funciona", "problema"], 
-                    response: "⚠️ Para soporte técnico, por favor ingresa a nuestra Mesa de Ayuda.", 
-                    linkText: "🔴 Ir a Mesa de Ayuda", linkUrl: "soporte.html" 
+                {
+                    keywords: ["soporte", "ayuda", "ticket", "falla", "error", "tecnico", "no funciona", "problema"],
+                    response: "⚠️ Para soporte técnico, por favor ingresa a nuestra Mesa de Ayuda.",
+                    linkText: "🔴 Ir a Mesa de Ayuda", linkUrl: "soporte.html"
                 },
                 {
                     keywords: ["demo", "demostracion", "prueba", "ver", "enseñame"],
@@ -344,17 +376,17 @@
                     linkText: "🚀 Hablar con Ventas", action: "whatsapp_venta"
                 },
                 {
-                    keywords: ["certificado", "digital", "firma", "token"], 
+                    keywords: ["certificado", "digital", "firma", "token"],
                     response: "Gestionamos tus certificados digitales para facturación electrónica. ¿Te interesa comprar uno?",
                     options: true
                 },
-                { 
-                    keywords: ["hola", "buenos", "buenas", "inicio", "saludos"], 
-                    response: "¡Hola! 👋 Soy tu Asesor Comercial. ¿Buscas Certificados, una Demo o Soporte?", 
-                    options: true 
+                {
+                    keywords: ["hola", "buenos", "buenas", "inicio", "saludos"],
+                    response: "¡Hola! 👋 Soy tu Asesor Comercial. ¿Buscas Certificados, una Demo o Soporte?",
+                    options: true
                 },
                 {
-                    keywords: ["sector", "rubro", "empresa"], 
+                    keywords: ["sector", "rubro", "empresa"],
                     response: "Tenemos soluciones para diversos sectores. Puedes verlos en el inicio.",
                     linkText: "Ver Sectores", linkUrl: "index.html"
                 }
@@ -399,14 +431,14 @@
                 const btn = document.createElement('button');
                 btn.classList.add('chat-btn');
                 btn.innerText = text;
-                
+
                 if (action === 'openModal') btn.onclick = () => window.location.href = "index.html"; // Redirige a index
                 else if (action === 'whatsapp') btn.onclick = () => window.open("https://wa.me/51940769186", "_blank");
                 else if (action === 'whatsapp_demo') btn.onclick = () => window.open("https://wa.me/51940769186?text=Hola,%20quisiera%20agendar%20una%20Demo.", "_blank");
                 else if (action === 'whatsapp_cotizacion') btn.onclick = () => window.open("https://wa.me/51940769186?text=Hola,%20deseo%20una%20cotizaci%C3%B3n.", "_blank");
                 else if (action === 'whatsapp_venta') btn.onclick = () => window.open("https://wa.me/51940769186?text=Hola,%20estoy%20interesado%20en%20contratar.", "_blank");
                 else btn.onclick = () => window.location.href = url;
-                
+
                 div.appendChild(btn);
                 chatBody.appendChild(div);
                 chatBody.scrollTop = chatBody.scrollHeight;
@@ -425,12 +457,12 @@
                     const btn = document.createElement('button');
                     btn.classList.add('chat-btn');
                     btn.innerText = opt.text;
-                    
-                    if(opt.action === 'whatsapp') btn.onclick = () => window.open("https://wa.me/51940769186", "_blank");
-                    else if(opt.action === 'whatsapp_demo') btn.onclick = () => window.open("https://wa.me/51940769186?text=Hola,%20quisiera%20agendar%20una%20Demo.", "_blank");
-                    else if(opt.action === 'whatsapp_venta') btn.onclick = () => window.open("https://wa.me/51940769186?text=Hola,%20estoy%20interesado%20en%20contratar.", "_blank");
+
+                    if (opt.action === 'whatsapp') btn.onclick = () => window.open("https://wa.me/51940769186", "_blank");
+                    else if (opt.action === 'whatsapp_demo') btn.onclick = () => window.open("https://wa.me/51940769186?text=Hola,%20quisiera%20agendar%20una%20Demo.", "_blank");
+                    else if (opt.action === 'whatsapp_venta') btn.onclick = () => window.open("https://wa.me/51940769186?text=Hola,%20estoy%20interesado%20en%20contratar.", "_blank");
                     else btn.onclick = () => window.location.href = opt.url;
-                    
+
                     div.appendChild(btn);
                 });
                 chatBody.appendChild(div);
@@ -438,19 +470,19 @@
             }
 
             function processUserInput(text) {
-                const cleanText = text.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[?¿!¡,.]/g, ""); 
+                const cleanText = text.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[?¿!¡,.]/g, "");
                 let matchFound = false;
 
                 setTimeout(() => {
                     for (const item of knowledgeBase) {
                         if (item.keywords.some(keyword => cleanText.includes(keyword))) {
                             addMessage(item.response, 'bot');
-                            if (item.linkText && (item.linkUrl || item.modalId || item.action)) { 
-                                addOptionsBtn(item.linkText, item.linkUrl, item.action, item.modalId); 
+                            if (item.linkText && (item.linkUrl || item.modalId || item.action)) {
+                                addOptionsBtn(item.linkText, item.linkUrl, item.action, item.modalId);
                             }
                             if (item.options) { showMainMenu(); }
                             matchFound = true;
-                            break; 
+                            break;
                         }
                     }
                     if (!matchFound) {
@@ -470,4 +502,5 @@
         });
     </script>
 </body>
+
 </html>
