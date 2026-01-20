@@ -20,7 +20,7 @@
                     <li><a href="index.html">Inicio</a></li>
                     <li><a href="nosotros.html">Nosotros</a></li>
                     <li class="dropdown-item">
-                        <a href="servicios.html" class="dropdown-trigger active-link">Soluciones <i class="fas fa-chevron-down"></i></a>
+                        <a href="servicios.html" class="dropdown-trigger active-link">Soluciones<i class="fas fa-chevron-down"></i></a>
                         <div class="mega-menu">
                             <div class="menu-tabs">
                                 <span class="tab-link active" onclick="switchMenuTab(event, 'tab-productos')">PRODUCTOS</span>
@@ -37,11 +37,11 @@
                             </div>
                             <div id="tab-servicios" class="menu-content">
                                 <ul>
-                                    <li><a href="soporte.html">Servicio de Soporte <i class="fas fa-chevron-right"></i></a></li>
+                                    <li><a href="soporteUsuario.html">Servicio de Soporte <i class="fas fa-chevron-right"></i></a></li>
                                     <li><a href="certificadosDigitales.html">Certificados Digitales <i class="fas fa-chevron-right"></i></a></li>
                                     <li><a href="nubefactOse.html">NubeFact - OSE <i class="fas fa-chevron-right"></i></a></li>
                                     <li><a href="servidorNube.html">Servidor en la Nube (VPS) <i class="fas fa-chevron-right"></i></a></li>
-                                    <li><a href="modificacionSistema.html">Modificación de Sistema <i class="fas fa-chevron-right"></i></a>
+                                    <li><a href="modificacionSistema.html">Modificación de Sistema <i class="fas fa-chevron-right"></i></a></li>
                                 </ul>
                             </div>
                         </div>
@@ -92,7 +92,7 @@
                     </ul>
                 </div>
                 <div class="module-image">
-                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80" alt="Equipo de Desarrollo">
+                    <img src="img/socioTecnologico.png" alt="Equipo de Desarrollo">
                 </div>
             </div>
 
@@ -169,9 +169,7 @@
         <div class="container">
             <div class="footer-top">
                 <div class="footer-left">
-                    <a href="#" class="footer-logo">
-                        <img src="img/logoTextBlanco.png" alt="DSISAC Logo">
-                    </a>
+                    <a href="#" class="footer-logo"><img src="img/logoTextBlanco.png" alt="DSISAC Logo"></a>
                     <p class="footer-desc">Desde la estrategia hasta la ejecución, creamos soluciones digitales que impulsan tu negocio</p>
                     <ul class="footer-nav">
                         <li><a href="index.html">Inicio</a></li>
@@ -208,6 +206,33 @@
         </div>
     </div>
 
+    <div class="chat-widget">
+        <button id="chat-toggle" class="chat-toggle">
+            <i class="fas fa-comment-dots"></i>
+            <span class="chat-badge">1</span>
+        </button>
+
+        <div class="chat-window" id="chat-window">
+            <div class="chat-header">
+                <div class="header-info">
+                    <img src="img/ISOTIPO.png" alt="Bot" onerror="this.src='https://cdn-icons-png.flaticon.com/512/4712/4712035.png'">
+                    <div>
+                        <h4>Asistente DSI</h4>
+                        <span class="status">● En línea</span>
+                    </div>
+                </div>
+                <button id="chat-close" class="chat-close"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="chat-body" id="chat-body"></div>
+            <div class="chat-footer">
+                <form id="chat-form" autocomplete="off">
+                    <input type="text" id="chat-input" placeholder="Escribe tu consulta..." required>
+                    <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                </form>
+            </div>
+        </div>
+    </div>
+
     <script>
         function switchMenuTab(evt, tabId) {
             evt.preventDefault(); evt.stopPropagation();
@@ -220,18 +245,20 @@
         }
 
         document.addEventListener('DOMContentLoaded', () => {
-            const observer = new IntersectionObserver((entries) => {
+            const observerOptions = { root: null, rootMargin: '0px', threshold: 0.1 };
+            const observer = new IntersectionObserver((entries, observer) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         entry.target.classList.add('show');
                         observer.unobserve(entry.target);
                     }
                 });
-            }, { threshold: 0.1 });
-            document.querySelectorAll('.hidden, .hidden-left, .hidden-right').forEach(el => observer.observe(el));
+            }, observerOptions);
+
+            const hiddenElements = document.querySelectorAll('.hidden, .hidden-left, .hidden-right');
+            hiddenElements.forEach((el) => observer.observe(el));
         });
 
-        /* --- SCRIPT PARA EL FORMULARIO Y EL MODAL --- */
         const form = document.getElementById('contactForm');
         const modal = document.getElementById('formModal');
         const modalIcon = document.getElementById('modalIcon');
@@ -242,7 +269,6 @@
         form.addEventListener('submit', function(e) {
             e.preventDefault();
 
-            // Validación simple
             if (!form.checkValidity()) {
                 showModal('error', 'Error al enviar', 'Por favor, complete todos los campos requeridos.');
                 return;
@@ -254,19 +280,18 @@
 
             const formData = new FormData(form);
 
-            // AJAX FETCH a FormSubmit
-            fetch("https://formsubmit.co/ajax/jordanregaladora@gmail.com", {
+            fetch("https://formsubmit.co/ajax/ventas@dsi-sac.com", {
                 method: "POST",
                 body: formData
             })
             .then(response => response.json())
             .then(data => {
-                showModal('success', '¡Mensaje Enviado!', 'Gracias por cotizar con nosotros. Hemos recibido su requerimiento correctamente.');
+                showModal('success', '¡Mensaje Enviado!', 'Gracias por cotizar. Su solicitud ha sido recibida.');
                 form.reset();
             })
             .catch(error => {
                 console.error('Error:', error);
-                showModal('error', 'Error de conexión', 'Hubo un problema al enviar el mensaje. Inténtelo nuevamente.');
+                showModal('error', 'Error de conexión', 'Hubo un problema al enviar el mensaje.');
             })
             .finally(() => {
                 submitBtn.innerHTML = originalBtnText;
@@ -295,6 +320,164 @@
         window.onclick = function(event) {
             if (event.target == modal) closeModal();
         }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const chatToggle = document.getElementById('chat-toggle');
+            const chatWindow = document.getElementById('chat-window');
+            const chatClose = document.getElementById('chat-close');
+            const chatBody = document.getElementById('chat-body');
+            const chatBadge = document.querySelector('.chat-badge');
+            const chatForm = document.getElementById('chat-form');
+            const chatInput = document.getElementById('chat-input');
+            let isChatOpen = false;
+            let hasStarted = false;
+
+            const knowledgeBase = [
+                { 
+                    keywords: ["soporte", "ayuda", "ticket", "falla", "error", "tecnico", "no funciona", "problema"], 
+                    response: "⚠️ Para soporte técnico, por favor ingresa a nuestra Mesa de Ayuda.", 
+                    linkText: "🔴 Ir a Mesa de Ayuda", linkUrl: "soporte.html" 
+                },
+                {
+                    keywords: ["demo", "demostracion", "prueba", "ver", "enseñame"],
+                    response: "¡Excelente! 🚀 ¿Te agendo una reunión para analizar tus requerimientos?",
+                    linkText: "📅 Agendar Reunión por WhatsApp", action: "whatsapp_demo"
+                },
+                {
+                    keywords: ["precio", "costo", "cotizar", "presupuesto", "tarifa"],
+                    response: "Al ser un desarrollo a medida, necesitamos evaluar el alcance. ¿Deseas hablar con un consultor?",
+                    linkText: "Hablar con Consultor", action: "whatsapp_cotizacion"
+                },
+                {
+                    keywords: ["comprar", "contratar", "adquirir", "quiero", "interesado"],
+                    response: "¡Perfecto! 🎉 Un consultor tecnológico priorizará tu atención.",
+                    linkText: "🚀 Hablar con Ventas", action: "whatsapp_venta"
+                },
+                {
+                    keywords: ["medida", "desarrollo", "web", "app", "movil", "integracion"], 
+                    response: "Somos expertos creando software único para procesos específicos. ¿Tienes un proyecto en mente?",
+                    options: true
+                },
+                { 
+                    keywords: ["hola", "buenos", "buenas", "inicio", "saludos"], 
+                    response: "¡Hola! 👋 Soy tu Asesor Tecnológico. ¿Buscas **Desarrollo a Medida**, una **Cotización** o **Soporte**?", 
+                    options: true 
+                },
+                {
+                    keywords: ["sector", "rubro", "empresa"], 
+                    response: "Tenemos soluciones para diversos sectores. Puedes verlos en el inicio.",
+                    linkText: "Ver Sectores", linkUrl: "index.html"
+                }
+            ];
+
+            chatToggle.addEventListener('click', () => {
+                isChatOpen = !isChatOpen;
+                chatWindow.classList.toggle('active', isChatOpen);
+                if (isChatOpen) {
+                    chatBadge.style.display = 'none';
+                    if (!hasStarted) { startConversation(); hasStarted = true; }
+                    setTimeout(() => chatInput.focus(), 300);
+                }
+            });
+
+            chatClose.addEventListener('click', () => {
+                isChatOpen = false;
+                chatWindow.classList.remove('active');
+            });
+
+            chatForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const text = chatInput.value.trim();
+                if (text) {
+                    addMessage(text, 'user');
+                    processUserInput(text);
+                    chatInput.value = '';
+                }
+            });
+
+            function addMessage(text, sender) {
+                const div = document.createElement('div');
+                div.classList.add('message', sender === 'bot' ? 'bot-msg' : 'user-msg');
+                div.innerHTML = text;
+                chatBody.appendChild(div);
+                chatBody.scrollTop = chatBody.scrollHeight;
+            }
+
+            function addOptionsBtn(text, url, action, modalId) {
+                const div = document.createElement('div');
+                div.classList.add('options-container');
+                const btn = document.createElement('button');
+                btn.classList.add('chat-btn');
+                btn.innerText = text;
+                
+                if (action === 'openModal') btn.onclick = () => window.location.href = "index.html"; 
+                else if (action === 'whatsapp') btn.onclick = () => window.open("https://wa.me/51940769186", "_blank");
+                else if (action === 'whatsapp_demo') btn.onclick = () => window.open("https://wa.me/51940769186?text=Hola,%20quisiera%20agendar%20una%20reuni%C3%B3n%20para%20un%20proyecto.", "_blank");
+                else if (action === 'whatsapp_cotizacion') btn.onclick = () => window.open("https://wa.me/51940769186?text=Hola,%20deseo%20cotizar%20un%20desarrollo%20a%20medida.", "_blank");
+                else if (action === 'whatsapp_venta') btn.onclick = () => window.open("https://wa.me/51940769186?text=Hola,%20tengo%20un%20proyecto%20de%20software%20en%20mente.", "_blank");
+                else btn.onclick = () => window.location.href = opt.url;
+                
+                div.appendChild(btn);
+                chatBody.appendChild(div);
+                chatBody.scrollTop = chatBody.scrollHeight;
+            }
+
+            function showMainMenu() {
+                const div = document.createElement('div');
+                div.classList.add('options-container');
+                const options = [
+                    { text: "🛠️ Desarrollo a Medida", action: "whatsapp_venta" },
+                    { text: "💻 Ver Software ERP", url: "detalleERP.html" },
+                    { text: "📅 Agendar Reunión", action: "whatsapp_demo" },
+                    { text: "🙋‍♂️ Hablar con Asesor", action: "whatsapp" }
+                ];
+                options.forEach(opt => {
+                    const btn = document.createElement('button');
+                    btn.classList.add('chat-btn');
+                    btn.innerText = opt.text;
+                    
+                    if(opt.action === 'whatsapp') btn.onclick = () => window.open("https://wa.me/51940769186", "_blank");
+                    else if(opt.action === 'whatsapp_demo') btn.onclick = () => window.open("https://wa.me/51940769186?text=Hola,%20quisiera%20agendar%20una%20reuni%C3%B3n%20t%C3%A9cnica.", "_blank");
+                    else if(opt.action === 'whatsapp_venta') btn.onclick = () => window.open("https://wa.me/51940769186?text=Hola,%20tengo%20un%20proyecto%20de%20software.", "_blank");
+                    else btn.onclick = () => window.location.href = opt.url;
+                    
+                    div.appendChild(btn);
+                });
+                chatBody.appendChild(div);
+                chatBody.scrollTop = chatBody.scrollHeight;
+            }
+
+            function processUserInput(text) {
+                const cleanText = text.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[?¿!¡,.]/g, ""); 
+                let matchFound = false;
+
+                setTimeout(() => {
+                    for (const item of knowledgeBase) {
+                        if (item.keywords.some(keyword => cleanText.includes(keyword))) {
+                            addMessage(item.response, 'bot');
+                            if (item.linkText && (item.linkUrl || item.modalId || item.action)) { 
+                                addOptionsBtn(item.linkText, item.linkUrl, item.action, item.modalId); 
+                            }
+                            if (item.options) { showMainMenu(); }
+                            matchFound = true;
+                            break; 
+                        }
+                    }
+                    if (!matchFound) {
+                        addMessage("🤔 No estoy seguro. ¿Te interesa un **Desarrollo**, **Cotizar** o **Soporte**?", 'bot');
+                        showMainMenu();
+                    }
+                }, 600);
+            }
+
+            function startConversation() {
+                addMessage("¡Hola! 👋 Soy tu Asesor Tecnológico de <strong>DSISAC</strong>.", 'bot');
+                setTimeout(() => {
+                    addMessage("¿Tienes un proyecto en mente? Escribe (ej: 'quiero una app', 'cotizar') o elige una opción:", 'bot');
+                    showMainMenu();
+                }, 600);
+            }
+        });
     </script>
 </body>
 </html>

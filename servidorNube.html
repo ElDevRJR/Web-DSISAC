@@ -24,10 +24,10 @@
                         <a href="servicios.html" class="dropdown-trigger active-link">Soluciones <i class="fas fa-chevron-down"></i></a>
                         <div class="mega-menu">
                             <div class="menu-tabs">
-                                <span class="tab-link" onclick="switchMenuTab(event, 'tab-productos')">PRODUCTOS</span>
-                                <span class="tab-link active" onclick="switchMenuTab(event, 'tab-servicios')">SERVICIOS</span>
+                                <span class="tab-link active" onclick="switchMenuTab(event, 'tab-productos')">PRODUCTOS</span>
+                                <span class="tab-link" onclick="switchMenuTab(event, 'tab-servicios')">SERVICIOS</span>
                             </div>
-                            <div id="tab-productos" class="menu-content">
+                            <div id="tab-productos" class="menu-content active">
                                 <ul>
                                     <li><a href="detalleERP.html">DSINet - ERP Core <i class="fas fa-chevron-right"></i></a></li>
                                     <li><a href="contabilidad.html">DSI - Contabilidad <i class="fas fa-chevron-right"></i></a></li>
@@ -36,13 +36,13 @@
                                     <li><a href="medida.html">Desarrollo de Software a Medida <i class="fas fa-chevron-right"></i></a></li>
                                 </ul>
                             </div>
-                            <div id="tab-servicios" class="menu-content active">
+                            <div id="tab-servicios" class="menu-content">
                                 <ul>
                                     <li><a href="soporteUsuario.html">Servicio de Soporte <i class="fas fa-chevron-right"></i></a></li>
                                     <li><a href="certificadosDigitales.html">Certificados Digitales <i class="fas fa-chevron-right"></i></a></li>
                                     <li><a href="nubefactOse.html">NubeFact - OSE <i class="fas fa-chevron-right"></i></a></li>
                                     <li><a href="servidorNube.html">Servidor en la Nube (VPS) <i class="fas fa-chevron-right"></i></a></li>
-                                    <li><a href="modificacionSistema.html">Modificación de Sistema <i class="fas fa-chevron-right"></i></a>
+                                    <li><a href="modificacionSistema.html">Modificación de Sistema <i class="fas fa-chevron-right"></i></a></li>
                                 </ul>
                             </div>
                         </div>
@@ -215,6 +215,33 @@
         </div>
     </div>
 
+    <div class="chat-widget">
+        <button id="chat-toggle" class="chat-toggle">
+            <i class="fas fa-comment-dots"></i>
+            <span class="chat-badge">1</span>
+        </button>
+
+        <div class="chat-window" id="chat-window">
+            <div class="chat-header">
+                <div class="header-info">
+                    <img src="img/ISOTIPO.png" alt="Bot" onerror="this.src='https://cdn-icons-png.flaticon.com/512/4712/4712035.png'">
+                    <div>
+                        <h4>Asistente DSI</h4>
+                        <span class="status">● En línea</span>
+                    </div>
+                </div>
+                <button id="chat-close" class="chat-close"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="chat-body" id="chat-body"></div>
+            <div class="chat-footer">
+                <form id="chat-form" autocomplete="off">
+                    <input type="text" id="chat-input" placeholder="Escribe tu consulta..." required>
+                    <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                </form>
+            </div>
+        </div>
+    </div>
+
     <script>
         function switchMenuTab(evt, tabId) {
             evt.preventDefault(); evt.stopPropagation();
@@ -227,15 +254,18 @@
         }
 
         document.addEventListener('DOMContentLoaded', () => {
-            const observer = new IntersectionObserver((entries) => {
+            const observerOptions = { root: null, rootMargin: '0px', threshold: 0.1 };
+            const observer = new IntersectionObserver((entries, observer) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         entry.target.classList.add('show');
                         observer.unobserve(entry.target);
                     }
                 });
-            }, { threshold: 0.1 });
-            document.querySelectorAll('.hidden, .hidden-left, .hidden-right').forEach(el => observer.observe(el));
+            }, observerOptions);
+
+            const hiddenElements = document.querySelectorAll('.hidden, .hidden-left, .hidden-right');
+            hiddenElements.forEach((el) => observer.observe(el));
         });
 
         const form = document.getElementById('contactForm');
@@ -259,18 +289,18 @@
 
             const formData = new FormData(form);
 
-            fetch("https://formsubmit.co/ajax/jordanregaladora@gmail.com", {
+            fetch("https://formsubmit.co/ajax/ventas@dsi-sac.com", {
                 method: "POST",
                 body: formData
             })
             .then(response => response.json())
             .then(data => {
-                showModal('success', '¡Mensaje Enviado!', 'Gracias por cotizar. Un asesor le contactará pronto.');
+                showModal('success', '¡Mensaje Enviado!', 'Gracias por cotizar. Su solicitud ha sido recibida.');
                 form.reset();
             })
             .catch(error => {
                 console.error('Error:', error);
-                showModal('error', 'Error de conexión', 'Hubo un problema al enviar la solicitud.');
+                showModal('error', 'Error de conexión', 'Hubo un problema al enviar el mensaje.');
             })
             .finally(() => {
                 submitBtn.innerHTML = originalBtnText;
@@ -299,6 +329,163 @@
         window.onclick = function(event) {
             if (event.target == modal) closeModal();
         }
+
+        /* --- SCRIPT CHATBOT VPS --- */
+        document.addEventListener('DOMContentLoaded', () => {
+            const chatToggle = document.getElementById('chat-toggle');
+            const chatWindow = document.getElementById('chat-window');
+            const chatClose = document.getElementById('chat-close');
+            const chatBody = document.getElementById('chat-body');
+            const chatBadge = document.querySelector('.chat-badge');
+            const chatForm = document.getElementById('chat-form');
+            const chatInput = document.getElementById('chat-input');
+            let isChatOpen = false;
+            let hasStarted = false;
+
+            const knowledgeBase = [
+                { 
+                    keywords: ["soporte", "ayuda", "ticket", "falla", "error", "tecnico", "no funciona", "problema"], 
+                    response: "⚠️ Para soporte técnico, por favor ingresa a nuestra Mesa de Ayuda.", 
+                    linkText: "🔴 Ir a Mesa de Ayuda", linkUrl: "soporte.html" 
+                },
+                {
+                    keywords: ["demo", "prueba", "ver"],
+                    response: "No ofrecemos demos de VPS, pero podemos asesorarte sobre las especificaciones. ¿Deseas hablar con un consultor?",
+                    linkText: "Hablar con Consultor", action: "whatsapp_venta"
+                },
+                {
+                    keywords: ["precio", "costo", "cotizar", "presupuesto", "tarifa"],
+                    response: "Los precios varían según la RAM y almacenamiento que necesites. ¿Te gustaría una cotización?",
+                    linkText: "Solicitar Cotización", action: "whatsapp_cotizacion"
+                },
+                {
+                    keywords: ["comprar", "contratar", "adquirir", "quiero", "interesado"],
+                    response: "¡Perfecto! 🎉 Un asesor comercial priorizará tu atención.",
+                    linkText: "🚀 Hablar con Ventas", action: "whatsapp_venta"
+                },
+                {
+                    keywords: ["acceso", "remoto", "nube", "backup", "seguridad"], 
+                    response: "Nuestros VPS incluyen acceso 24/7, IP pública y backups automáticos. ¿Te interesa?",
+                    options: true
+                },
+                { 
+                    keywords: ["hola", "buenos", "buenas", "inicio", "saludos"], 
+                    response: "¡Hola! 👋 Soy tu Asesor de Infraestructura. ¿Buscas un **Servidor VPS**, **Precios** o **Soporte**?", 
+                    options: true 
+                },
+                {
+                    keywords: ["sector", "rubro", "empresa"], 
+                    response: "Tenemos soluciones para diversos sectores. Puedes verlos en el inicio.",
+                    linkText: "Ver Sectores", linkUrl: "index.html"
+                }
+            ];
+
+            chatToggle.addEventListener('click', () => {
+                isChatOpen = !isChatOpen;
+                chatWindow.classList.toggle('active', isChatOpen);
+                if (isChatOpen) {
+                    chatBadge.style.display = 'none';
+                    if (!hasStarted) { startConversation(); hasStarted = true; }
+                    setTimeout(() => chatInput.focus(), 300);
+                }
+            });
+
+            chatClose.addEventListener('click', () => {
+                isChatOpen = false;
+                chatWindow.classList.remove('active');
+            });
+
+            chatForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const text = chatInput.value.trim();
+                if (text) {
+                    addMessage(text, 'user');
+                    processUserInput(text);
+                    chatInput.value = '';
+                }
+            });
+
+            function addMessage(text, sender) {
+                const div = document.createElement('div');
+                div.classList.add('message', sender === 'bot' ? 'bot-msg' : 'user-msg');
+                div.innerHTML = text;
+                chatBody.appendChild(div);
+                chatBody.scrollTop = chatBody.scrollHeight;
+            }
+
+            function addOptionsBtn(text, url, action, modalId) {
+                const div = document.createElement('div');
+                div.classList.add('options-container');
+                const btn = document.createElement('button');
+                btn.classList.add('chat-btn');
+                btn.innerText = text;
+                
+                if (action === 'openModal') btn.onclick = () => window.location.href = "index.html"; 
+                else if (action === 'whatsapp') btn.onclick = () => window.open("https://wa.me/51940769186", "_blank");
+                else if (action === 'whatsapp_cotizacion') btn.onclick = () => window.open("https://wa.me/51940769186?text=Hola,%20deseo%20cotizar%20un%20servidor%20VPS.", "_blank");
+                else if (action === 'whatsapp_venta') btn.onclick = () => window.open("https://wa.me/51940769186?text=Hola,%20estoy%20interesado%20en%20un%20servidor.", "_blank");
+                else btn.onclick = () => window.location.href = url;
+                
+                div.appendChild(btn);
+                chatBody.appendChild(div);
+                chatBody.scrollTop = chatBody.scrollHeight;
+            }
+
+            function showMainMenu() {
+                const div = document.createElement('div');
+                div.classList.add('options-container');
+                const options = [
+                    { text: "☁️ Cotizar VPS", action: "whatsapp_cotizacion" },
+                    { text: "💻 Ver Software ERP", url: "detalleERP.html" },
+                    { text: "🛠️ Soporte Técnico", url: "soporte.html" },
+                    { text: "🙋‍♂️ Hablar con Asesor", action: "whatsapp" }
+                ];
+                options.forEach(opt => {
+                    const btn = document.createElement('button');
+                    btn.classList.add('chat-btn');
+                    btn.innerText = opt.text;
+                    
+                    if(opt.action === 'whatsapp') btn.onclick = () => window.open("https://wa.me/51940769186", "_blank");
+                    else if(opt.action === 'whatsapp_cotizacion') btn.onclick = () => window.open("https://wa.me/51940769186?text=Hola,%20deseo%20cotizar%20un%20VPS.", "_blank");
+                    else btn.onclick = () => window.location.href = opt.url;
+                    
+                    div.appendChild(btn);
+                });
+                chatBody.appendChild(div);
+                chatBody.scrollTop = chatBody.scrollHeight;
+            }
+
+            function processUserInput(text) {
+                const cleanText = text.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[?¿!¡,.]/g, ""); 
+                let matchFound = false;
+
+                setTimeout(() => {
+                    for (const item of knowledgeBase) {
+                        if (item.keywords.some(keyword => cleanText.includes(keyword))) {
+                            addMessage(item.response, 'bot');
+                            if (item.linkText && (item.linkUrl || item.modalId || item.action)) { 
+                                addOptionsBtn(item.linkText, item.linkUrl, item.action, item.modalId); 
+                            }
+                            if (item.options) { showMainMenu(); }
+                            matchFound = true;
+                            break; 
+                        }
+                    }
+                    if (!matchFound) {
+                        addMessage("🤔 No estoy seguro. ¿Te interesa un **VPS**, **Cotizar** o **Soporte**?", 'bot');
+                        showMainMenu();
+                    }
+                }, 600);
+            }
+
+            function startConversation() {
+                addMessage("¡Hola! 👋 Soy tu Asesor de Infraestructura de <strong>DSISAC</strong>.", 'bot');
+                setTimeout(() => {
+                    addMessage("¿Buscas un servidor en la nube? Escribe (ej: 'quiero cotizar', 'acceso remoto') o elige una opción:", 'bot');
+                    showMainMenu();
+                }, 600);
+            }
+        });
     </script>
 </body>
 </html>

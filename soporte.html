@@ -46,7 +46,7 @@
 
                             <div id="tab-servicios" class="menu-content">
                                 <ul>
-                                    <li><a href="soporte.html">Servicio de Soporte <i class="fas fa-chevron-right"></i></a></li>
+                                    <li><a href="soporteUsuario.html">Servicio de Soporte <i class="fas fa-chevron-right"></i></a></li>
                                     <li><a href="certificadosDigitales.html">Certificados Digitales <i class="fas fa-chevron-right"></i></a></li>
                                     <li><a href="nubefactOse.html">NubeFact - OSE <i class="fas fa-chevron-right"></i></a></li>
                                     <li><a href="servidorNube.html">Servidor en la Nube (VPS) <i class="fas fa-chevron-right"></i></a></li>
@@ -68,7 +68,7 @@
         <div class="container hero-content hidden">
             <h1>Soporte que <br> realmente <span class="text-cyan">funciona</span></h1>
             <p>Sistema de tickets profesional con respuesta garantizada en menos de 15 minutos.</p>
-            <a href="#" class="btn-cyan-hero">Abrir Ticket Ahora &rarr;</a>
+            <a href="mailto:helpdesk@dsi-sac.com" class="btn-cyan-hero">Abrir Ticket Ahora &rarr;</a>
         </div>
     </section>
 
@@ -146,14 +146,14 @@
     <section class="helpdesk-contact-section">
         <div class="container helpdesk-grid">
             <div class="helpdesk-image hidden-left">
-                <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=800&q=80" alt="Atención al cliente">
+                <img src="img/gestionComercial.png" alt="Atención al cliente">
             </div>
             <div class="helpdesk-info hidden-right">
                 <h2>HelpDesk</h2>
                 <p class="subtitle">Su feedback es muy importante.</p>
                 <p class="description">Esto nos permite anticiparnos a problemas futuros y optimizar el servicio.</p>
                 <div class="contact-channels">
-                    <div class="channel-item"><i class="far fa-comment-alt"></i><span>+51 960-579-083</span></div>
+                    <div class="channel-item"><i class="far fa-comment-alt"></i><span>+51 942 635 004</span></div>
                     <div class="channel-item"><i class="far fa-envelope"></i><span>helpdesk@dsi-sac.com</span></div>
                 </div>
                 <div class="exclusive-note">
@@ -198,6 +198,33 @@
         </div>
     </footer>
 
+    <div class="chat-widget">
+        <button id="chat-toggle" class="chat-toggle">
+            <i class="fas fa-comment-dots"></i>
+            <span class="chat-badge">1</span>
+        </button>
+
+        <div class="chat-window" id="chat-window">
+            <div class="chat-header">
+                <div class="header-info">
+                    <img src="img/ISOTIPO.png" alt="Bot" onerror="this.src='https://cdn-icons-png.flaticon.com/512/4712/4712035.png'">
+                    <div>
+                        <h4>Mesa de Ayuda DSI</h4>
+                        <span class="status">● En línea</span>
+                    </div>
+                </div>
+                <button id="chat-close" class="chat-close"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="chat-body" id="chat-body"></div>
+            <div class="chat-footer">
+                <form id="chat-form" autocomplete="off">
+                    <input type="text" id="chat-input" placeholder="Escribe tu consulta..." required>
+                    <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                </form>
+            </div>
+        </div>
+    </div>
+
     <script>
         function switchMenuTab(evt, tabId) {
             evt.preventDefault(); evt.stopPropagation();
@@ -210,15 +237,168 @@
         }
 
         document.addEventListener('DOMContentLoaded', () => {
-            const observer = new IntersectionObserver((entries) => {
+            const observerOptions = { root: null, rootMargin: '0px', threshold: 0.1 };
+            const observer = new IntersectionObserver((entries, observer) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         entry.target.classList.add('show');
                         observer.unobserve(entry.target);
                     }
                 });
-            }, { threshold: 0.1 });
-            document.querySelectorAll('.hidden, .hidden-left, .hidden-right').forEach(el => observer.observe(el));
+            }, observerOptions);
+
+            const hiddenElements = document.querySelectorAll('.hidden, .hidden-left, .hidden-right');
+            hiddenElements.forEach((el) => observer.observe(el));
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const chatToggle = document.getElementById('chat-toggle');
+            const chatWindow = document.getElementById('chat-window');
+            const chatClose = document.getElementById('chat-close');
+            const chatBody = document.getElementById('chat-body');
+            const chatBadge = document.querySelector('.chat-badge');
+            const chatForm = document.getElementById('chat-form');
+            const chatInput = document.getElementById('chat-input');
+            let isChatOpen = false;
+            let hasStarted = false;
+
+            const knowledgeBase = [
+                { 
+                    keywords: ["ticket", "incidencia", "reportar", "problema", "falla", "error"], 
+                    response: "⚠️ Para reportar una incidencia, por favor envía un correo detallado a nuestra Mesa de Ayuda.", 
+                    linkText: "✉️ Enviar Correo a HelpDesk", linkUrl: "mailto:helpdesk@dsi-sac.com" 
+                },
+                {
+                    keywords: ["telefono", "celular", "llamar", "urgencia"],
+                    response: "📞 El número directo de soporte técnico es +51 942 635 004.",
+                    linkText: "Llamar a Soporte", action: "whatsapp_soporte"
+                },
+                {
+                    keywords: ["remoto", "teamviewer", "anydesk", "acceso"],
+                    response: "Para soporte remoto, asegúrate de tener instalado AnyDesk o TeamViewer y compártenos tu ID.",
+                    options: true
+                },
+                {
+                    keywords: ["horario", "atencion", "hora"],
+                    response: "Nuestro horario de atención es de Lunes a Viernes de 8:30 AM a 6:00 PM y Sábados de 9:00 AM a 1:00 PM.",
+                },
+                {
+                    keywords: ["ventas", "cotizar", "precio", "comprar"],
+                    response: "Si necesitas una cotización comercial, te derivaré con el área de Ventas.",
+                    linkText: "Hablar con Ventas", action: "whatsapp_venta"
+                },
+                { 
+                    keywords: ["hola", "buenos", "buenas", "inicio", "saludos"], 
+                    response: "¡Hola! 👋 Soy el asistente de Soporte. ¿Deseas abrir un **Ticket**, contactar al **Técnico** o ver **Horarios**?", 
+                    options: true 
+                }
+            ];
+
+            chatToggle.addEventListener('click', () => {
+                isChatOpen = !isChatOpen;
+                chatWindow.classList.toggle('active', isChatOpen);
+                if (isChatOpen) {
+                    chatBadge.style.display = 'none';
+                    if (!hasStarted) { startConversation(); hasStarted = true; }
+                    setTimeout(() => chatInput.focus(), 300);
+                }
+            });
+
+            chatClose.addEventListener('click', () => {
+                isChatOpen = false;
+                chatWindow.classList.remove('active');
+            });
+
+            chatForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const text = chatInput.value.trim();
+                if (text) {
+                    addMessage(text, 'user');
+                    processUserInput(text);
+                    chatInput.value = '';
+                }
+            });
+
+            function addMessage(text, sender) {
+                const div = document.createElement('div');
+                div.classList.add('message', sender === 'bot' ? 'bot-msg' : 'user-msg');
+                div.innerHTML = text;
+                chatBody.appendChild(div);
+                chatBody.scrollTop = chatBody.scrollHeight;
+            }
+
+            function addOptionsBtn(text, url, action, modalId) {
+                const div = document.createElement('div');
+                div.classList.add('options-container');
+                const btn = document.createElement('button');
+                btn.classList.add('chat-btn');
+                btn.innerText = text;
+                
+                if (action === 'openModal') btn.onclick = () => window.location.href = "index.html"; 
+                else if (action === 'whatsapp_soporte') btn.onclick = () => window.open("https://wa.me/51942635004", "_blank");
+                else if (action === 'whatsapp_venta') btn.onclick = () => window.open("https://wa.me/51940769186", "_blank");
+                else btn.onclick = () => window.location.href = url;
+                
+                div.appendChild(btn);
+                chatBody.appendChild(div);
+                chatBody.scrollTop = chatBody.scrollHeight;
+            }
+
+            function showMainMenu() {
+                const div = document.createElement('div');
+                div.classList.add('options-container');
+                const options = [
+                    { text: "📞 Contactar Soporte", action: "whatsapp_soporte" },
+                    { text: "✉️ Enviar Correo", url: "mailto:helpdesk@dsi-sac.com" },
+                    { text: "🕙 Horarios Atención", action: "whatsapp_soporte" }, // Placeholder action
+                    { text: "💰 Consultas Ventas", action: "whatsapp_venta" }
+                ];
+                options.forEach(opt => {
+                    const btn = document.createElement('button');
+                    btn.classList.add('chat-btn');
+                    btn.innerText = opt.text;
+                    
+                    if(opt.action === 'whatsapp_soporte') btn.onclick = () => window.open("https://wa.me/51942635004", "_blank");
+                    else if(opt.action === 'whatsapp_venta') btn.onclick = () => window.open("https://wa.me/51940769186", "_blank");
+                    else if(opt.text.includes("Horarios")) btn.onclick = () => addMessage("Lunes a Viernes: 8:30am - 6:00pm<br>Sábados: 9:00am - 1:00pm", 'bot');
+                    else btn.onclick = () => window.location.href = opt.url;
+                    
+                    div.appendChild(btn);
+                });
+                chatBody.appendChild(div);
+                chatBody.scrollTop = chatBody.scrollHeight;
+            }
+
+            function processUserInput(text) {
+                const cleanText = text.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[?¿!¡,.]/g, ""); 
+                let matchFound = false;
+
+                setTimeout(() => {
+                    for (const item of knowledgeBase) {
+                        if (item.keywords.some(keyword => cleanText.includes(keyword))) {
+                            addMessage(item.response, 'bot');
+                            if (item.linkText && (item.linkUrl || item.modalId || item.action)) { 
+                                addOptionsBtn(item.linkText, item.linkUrl, item.action, item.modalId); 
+                            }
+                            if (item.options) { showMainMenu(); }
+                            matchFound = true;
+                            break; 
+                        }
+                    }
+                    if (!matchFound) {
+                        addMessage("🤔 No estoy seguro. Soy el asistente de Soporte. ¿Deseas **contactar al técnico**?", 'bot');
+                        showMainMenu();
+                    }
+                }, 600);
+            }
+
+            function startConversation() {
+                addMessage("¡Hola! 👋 Bienvenido a la **Mesa de Ayuda**.", 'bot');
+                setTimeout(() => {
+                    addMessage("¿Tienes algún problema técnico o consulta?", 'bot');
+                    showMainMenu();
+                }, 600);
+            }
         });
     </script>
 </body>

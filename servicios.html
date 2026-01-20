@@ -69,15 +69,15 @@
             <div class="hero-text hidden-left">
                 <h1>Soluciones ERP para <br> gestión <span class="underline-blue">empresarial</span></h1>
                 <p>Brindamos soluciones tecnológicas integrales que centralizan la información, optimizan procesos críticos y aseguran la continuidad operativa del negocio.</p>
-                <a href="#" class="btn-dark-blue">Saber más &rarr;</a>
+                <a href="#catalogo" class="btn-dark-blue">Ver Catálogo &rarr;</a>
             </div>
             <div class="hero-image hidden-right">
-                <img src="https://images.unsplash.com/photo-1531973576160-7125cd663d86?auto=format&fit=crop&w=800&q=80" alt="Gestión Empresarial">
+                <img src="img/solucionesServicios.png" alt="Gestión Empresarial">
             </div>
         </div>
     </section>
 
-    <section class="services-slider">
+    <section class="services-slider" id="catalogo">
         <div class="slider-container">
             <div class="service-slide active" style="background-image: linear-gradient(rgba(13, 37, 78, 0.85), rgba(13, 37, 78, 0.9)), url('https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=1600&q=80');">
                 <div class="slide-content">
@@ -127,7 +127,7 @@
             <div class="adaptability-text hidden-right">
                 <h2>Contamos con la experiencia necesaria para adaptarnos a la forma en que opera cada negocio</h2>
                 <p>Desarrollamos e implementamos soluciones que se ajustan a los procesos, necesidades y objetivos de cada empresa.</p>
-                <a href="#" class="btn-dark-blue">Saber más &rarr;</a>
+                <a href="contacto.html" class="btn-dark-blue">Contactar &rarr;</a>
             </div>
         </div>
     </section>
@@ -144,7 +144,7 @@
                 </ul>
             </div>
             <div class="work-image hidden-right">
-                <img src="https://images.unsplash.com/photo-1531538606174-0f90ff5dce83?auto=format&fit=crop&w=800&q=80" alt="Reunión">
+                <img src="img/comoTrabajamos.png" alt="Reunión">
             </div>
         </div>
     </section>
@@ -179,7 +179,7 @@
     <section class="technology-section">
         <div class="container technology-grid">
             <div class="tech-image hidden-left">
-                <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=800&q=80" alt="Tecnología">
+                <img src="img/sostieneServicios.png" alt="Tecnología">
             </div>
             <div class="tech-text hidden-right">
                 <h2>Tecnología que sostiene la <br> gestión <span class="text-dark">empresarial</span></h2>
@@ -223,6 +223,33 @@
         </div>
     </footer>
 
+    <div class="chat-widget">
+        <button id="chat-toggle" class="chat-toggle">
+            <i class="fas fa-comment-dots"></i>
+            <span class="chat-badge">1</span>
+        </button>
+
+        <div class="chat-window" id="chat-window">
+            <div class="chat-header">
+                <div class="header-info">
+                    <img src="img/ISOTIPO.png" alt="Bot" onerror="this.src='https://cdn-icons-png.flaticon.com/512/4712/4712035.png'">
+                    <div>
+                        <h4>Asistente DSI</h4>
+                        <span class="status">● En línea</span>
+                    </div>
+                </div>
+                <button id="chat-close" class="chat-close"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="chat-body" id="chat-body"></div>
+            <div class="chat-footer">
+                <form id="chat-form" autocomplete="off">
+                    <input type="text" id="chat-input" placeholder="Escribe tu consulta..." required>
+                    <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                </form>
+            </div>
+        </div>
+    </div>
+
     <script>
         function switchMenuTab(evt, tabId) {
             evt.preventDefault(); evt.stopPropagation();
@@ -247,15 +274,172 @@
         setInterval(() => { moveSlide(1); }, 6000);
 
         document.addEventListener('DOMContentLoaded', () => {
-            const observer = new IntersectionObserver((entries) => {
+            const observerOptions = { root: null, rootMargin: '0px', threshold: 0.1 };
+            const observer = new IntersectionObserver((entries, observer) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         entry.target.classList.add('show');
                         observer.unobserve(entry.target);
                     }
                 });
-            }, { threshold: 0.1 });
-            document.querySelectorAll('.hidden, .hidden-left, .hidden-right').forEach(el => observer.observe(el));
+            }, observerOptions);
+            const hiddenElements = document.querySelectorAll('.hidden, .hidden-left, .hidden-right');
+            hiddenElements.forEach((el) => observer.observe(el));
+        });
+
+        /* --- CHATBOT INTELIGENTE PARA SERVICIOS --- */
+        document.addEventListener('DOMContentLoaded', () => {
+            const chatToggle = document.getElementById('chat-toggle');
+            const chatWindow = document.getElementById('chat-window');
+            const chatClose = document.getElementById('chat-close');
+            const chatBody = document.getElementById('chat-body');
+            const chatBadge = document.querySelector('.chat-badge');
+            const chatForm = document.getElementById('chat-form');
+            const chatInput = document.getElementById('chat-input');
+            let isChatOpen = false;
+            let hasStarted = false;
+
+            const knowledgeBase = [
+                { 
+                    keywords: ["soporte", "ayuda", "ticket", "falla", "error", "tecnico", "no funciona", "problema"], 
+                    response: "⚠️ Para soporte técnico, por favor ingresa a nuestra Mesa de Ayuda.", 
+                    linkText: "🔴 Ir a Mesa de Ayuda", linkUrl: "soporte.html" 
+                },
+                {
+                    keywords: ["ose", "facturacion", "sunat", "nubefact"],
+                    response: "Con NubeFact OSE validas facturas al instante y evitas caídas de SUNAT. ¿Te interesa?",
+                    linkText: "Ver OSE", linkUrl: "nubefactOse.html"
+                },
+                {
+                    keywords: ["vps", "nube", "servidor", "hosting"],
+                    response: "Ofrecemos servidores en la nube (VPS) seguros y escalables para tu ERP.",
+                    linkText: "Ver Servidores VPS", linkUrl: "servidorNube.html"
+                },
+                {
+                    keywords: ["certificado", "digital", "firma"],
+                    response: "Gestionamos la emisión y renovación de tus certificados digitales para facturación.",
+                    linkText: "Ver Certificados", linkUrl: "certificadosDigitales.html"
+                },
+                {
+                    keywords: ["modificacion", "medida", "cambio", "personalizar"],
+                    response: "Adaptamos el sistema a tus procesos específicos. ¿Tienes un requerimiento?",
+                    linkText: "Ver Modificaciones", linkUrl: "modificacionSistema.html"
+                },
+                {
+                    keywords: ["comprar", "contratar", "cotizar", "precio"],
+                    response: "¡Excelente! Un asesor comercial puede ayudarte a elegir el mejor plan.",
+                    linkText: "Hablar con Ventas", action: "whatsapp_venta"
+                },
+                { 
+                    keywords: ["hola", "buenos", "buenas", "inicio", "saludos"], 
+                    response: "¡Hola! 👋 Soy tu Asesor de Soluciones. ¿Buscas **Soporte**, **VPS** o **Facturación OSE**?", 
+                    options: true 
+                }
+            ];
+
+            chatToggle.addEventListener('click', () => {
+                isChatOpen = !isChatOpen;
+                chatWindow.classList.toggle('active', isChatOpen);
+                if (isChatOpen) {
+                    chatBadge.style.display = 'none';
+                    if (!hasStarted) { startConversation(); hasStarted = true; }
+                    setTimeout(() => chatInput.focus(), 300);
+                }
+            });
+
+            chatClose.addEventListener('click', () => {
+                isChatOpen = false;
+                chatWindow.classList.remove('active');
+            });
+
+            chatForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const text = chatInput.value.trim();
+                if (text) {
+                    addMessage(text, 'user');
+                    processUserInput(text);
+                    chatInput.value = '';
+                }
+            });
+
+            function addMessage(text, sender) {
+                const div = document.createElement('div');
+                div.classList.add('message', sender === 'bot' ? 'bot-msg' : 'user-msg');
+                div.innerHTML = text;
+                chatBody.appendChild(div);
+                chatBody.scrollTop = chatBody.scrollHeight;
+            }
+
+            function addOptionsBtn(text, url, action, modalId) {
+                const div = document.createElement('div');
+                div.classList.add('options-container');
+                const btn = document.createElement('button');
+                btn.classList.add('chat-btn');
+                btn.innerText = text;
+                
+                if (action === 'openModal') btn.onclick = () => window.location.href = "index.html"; 
+                else if (action === 'whatsapp') btn.onclick = () => window.open("https://wa.me/51940769186", "_blank");
+                else if (action === 'whatsapp_venta') btn.onclick = () => window.open("https://wa.me/51940769186?text=Hola,%20quisiera%20informaci%C3%B3n%20sobre%20sus%20servicios.", "_blank");
+                else btn.onclick = () => window.location.href = url;
+                
+                div.appendChild(btn);
+                chatBody.appendChild(div);
+                chatBody.scrollTop = chatBody.scrollHeight;
+            }
+
+            function showMainMenu() {
+                const div = document.createElement('div');
+                div.classList.add('options-container');
+                const options = [
+                    { text: "🛠️ Soporte Técnico", url: "soporte.html" },
+                    { text: "☁️ Servidores VPS", url: "servidorNube.html" },
+                    { text: "📜 Certificados", url: "certificadosDigitales.html" },
+                    { text: "🙋‍♂️ Hablar con Ventas", action: "whatsapp_venta" }
+                ];
+                options.forEach(opt => {
+                    const btn = document.createElement('button');
+                    btn.classList.add('chat-btn');
+                    btn.innerText = opt.text;
+                    
+                    if(opt.action === 'whatsapp_venta') btn.onclick = () => window.open("https://wa.me/51940769186", "_blank");
+                    else btn.onclick = () => window.location.href = opt.url;
+                    
+                    div.appendChild(btn);
+                });
+                chatBody.appendChild(div);
+                chatBody.scrollTop = chatBody.scrollHeight;
+            }
+
+            function processUserInput(text) {
+                const cleanText = text.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[?¿!¡,.]/g, ""); 
+                let matchFound = false;
+
+                setTimeout(() => {
+                    for (const item of knowledgeBase) {
+                        if (item.keywords.some(keyword => cleanText.includes(keyword))) {
+                            addMessage(item.response, 'bot');
+                            if (item.linkText && (item.linkUrl || item.modalId || item.action)) { 
+                                addOptionsBtn(item.linkText, item.linkUrl, item.action, item.modalId); 
+                            }
+                            if (item.options) { showMainMenu(); }
+                            matchFound = true;
+                            break; 
+                        }
+                    }
+                    if (!matchFound) {
+                        addMessage("🤔 No estoy seguro. ¿Buscas **Soporte**, **VPS** o **Facturación**?", 'bot');
+                        showMainMenu();
+                    }
+                }, 600);
+            }
+
+            function startConversation() {
+                addMessage("¡Hola! 👋 Bienvenido a la sección de Servicios.", 'bot');
+                setTimeout(() => {
+                    addMessage("¿En qué solución estás interesado?", 'bot');
+                    showMainMenu();
+                }, 600);
+            }
         });
     </script>
 </body>
