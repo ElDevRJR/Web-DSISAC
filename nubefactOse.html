@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta property="og:type" content="website">
-<meta property="og:locale" content="es_PE">
-<meta property="og:site_name" content="DSISAC">
-<meta property="og:url" content="https://www.dsi-sac.com/"> <meta property="og:title" content="DSISAC - Fábrica de Software">
-<meta property="og:description" content="Expertos en Desarrollo de Software, ERP y Facturación OSE.">
-<meta property="og:image" content="https://www.dsi-sac.com/img/portada-whatsapp.jpg">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
+    <meta property="og:locale" content="es_PE">
+    <meta property="og:site_name" content="DSISAC">
+    <meta property="og:url" content="https://www.dsi-sac.com/nubefactOse.html"> 
+    <meta property="og:title" content="NubeFact OSE - Facturación Electrónica">
+    <meta property="og:description" content="Valida tus comprobantes al instante con OSE. Sin caídas de SUNAT.">
+    <meta property="og:image" content="https://www.dsi-sac.com/img/portada-whatsapp.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
     <title>DSI - NubeFact OSE</title>
     <link rel="stylesheet" href="nubefactOse.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -187,12 +188,13 @@
                     </ul>
                 </div>
                 <div class="footer-right">
-                    <h3>Suscríbete a nuestro boletín</h3>
-                    <p>Las últimas noticias, artículos y recursos, enviados a su bandeja de entrada semanalmente</p>
-                    <form class="subscribe-form">
-                        <input type="email" placeholder="Introduce tu correo electrónico" required>
-                        <button type="submit">Suscribirse</button>
-                    </form>
+                    <h3>Datos de Contacto</h3>
+                    <ul class="contact-info-list">
+                        <li><i class="fas fa-map-marker-alt"></i> Jr. Manuel Candamo 589, Lince, Lima</li>
+                        <li><i class="fab fa-whatsapp"></i> +51 940 769 186</li>
+                        <li><i class="fas fa-envelope"></i> ventas@dsi-sac.com</li>
+                        <li><i class="fas fa-clock"></i> Lun - Vie: 9:00 AM - 6:00 PM</li>
+                    </ul>
                 </div>
             </div>
             <div class="footer-bottom">
@@ -214,34 +216,8 @@
         </div>
     </div>
 
-    <div class="chat-widget">
-        <button id="chat-toggle" class="chat-toggle">
-            <i class="fas fa-comment-dots"></i>
-            <span class="chat-badge">1</span>
-        </button>
-
-        <div class="chat-window" id="chat-window">
-            <div class="chat-header">
-                <div class="header-info">
-                    <img src="img/ISOTIPO.png" alt="Bot" onerror="this.src='https://cdn-icons-png.flaticon.com/512/4712/4712035.png'">
-                    <div>
-                        <h4>Asistente DSI</h4>
-                        <span class="status">● En línea</span>
-                    </div>
-                </div>
-                <button id="chat-close" class="chat-close"><i class="fas fa-times"></i></button>
-            </div>
-            <div class="chat-body" id="chat-body"></div>
-            <div class="chat-footer">
-                <form id="chat-form" autocomplete="off">
-                    <input type="text" id="chat-input" placeholder="Escribe tu consulta..." required>
-                    <button type="submit"><i class="fas fa-paper-plane"></i></button>
-                </form>
-            </div>
-        </div>
-    </div>
-
     <script>
+        // Lógica del Menú
         function switchMenuTab(evt, tabId) {
             evt.preventDefault(); evt.stopPropagation();
             let tabs = document.querySelectorAll('.tab-link');
@@ -252,21 +228,20 @@
             document.getElementById(tabId).classList.add('active');
         }
 
+        // Animaciones
         document.addEventListener('DOMContentLoaded', () => {
-            const observerOptions = { root: null, rootMargin: '0px', threshold: 0.1 };
-            const observer = new IntersectionObserver((entries, observer) => {
+            const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         entry.target.classList.add('show');
                         observer.unobserve(entry.target);
                     }
                 });
-            }, observerOptions);
-
-            const hiddenElements = document.querySelectorAll('.hidden, .hidden-left, .hidden-right');
-            hiddenElements.forEach((el) => observer.observe(el));
+            }, { threshold: 0.1 });
+            document.querySelectorAll('.hidden, .hidden-left, .hidden-right').forEach(el => observer.observe(el));
         });
 
+        // Lógica del Formulario
         const form = document.getElementById('contactForm');
         const modal = document.getElementById('formModal');
         const modalIcon = document.getElementById('modalIcon');
@@ -276,16 +251,13 @@
 
         form.addEventListener('submit', function(e) {
             e.preventDefault();
-
             if (!form.checkValidity()) {
                 showModal('error', 'Error al enviar', 'Por favor, complete todos los campos requeridos.');
                 return;
             }
-
             const originalBtnText = submitBtn.innerHTML;
             submitBtn.innerHTML = 'Enviando... <i class="fas fa-spinner fa-spin"></i>';
             submitBtn.disabled = true;
-
             const formData = new FormData(form);
 
             fetch("https://formsubmit.co/ajax/ventas@dsi-sac.com", {
@@ -294,7 +266,7 @@
             })
             .then(response => response.json())
             .then(data => {
-                showModal('success', '¡Mensaje Enviado!', 'Gracias por su interés. Nos pondremos en contacto pronto.');
+                showModal('success', '¡Solicitud Recibida!', 'Nos pondremos en contacto contigo para activar tu OSE.');
                 form.reset();
             })
             .catch(error => {
@@ -311,7 +283,6 @@
             modal.style.display = 'flex';
             modalTitle.textContent = title;
             modalMessage.textContent = message;
-
             if (type === 'success') {
                 modalIcon.innerHTML = '<i class="fas fa-check-circle" style="color: #28a745;"></i>';
             } else {
@@ -328,164 +299,6 @@
         window.onclick = function(event) {
             if (event.target == modal) closeModal();
         }
-
-        document.addEventListener('DOMContentLoaded', () => {
-            const chatToggle = document.getElementById('chat-toggle');
-            const chatWindow = document.getElementById('chat-window');
-            const chatClose = document.getElementById('chat-close');
-            const chatBody = document.getElementById('chat-body');
-            const chatBadge = document.querySelector('.chat-badge');
-            const chatForm = document.getElementById('chat-form');
-            const chatInput = document.getElementById('chat-input');
-            let isChatOpen = false;
-            let hasStarted = false;
-
-            const knowledgeBase = [
-                { 
-                    keywords: ["soporte", "ayuda", "ticket", "falla", "error", "tecnico", "no funciona", "problema"], 
-                    response: "⚠️ Para soporte técnico, por favor ingresa a nuestra Mesa de Ayuda.", 
-                    linkText: "🔴 Ir a Mesa de Ayuda", linkUrl: "soporte.html" 
-                },
-                {
-                    keywords: ["demo", "demostracion", "prueba", "ver", "enseñame"],
-                    response: "¡Excelente! 🚀 ¿Te agendo una demo para ver la velocidad del OSE?",
-                    linkText: "📅 Agendar Demo por WhatsApp", action: "whatsapp_demo"
-                },
-                {
-                    keywords: ["precio", "costo", "cotizar", "presupuesto", "tarifa", "volumen"],
-                    response: "El precio depende del volumen de comprobantes. ¿Cuántos emites al mes aprox?",
-                    linkText: "Consultar Precio", action: "whatsapp_cotizacion"
-                },
-                {
-                    keywords: ["comprar", "contratar", "adquirir", "quiero", "interesado"],
-                    response: "¡Perfecto! 🎉 Un asesor comercial priorizará tu atención.",
-                    linkText: "🚀 Hablar con Ventas", action: "whatsapp_venta"
-                },
-                {
-                    keywords: ["sunat", "ose", "nubefact", "facturacion", "validez"], 
-                    response: "El OSE NubeFact valida tus comprobantes al instante y los envía a SUNAT. ¿Te interesa?",
-                    options: true
-                },
-                { 
-                    keywords: ["hola", "buenos", "buenas", "inicio", "saludos"], 
-                    response: "¡Hola! 👋 Soy tu Asesor de Facturación Electrónica. ¿Buscas **Precios**, **Activar OSE** o **Soporte**?", 
-                    options: true 
-                },
-                {
-                    keywords: ["sector", "rubro", "empresa"], 
-                    response: "Tenemos soluciones para diversos sectores. Puedes verlos en el inicio.",
-                    linkText: "Ver Sectores", linkUrl: "index.html"
-                }
-            ];
-
-            chatToggle.addEventListener('click', () => {
-                isChatOpen = !isChatOpen;
-                chatWindow.classList.toggle('active', isChatOpen);
-                if (isChatOpen) {
-                    chatBadge.style.display = 'none';
-                    if (!hasStarted) { startConversation(); hasStarted = true; }
-                    setTimeout(() => chatInput.focus(), 300);
-                }
-            });
-
-            chatClose.addEventListener('click', () => {
-                isChatOpen = false;
-                chatWindow.classList.remove('active');
-            });
-
-            chatForm.addEventListener('submit', (e) => {
-                e.preventDefault();
-                const text = chatInput.value.trim();
-                if (text) {
-                    addMessage(text, 'user');
-                    processUserInput(text);
-                    chatInput.value = '';
-                }
-            });
-
-            function addMessage(text, sender) {
-                const div = document.createElement('div');
-                div.classList.add('message', sender === 'bot' ? 'bot-msg' : 'user-msg');
-                div.innerHTML = text;
-                chatBody.appendChild(div);
-                chatBody.scrollTop = chatBody.scrollHeight;
-            }
-
-            function addOptionsBtn(text, url, action, modalId) {
-                const div = document.createElement('div');
-                div.classList.add('options-container');
-                const btn = document.createElement('button');
-                btn.classList.add('chat-btn');
-                btn.innerText = text;
-                
-                if (action === 'openModal') btn.onclick = () => window.location.href = "index.html"; 
-                else if (action === 'whatsapp') btn.onclick = () => window.open("https://wa.me/51940769186", "_blank");
-                else if (action === 'whatsapp_demo') btn.onclick = () => window.open("https://wa.me/51940769186?text=Hola,%20quisiera%20agendar%20una%20reuni%C3%B3n%20sobre%20OSE.", "_blank");
-                else if (action === 'whatsapp_cotizacion') btn.onclick = () => window.open("https://wa.me/51940769186?text=Hola,%20deseo%20cotizar%20el%20servicio%20OSE.", "_blank");
-                else if (action === 'whatsapp_venta') btn.onclick = () => window.open("https://wa.me/51940769186?text=Hola,%20quiero%20activar%20el%20OSE.", "_blank");
-                else btn.onclick = () => window.location.href = url;
-                
-                div.appendChild(btn);
-                chatBody.appendChild(div);
-                chatBody.scrollTop = chatBody.scrollHeight;
-            }
-
-            function showMainMenu() {
-                const div = document.createElement('div');
-                div.classList.add('options-container');
-                const options = [
-                    { text: "☁️ Activar OSE", action: "whatsapp_venta" },
-                    { text: "💻 Ver Software ERP", url: "detalleERP.html" },
-                    { text: "📅 Agendar Reunión", action: "whatsapp_demo" },
-                    { text: "🙋‍♂️ Hablar con Asesor", action: "whatsapp" }
-                ];
-                options.forEach(opt => {
-                    const btn = document.createElement('button');
-                    btn.classList.add('chat-btn');
-                    btn.innerText = opt.text;
-                    
-                    if(opt.action === 'whatsapp') btn.onclick = () => window.open("https://wa.me/51940769186", "_blank");
-                    else if(opt.action === 'whatsapp_demo') btn.onclick = () => window.open("https://wa.me/51940769186?text=Hola,%20quisiera%20agendar%20una%20reuni%C3%B3n%20sobre%20OSE.", "_blank");
-                    else if(opt.action === 'whatsapp_venta') btn.onclick = () => window.open("https://wa.me/51940769186?text=Hola,%20quiero%20activar%20el%20OSE.", "_blank");
-                    else btn.onclick = () => window.location.href = opt.url;
-                    
-                    div.appendChild(btn);
-                });
-                chatBody.appendChild(div);
-                chatBody.scrollTop = chatBody.scrollHeight;
-            }
-
-            function processUserInput(text) {
-                const cleanText = text.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[?¿!¡,.]/g, ""); 
-                let matchFound = false;
-
-                setTimeout(() => {
-                    for (const item of knowledgeBase) {
-                        if (item.keywords.some(keyword => cleanText.includes(keyword))) {
-                            addMessage(item.response, 'bot');
-                            if (item.linkText && (item.linkUrl || item.modalId || item.action)) { 
-                                addOptionsBtn(item.linkText, item.linkUrl, item.action, item.modalId); 
-                            }
-                            if (item.options) { showMainMenu(); }
-                            matchFound = true;
-                            break; 
-                        }
-                    }
-                    if (!matchFound) {
-                        addMessage("🤔 No estoy seguro. ¿Te interesa **OSE/Facturación**, **Cotizar** o **Soporte**?", 'bot');
-                        showMainMenu();
-                    }
-                }, 600);
-            }
-
-            function startConversation() {
-                addMessage("¡Hola! 👋 Soy tu Asesor de Facturación Electrónica.", 'bot');
-                setTimeout(() => {
-                    addMessage("¿Buscas mejorar tu velocidad de facturación? Escribe (ej: 'quiero OSE', 'cotizar') o elige una opción:", 'bot');
-                    showMainMenu();
-                }, 600);
-            }
-        });
     </script>
 </body>
 </html>

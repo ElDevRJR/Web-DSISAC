@@ -7,9 +7,9 @@
     <meta property="og:type" content="website">
     <meta property="og:locale" content="es_PE">
     <meta property="og:site_name" content="DSISAC">
-    <meta property="og:url" content="https://www.dsi-sac.com/">
-    <meta property="og:title" content="DSISAC - Fábrica de Software">
-    <meta property="og:description" content="Expertos en Desarrollo de Software, ERP y Facturación OSE.">
+    <meta property="og:url" content="https://www.dsi-sac.com/contabilidad.html">
+    <meta property="og:title" content="DSI - Contabilidad y Finanzas">
+    <meta property="og:description" content="Módulo contable integrado que automatiza asientos, libros electrónicos y reportes tributarios.">
     <meta property="og:image" content="https://www.dsi-sac.com/img/portada-whatsapp.jpg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
@@ -240,36 +240,7 @@
         </div>
     </div>
 
-    <div class="chat-widget">
-        <button id="chat-toggle" class="chat-toggle">
-            <i class="fas fa-comment-dots"></i>
-            <span class="chat-badge">1</span>
-        </button>
-
-        <div class="chat-window" id="chat-window">
-            <div class="chat-header">
-                <div class="header-info">
-                    <img src="img/ISOTIPO.png" alt="Bot"
-                        onerror="this.src='https://cdn-icons-png.flaticon.com/512/4712/4712035.png'">
-                    <div>
-                        <h4>Asistente DSI</h4>
-                        <span class="status">● En línea</span>
-                    </div>
-                </div>
-                <button id="chat-close" class="chat-close"><i class="fas fa-times"></i></button>
-            </div>
-            <div class="chat-body" id="chat-body"></div>
-            <div class="chat-footer">
-                <form id="chat-form" autocomplete="off">
-                    <input type="text" id="chat-input" placeholder="Escribe tu consulta..." required>
-                    <button type="submit"><i class="fas fa-paper-plane"></i></button>
-                </form>
-            </div>
-        </div>
-    </div>
-
     <script>
-        /* --- 1. LÓGICA VISUAL Y FORMULARIO --- */
         function switchMenuTab(evt, tabId) {
             evt.preventDefault(); evt.stopPropagation();
             let tabs = document.querySelectorAll('.tab-link');
@@ -280,7 +251,6 @@
             document.getElementById(tabId).classList.add('active');
         }
 
-        /* --- LOGICA FORMULARIO AJAX --- */
         const form = document.getElementById('contactForm');
         const modal = document.getElementById('formModal');
         const modalIcon = document.getElementById('modalIcon');
@@ -290,13 +260,16 @@
 
         form.addEventListener('submit', function (e) {
             e.preventDefault();
+
             if (!form.checkValidity()) {
                 showModal('error', 'Error al enviar', 'Por favor, complete todos los campos requeridos.');
                 return;
             }
+
             const originalBtnText = submitBtn.innerHTML;
             submitBtn.innerHTML = 'Enviando... <i class="fas fa-spinner fa-spin"></i>';
             submitBtn.disabled = true;
+
             const formData = new FormData(form);
 
             fetch("https://formsubmit.co/ajax/ventas@dsi-sac.com", {
@@ -305,12 +278,12 @@
             })
                 .then(response => response.json())
                 .then(data => {
-                    showModal('success', '¡Mensaje Enviado!', 'Gracias por cotizar. Nos pondremos en contacto pronto.');
+                    showModal('success', '¡Mensaje Enviado!', 'Gracias por cotizar. Su solicitud ha sido recibida.');
                     form.reset();
                 })
                 .catch(error => {
                     console.error('Error:', error);
-                    showModal('error', 'Error de conexión', 'Hubo un problema al enviar el mensaje. Inténtelo de nuevo.');
+                    showModal('error', 'Error de conexión', 'Hubo un problema al enviar el mensaje.');
                 })
                 .finally(() => {
                     submitBtn.innerHTML = originalBtnText;
@@ -322,6 +295,7 @@
             modal.style.display = 'flex';
             modalTitle.textContent = title;
             modalMessage.textContent = message;
+
             if (type === 'success') {
                 modalIcon.innerHTML = '<i class="fas fa-check-circle" style="color: #28a745;"></i>';
             } else {
@@ -340,176 +314,15 @@
         }
 
         document.addEventListener('DOMContentLoaded', () => {
-            const observerOptions = { root: null, rootMargin: '0px', threshold: 0.1 };
-            const observer = new IntersectionObserver((entries, observer) => {
+            const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         entry.target.classList.add('show');
                         observer.unobserve(entry.target);
                     }
                 });
-            }, observerOptions);
-            const hiddenElements = document.querySelectorAll('.hidden, .hidden-left, .hidden-right');
-            hiddenElements.forEach((el) => observer.observe(el));
-        });
-
-        /* --- 2. CHATBOT DE VENTAS --- */
-        document.addEventListener('DOMContentLoaded', () => {
-            const chatToggle = document.getElementById('chat-toggle');
-            const chatWindow = document.getElementById('chat-window');
-            const chatClose = document.getElementById('chat-close');
-            const chatBody = document.getElementById('chat-body');
-            const chatBadge = document.querySelector('.chat-badge');
-            const chatForm = document.getElementById('chat-form');
-            const chatInput = document.getElementById('chat-input');
-            let isChatOpen = false;
-            let hasStarted = false;
-
-            const knowledgeBase = [
-                {
-                    keywords: ["soporte", "ayuda", "ticket", "falla", "error", "tecnico", "no funciona", "problema"],
-                    response: "⚠️ Para soporte técnico, por favor ingresa a nuestra Mesa de Ayuda.",
-                    linkText: "🔴 Ir a Mesa de Ayuda", linkUrl: "soporte.html"
-                },
-                {
-                    keywords: ["demo", "demostracion", "prueba", "ver", "enseñame"],
-                    response: "¡Excelente! 🚀 La mejor forma de convencerte es viendo el sistema. ¿Te agendo una demo gratuita?",
-                    linkText: "📅 Agendar Demo por WhatsApp", action: "whatsapp_demo"
-                },
-                {
-                    keywords: ["precio", "costo", "cotizar", "presupuesto", "tarifa"],
-                    response: "Manejamos planes flexibles. 💰 ¿Deseas una cotización formal?",
-                    linkText: "Solicitar Cotización", action: "whatsapp_cotizacion"
-                },
-                {
-                    keywords: ["comprar", "contratar", "adquirir", "quiero", "interesado"],
-                    response: "¡Perfecto! 🎉 Un asesor comercial priorizará tu atención.",
-                    linkText: "🚀 Hablar con Ventas", action: "whatsapp_venta"
-                },
-                {
-                    keywords: ["contabilidad", "contable", "libros", "asientos"],
-                    response: "El módulo Contable automatiza tus asientos y libros electrónicos. ¿Te gustaría implementarlo?",
-                    options: true
-                },
-                {
-                    keywords: ["hola", "buenos", "buenas", "inicio", "saludos"],
-                    response: "¡Hola! 👋 Soy tu Asesor Comercial. ¿Buscas el módulo Contable, una Demo o Soporte?",
-                    options: true
-                },
-                {
-                    keywords: ["sector", "rubro", "empresa"],
-                    response: "Tenemos soluciones para diversos sectores. Puedes verlos en el inicio.",
-                    linkText: "Ver Sectores", linkUrl: "index.html"
-                }
-            ];
-
-            chatToggle.addEventListener('click', () => {
-                isChatOpen = !isChatOpen;
-                chatWindow.classList.toggle('active', isChatOpen);
-                if (isChatOpen) {
-                    chatBadge.style.display = 'none';
-                    if (!hasStarted) { startConversation(); hasStarted = true; }
-                    setTimeout(() => chatInput.focus(), 300);
-                }
-            });
-
-            chatClose.addEventListener('click', () => {
-                isChatOpen = false;
-                chatWindow.classList.remove('active');
-            });
-
-            chatForm.addEventListener('submit', (e) => {
-                e.preventDefault();
-                const text = chatInput.value.trim();
-                if (text) {
-                    addMessage(text, 'user');
-                    processUserInput(text);
-                    chatInput.value = '';
-                }
-            });
-
-            function addMessage(text, sender) {
-                const div = document.createElement('div');
-                div.classList.add('message', sender === 'bot' ? 'bot-msg' : 'user-msg');
-                div.innerHTML = text;
-                chatBody.appendChild(div);
-                chatBody.scrollTop = chatBody.scrollHeight;
-            }
-
-            function addOptionsBtn(text, url, action, modalId) {
-                const div = document.createElement('div');
-                div.classList.add('options-container');
-                const btn = document.createElement('button');
-                btn.classList.add('chat-btn');
-                btn.innerText = text;
-
-                if (action === 'openModal') btn.onclick = () => window.location.href = "index.html"; // Redirige a index para modales
-                else if (action === 'whatsapp') btn.onclick = () => window.open("https://wa.me/51940769186", "_blank");
-                else if (action === 'whatsapp_demo') btn.onclick = () => window.open("https://wa.me/51940769186?text=Hola,%20quisiera%20agendar%20una%20Demo%20de%20Contabilidad.", "_blank");
-                else if (action === 'whatsapp_cotizacion') btn.onclick = () => window.open("https://wa.me/51940769186?text=Hola,%20deseo%20cotizar%20el%20m%C3%B3dulo%20contable.", "_blank");
-                else if (action === 'whatsapp_venta') btn.onclick = () => window.open("https://wa.me/51940769186?text=Hola,%20estoy%20interesado%20en%20contratar.", "_blank");
-                else btn.onclick = () => window.location.href = url;
-
-                div.appendChild(btn);
-                chatBody.appendChild(div);
-                chatBody.scrollTop = chatBody.scrollHeight;
-            }
-
-            function showMainMenu() {
-                const div = document.createElement('div');
-                div.classList.add('options-container');
-                const options = [
-                    { text: "📊 Módulo Contable", action: "whatsapp_venta" },
-                    { text: "💻 Ver Software ERP", url: "detalleERP.html" },
-                    { text: "📅 Solicitar Demo", action: "whatsapp_demo" },
-                    { text: "🙋‍♂️ Hablar con Asesor", action: "whatsapp" }
-                ];
-                options.forEach(opt => {
-                    const btn = document.createElement('button');
-                    btn.classList.add('chat-btn');
-                    btn.innerText = opt.text;
-
-                    if (opt.action === 'whatsapp') btn.onclick = () => window.open("https://wa.me/51940769186", "_blank");
-                    else if (opt.action === 'whatsapp_demo') btn.onclick = () => window.open("https://wa.me/51940769186?text=Hola,%20quisiera%20agendar%20una%20Demo.", "_blank");
-                    else if (opt.action === 'whatsapp_venta') btn.onclick = () => window.open("https://wa.me/51940769186?text=Hola,%20estoy%20interesado%20en%20contratar.", "_blank");
-                    else btn.onclick = () => window.location.href = opt.url;
-
-                    div.appendChild(btn);
-                });
-                chatBody.appendChild(div);
-                chatBody.scrollTop = chatBody.scrollHeight;
-            }
-
-            function processUserInput(text) {
-                const cleanText = text.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[?¿!¡,.]/g, "");
-                let matchFound = false;
-
-                setTimeout(() => {
-                    for (const item of knowledgeBase) {
-                        if (item.keywords.some(keyword => cleanText.includes(keyword))) {
-                            addMessage(item.response, 'bot');
-                            if (item.linkText && (item.linkUrl || item.modalId || item.action)) {
-                                addOptionsBtn(item.linkText, item.linkUrl, item.action, item.modalId);
-                            }
-                            if (item.options) { showMainMenu(); }
-                            matchFound = true;
-                            break;
-                        }
-                    }
-                    if (!matchFound) {
-                        addMessage("🤔 No estoy seguro. ¿Te interesa una Demo, Contabilidad o Soporte?", 'bot');
-                        showMainMenu();
-                    }
-                }, 600);
-            }
-
-            function startConversation() {
-                addMessage("¡Hola! 👋 Soy tu Asesor Comercial de <strong>DSISAC</strong>.", 'bot');
-                setTimeout(() => {
-                    addMessage("¿En qué puedo ayudarte? Escribe (ej: 'quiero contabilidad', 'cotizar') o elige una opción:", 'bot');
-                    showMainMenu();
-                }, 600);
-            }
+            }, { threshold: 0.1 });
+            document.querySelectorAll('.hidden, .hidden-left, .hidden-right').forEach(el => observer.observe(el));
         });
     </script>
 </body>

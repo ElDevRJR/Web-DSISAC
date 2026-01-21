@@ -23,6 +23,7 @@ img {
     padding: 0 20px;
 }
 
+/* HEADER LIGHT */
 .header-light {
     background-color: #ffffff;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
@@ -105,6 +106,9 @@ img {
     width: 30px;
 }
 
+/* SIN FILTRO para que sea negro (asumiendo que la imagen es negra) */
+
+/* MEGA MENU LIGHT */
 .dropdown-item {
     position: relative;
 }
@@ -223,6 +227,7 @@ img {
     color: #00ADEE;
 }
 
+/* SERVICIOS HERO */
 .services-hero {
     padding: 100px 0;
     background-color: #ffffff;
@@ -289,6 +294,7 @@ img {
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
 }
 
+/* SLIDER */
 .services-slider {
     position: relative;
     width: 100%;
@@ -404,6 +410,7 @@ img {
     }
 }
 
+/* RESTO DE SECCIONES */
 .adaptability-section,
 .how-we-work-section,
 .technology-section {
@@ -580,7 +587,6 @@ img {
     padding: 80px 0 30px 0;
     color: #ffffff;
     font-size: 14px;
-    margin-top: -1px;
 }
 
 .footer-top {
@@ -642,31 +648,25 @@ img {
     margin-bottom: 20px;
 }
 
-.subscribe-form {
-    display: flex;
-    gap: 15px;
+.contact-info-list {
+    list-style: none;
+    padding: 0;
 }
 
-.subscribe-form input {
-    flex: 1;
-    background-color: #1a2332;
-    border: 1px solid #2a3b5c;
-    border-radius: 6px;
-    padding: 12px 15px;
-    color: #fff;
-    outline: none;
+.contact-info-list li {
+    display: flex;
+    align-items: center;
+    color: #cccccc;
+    margin-bottom: 12px;
     font-size: 14px;
 }
 
-.subscribe-form button {
-    background-color: #00ADEE;
-    color: #fff;
-    border: none;
-    border-radius: 6px;
-    padding: 12px 25px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background 0.3s;
+.contact-info-list li i {
+    color: #00ADEE;
+    font-size: 16px;
+    margin-right: 12px;
+    width: 20px;
+    text-align: center;
 }
 
 .footer-bottom {
@@ -694,6 +694,8 @@ img {
     transform: translateY(-2px);
 }
 
+
+/* UTILIDADES */
 .hidden,
 .hidden-left,
 .hidden-right {
@@ -744,7 +746,7 @@ img {
     }
 }
 
-/* CHATBOT STYLES */
+/* CHATBOT */
 .chat-widget {
     position: fixed;
     bottom: 30px;
@@ -976,6 +978,7 @@ img {
     background-color: #008cbf;
 }
 
+/* MEDIA QUERIES (MÓVIL) */
 @media (max-width: 992px) {
     .menu {
         justify-content: space-between;
@@ -992,8 +995,9 @@ img {
 
     .menu-icono {
         width: 30px;
-        filter: invert(100%);
     }
+
+    /* Sin filtro para que se vea negro en fondo blanco */
 
     .navbar {
         display: none !important;
@@ -1017,14 +1021,17 @@ img {
     }
 
     .navbar ul>li>a {
-        color: #333;
+        color: #333333;
         font-size: 18px;
     }
+
+    /* Texto oscuro para móvil */
 
     .btn-header {
         display: inline-block;
     }
 
+    /* Mega Menu en Móvil (Fondo Blanco) */
     .mega-menu {
         position: static;
         width: 100%;
@@ -1034,7 +1041,7 @@ img {
         transform: none;
         box-shadow: none;
         margin-top: 15px;
-        background-color: #2a2a2a;
+        background-color: #f9f9f9;
         border-top: none;
     }
 
@@ -1078,8 +1085,32 @@ img {
         width: 45%;
     }
 
+    .footer-top {
+        flex-direction: column;
+        gap: 40px;
+        text-align: center;
+    }
+
+    .footer-left,
+    .footer-right {
+        max-width: 100%;
+    }
+
+    .footer-logo img {
+        margin: 0 auto 20px auto;
+    }
+
+    .footer-nav {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
     .subscribe-form {
         flex-direction: column;
+        gap: 10px;
+        width: 100%;
+        max-width: 500px;
+        margin: 0 auto;
     }
 
     .subscribe-form input,
@@ -1090,11 +1121,6 @@ img {
     .footer-bottom {
         flex-direction: column;
         gap: 20px;
-    }
-
-    .chat-window {
-        width: 300px;
-        right: -10px;
-        bottom: 70px;
+        text-align: center;
     }
 }
