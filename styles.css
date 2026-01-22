@@ -295,6 +295,24 @@ img {
     transform: translateY(-3px);
 }
 
+.btn-cpe {
+    display: inline-block;
+    background-color: #00ADEE;
+    color: white;
+    padding: 18px 40px;
+    border-radius: 50px;
+    font-size: 18px;
+    font-weight: 600;
+    box-shadow: 0 10px 25px rgba(0, 173, 238, 0.3);
+    transition: transform 0.3s, background 0.3s;
+    margin-left: 10px;
+}
+
+.btn-cpe:hover {
+    background-color: #008cbf;
+    transform: translateY(-3px);
+}
+
 .productos-section {
     background-color: #ffffff;
     padding: 120px 20px 80px 20px;
@@ -381,7 +399,6 @@ img {
 }
 
 .sistema-conectado {
-    padding: 100px 0;
     background-color: #ffffff;
     overflow: hidden;
 }
@@ -437,6 +454,7 @@ img {
     padding: 100px 20px;
     text-align: center;
     color: white;
+    margin-top: 100px;
     margin-bottom: 80px;
 }
 
@@ -918,6 +936,7 @@ img {
 .delay-200 { transition-delay: 200ms; }
 .delay-300 { transition-delay: 300ms; }
 .delay-400 { transition-delay: 400ms; }
+
 
 @media (max-width: 992px) {
     .menu {
